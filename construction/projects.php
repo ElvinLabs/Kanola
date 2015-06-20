@@ -34,7 +34,7 @@ require '../functions&defined/function.php';
 		print_r($project);
 
 		print("<form action='edit.php' method='POST'> <input type='hidden' name='q' value='roads'> <input type='submit' value='delete'> </form>");
-		print("<form action='delete.php' method='POST'> <input type='hidden' name='q' value='".key($files["ongoing"][$i])."'> <input type='hidden' name='state' value='ongoing'> <input type='hidden' name='roads' value='".ROADS."'>  <input type='submit' value='delete'> </form>");
+		print("<form action='delete.php' method='POST'> <input type='hidden' name='filename' value='".key($files["ongoing"][$i])."'> <input type='hidden' name='state' value='ongoing'> <input type='hidden' name='project_path' value='".ROADS."'> <input type='hidden' name='path_to_file' value='".ROAD."'>   <input type='submit' value='delete'> </form>");
 		print("</div>");
 		printf("<br>");
 
