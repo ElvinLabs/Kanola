@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>add new vehicle</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+
+
+	<div class="margin:0 auto;">
+	<form action="auto_vehicle_save.php" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+
+
+		<table>
+			<caption>kanola construction admin pannel</caption>
+			<thead>
+				<tr>
+					<th>Fill in the details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><label>Category</label></td>
+					<td> :<input type="text" name="category" value="" placeholder="eg: cab/car" required></td>
+				</tr>
+				<tr>
+					<td><label>Brand</label></td>
+					<td> :<input type="text" name="brand" value="" placeholder="eg: BMW/Ford" required></td>
+				</tr>
+
+				<tr>
+                    
+                <tr>
+					<td><label>Model</label></td>
+					<td> :<input type="text" name="model" value="" placeholder="eg: Alto" required></td>
+				</tr>
+                    
+                    
+                <tr>
+					<td><label>Model Year</label></td>
+					<td> :<input type="text" name="modelyear" value="" placeholder="eg: 2010" required></td>
+				</tr>
+
+				<tr>
+                    
+                <tr>
+					<td><label>Condition</label></td>
+					<td> <select name="condition">
+						<option value="New">New</option>
+						<option value="Used">Used</option>
+                        <option value="Recondition">Recondition</option>
+						
+					</select>
+					 </td>
+					
+				</tr>
+                    
+                    
+                  <tr>
+					<td><label>Mileage</label></td>
+					<td> :<input type="text" name="mileage" value="" placeholder="eg: 10000Km" ></td>
+				</tr>
+
+				<tr> 
+                    
+                    
+                    
+                 <tr>
+					<td><label>Transmition</label></td>
+					<td> <select name="transmition">
+						<option value="Manual">Manual</option>
+						<option value="Automatic">Automatic</option>
+                        <option value="Other Transmition">Other Transmition</option>
+						
+					</select>
+					 </td>
+					
+				</tr>
+                
+                
+                <tr>
+					<td><label>Engine Capacity(cc)</label></td>
+					<td> :<input type="text" name="capacity" value="" placeholder="eg: 1000cc" required></td>
+				</tr>
+                    
+                    
+                    
+					<td> <label>Fuel type</label> </td>
+					<td> Diesel<input type="radio" name="ftype" value="Diesel" placeholder="">Petrol<input type="radio" name="ftype" value="Petrol" placeholder="">Other<input type="radio" name="ftype" value="Other" placeholder=""> </td>
+					
+				</tr>
+
+				<tr>
+					<td><label>location</label></td>
+					<td> :<input type="text" name="location" value="" placeholder="location" required></td>
+				</tr>
+        
+        
+                <tr>
+                
+                    <td>selec the images</td>
+                    <td><input type="file" name="files[]" multiple/></td>
+                
+                </tr>
+        
+        
+        
+        
+				
+				<tr>
+					<td><label>description</label></td>
+					<td> <textarea name="description" placeholder="other options and details" required></textarea></td>
+				</tr>
+
+			
+
+				<tr>
+					<td></td>
+					<td> <input type="submit" name="" value="save" placeholder="save"> </td>
+				</tr>
+			</tbody>
+		</table>
+		
+	</form>
+		
+	</div>
+	
+</body>
+</html>
