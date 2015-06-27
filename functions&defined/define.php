@@ -20,6 +20,15 @@ define("WRITIING_ERROR" , "writing_error");
 define("NOTFILL","All Field Requered");
 
 
+# image uploading
+define("ROAD_IMG","roads/images/");
+define("BUILDING_IMG","../buildings/images/");
+define("BRIDGE_IMG","../bridges/images/");
+
+
+
+
+
 
 
 

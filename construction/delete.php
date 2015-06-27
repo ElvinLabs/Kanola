@@ -19,26 +19,24 @@
 
 
 	// this function is delete the name of the project in main projects file
-	function delete_name($state , $file_name,$project_path ){
-			$file_content = json_decode(file_get_contents($project_path),true);
-			$state_projects = count($file_content[$state]);
+	function delete_name($state , $file_name, $project_path ){
+			$file_content = json_decode( file_get_contents( $project_path ), true );
+			$state_projects = count( $file_content[$state] );
 		
 			print($state_projects."<br>");
 
 			for ($i=0; $i <$state_projects ; $i++) { 
 
-				print(key($file_content[$state][$i])."<br>");
-				if (key($file_content[$state][$i])==$file_name) {	
+				print(key( $file_content[$state][$i])."<br>" );	# get the kay from kay,pair 
+				if ( key( $file_content[$state][$i] )==$file_name ) {	
 					echo "found";				
-					unset( $file_content[$state][$i]);
+					unset( $file_content[$state][$i] );	# delete the tha file from list
 					$file_content[$state."_num"]--;
 					$file_content["count"]--;
-				 	return	write_file($project_path,$file_content);
-					
-
+				 	return	write_file( $project_path, $file_content );
 				}
 			}
-					return "can't delete the project from project file";
+			return "can't delete the project from project file";
 	}
 
 

@@ -10,7 +10,7 @@
 
 
 	<div class="margin:0 auto;">
-	<form action="project_save.php" method="post" accept-charset="utf-8">
+	<form action="project_save.php" method="post" enctype="multipart/form-data" accept-charset="utf-8">
 
 
 		<table>
@@ -64,6 +64,16 @@
 					 </td>
 					
 				</tr>
+                
+                
+                <tr>
+                
+                    <td>selec the images</td>
+                    <td><input type="file" name="files[]" multiple/></td>
+                
+                </tr>
+                
+                
 
 				<tr>
 					<td></td>
