@@ -97,59 +97,5 @@ require 'define.php';
 
 
 
-    # auto & heavy machinery
-
-    #  add details to auto.json file
-    function add_auto_vehicle($path , $data ){
-    
-        $current_autos = json_decode( file_get_contents(AUTO."auto.json"), true );
-        //print_r( $current_autos);
-        array_push($current_autos['vehicles'],$data);
-        $current_autos['count']++;
-        //print_r( $current_autos);
-       $con= file_put_contents(AUTO."auto.json", json_encode( $current_autos, JSON_UNESCAPED_UNICODE ) );
-        
-        
-       if($con) return true;
-        else return false;
-    
-    }
-
-
-    function add_heavy_machinery($path , $data ){
-    
-        $current_machinery = json_decode( file_get_contents(MACHINERY."heavy.json"), true );
-        //print_r( $current_autos);
-        array_push($current_machinery ['machines'],$data);
-        $current_machinery ['count']++;
-        //print_r( $current_autos);
-       $con= file_put_contents(MACHINERY."heavy.json", json_encode( $current_machinery , JSON_UNESCAPED_UNICODE ) );
-        
-        
-       if($con) return true;
-        else return false;
-    
-    }
-
-
-
-    function delete_auto($filename, $type){
-    
-    
-    
-    
-    }
-
-
-
-
-
-
-
-
-
-
-
-
 
 ?>
