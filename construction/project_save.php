@@ -25,6 +25,7 @@ require '../functions&defined/function.php';
 			
 			$one =json_string_one( $title, $client , $location, $start_date, $cmplt_date);
             $images = array();
+            $name = create_file_name();
 			//$images =image_urls("123.jpg","124.jpg","125.jpg");
             
 
@@ -37,7 +38,7 @@ require '../functions&defined/function.php';
                             print_r($_FILES['files']);
                             $errors= array();
 
-                            $desired_dir=explode('.json',$file_path[$type]."images/")[0];
+                            $desired_dir=explode('.json',$file_path[$type]."images/".$name)[0];
                             foreach($_FILES['files']['tmp_name'] as $key => $tmp_name ){
 
 
@@ -46,9 +47,9 @@ require '../functions&defined/function.php';
                                 $file_tmp =$_FILES['files']['tmp_name'][$key];
                                 $file_type=$_FILES['files']['type'][$key];
                                 
-                                $name = $desired_dir.''.$file_name;
+                                $img_path = $desired_dir.'/'.$file_name;
                                 
-                                array_push( $images, $name);
+                                array_push( $images, $img_path);
 
 
                                 if($file_size > 3145728){
@@ -82,7 +83,6 @@ require '../functions&defined/function.php';
             
 
                     $two  = json_string_two($one ,$description, $images);
-                    $name = create_file_name();
                     $path = $file_path[$type]."/".$name;
 
             
