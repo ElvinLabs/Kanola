@@ -19,8 +19,7 @@ require '../functions&defined/function.php';
 
 
 
-
-	/* Road delete part */ 
+    # Auto vehicles
 	$files = json_decode(file_get_contents(AUTO."auto.json"),true);
 	$length = $files["count"];
 

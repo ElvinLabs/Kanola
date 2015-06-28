@@ -27,6 +27,16 @@ define("BRIDGE_IMG","../bridges/images/");
 
 
 
+# auto & heavy machinary
+define("AUTO","auto/");
+define("AUTO_IMG","auto/images");
+
+define("MACHINERY","heavy/");
+define("MACHINERY_IMG","heavy/images");
+
+
+
+
 
 
 
