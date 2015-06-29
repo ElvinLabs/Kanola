@@ -140,71 +140,97 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form role="form">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <form role="form" action="../../construction/project_save.php" method="post" enctype="multipart/form-data" accept-charset="utf-8" >
                                         <div class="form-group">
                                             <label>Title</label>
-                                            <input class="form-control">
+                                            <input class="form-control" type="text" name="title" value="" placeholder="type" required>
                                             <p class="help-block">Add the type of project</p>
                                         </div>
                                         <div class="form-group">
                                             <label>Client</label>
-                                            <input class="form-control" placeholder="Enter text">
+                                            <input class="form-control" type="text" name="client" value="" placeholder="client" required>
                                         </div>
+                                        
                                         <div class="form-group">
                                             <label>Project type</label>
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>Road
+                                                    <input type="radio" name="type" value="ROAD" placeholder="Road">Road
                                                 </label>
                                             </div>
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Bridge
+                                                    <input type="radio" name="type" value="BRIDGE">Bridge
                                                 </label>
                                             </div>
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">Building
+                                                    <input type="radio" name="type" value="BUILDING">Building
                                                 </label>
                                             </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Location</label>
-                                            <input class="form-control" placeholder="Enter text">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Start Date</label>
-                                            <input class="form-control" placeholder="Enter text">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Complete Date</label>
-                                            <input class="form-control" placeholder="Enter text">
                                         </div>
                                         
-                                    </form>
-                                </div>
-                                <!-- /.col-lg-6 (nested) -->
-                                <div class="col-lg-6">
-                                    <form role="form">
+                                        
+                                        <div class="form-group">
+                                            <label>Location</label>
+                                            <input class="form-control" type="text" name="location" value="" placeholder="location" required>
+                                        </div>
+                                        
+                                        
+                                        <div class="form-group">
+                                            <label>Start Date</label>
+                                            <input class="form-control" type="date" name="start_date" value="" placeholder="dd-mm-yy" required>
+                                        </div>
+                                        
+                                        
+                                        
+                                        
+                                        <div class="form-group">
+                                            <label>Complete Date</label>
+                                            <input class="form-control" type="date" name="cmpt_date" value="" placeholder="dd-mm-yy" required>
+                                        </div>
+                                        
+                                        
+                                        
+                                        
                                         <div class="form-group">
                                             <label>Discription</label>
-                                            <textarea class="form-control" rows="10"></textarea>
+                                            <textarea class="form-control" name="description" placeholder="description" required rows="10"></textarea>
                                         </div>
                                         <div class="form-group">
                                             <label>Project State</label>
-                                            <select class="form-control">
-                                                <option>Ongoing</option>
-                                                <option>Finished</option>
+                                            <select class="form-control" name="state">
+                                                <option value="ongoing" >Ongoing</option>
+                                                <option value="finished" >Finished</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label>Upload Images</label>
-                                            <input type="file">
+                                            <input type="file" type="file" name="files[]" multiple/ >
                                         </div>
-                                        <button type="submit" class="btn btn-default">Save</button> 
+                                        
+                                        <div class="form-group">
+                                            
+                                            <input type="submit" name="" value="Save" placeholder="save">
+                                        </div>
+                                   
+                                        
                                     </form>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                 </div>
-                                <!-- /.col-lg-6 (nested) -->
+                          
                             </div>
                             <!-- /.row (nested) -->
                         </div>
