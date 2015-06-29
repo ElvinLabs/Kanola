@@ -72,15 +72,15 @@
 
 
 //	print($file_name."<br>");
-//	print($file_path."<br>");
+	print($file_path."<br>");
 //	print($state."<br>");
 //	print($project_path."<br>");
 
     print($link);
 
 
-	print(delete_file($state, $file_name, $file_path.''.$file_name, $project_path ,$link )."<br>");
-	//print( delete_name($state , $file_name,$project_path ));
+	//print(delete_file($state, $file_name, $file_path.''.$file_name, $project_path ,$link )."<br>");
+	
 
 
     

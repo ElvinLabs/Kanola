@@ -352,3 +352,19 @@ table.dataTable thead .sorting:after {
 .panel-yellow a:hover {
     color: #df8a13;
 }
+
+
+
+
+.row .proj .table {
+    background-color: #f5f5f5;
+    margin-bottom: 20px;
+}
+
+.row .proj .table tbody tr td{
+    border-top: none;
+}
+
+.delete{
+    margin-bottom: 10px;
+}

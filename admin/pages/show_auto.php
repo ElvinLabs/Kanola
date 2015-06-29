@@ -17,14 +17,8 @@
     <!-- MetisMenu CSS -->
     <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
 
-    <!-- Timeline CSS -->
-    <link href="../dist/css/timeline.css" rel="stylesheet">
-
     <!-- Custom CSS -->
     <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
-
-    <!-- Morris Charts CSS -->
-    <link href="../bower_components/morrisjs/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -81,16 +75,16 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="#"><i class="fa fa-dashboard fa-fw"></i> Welcome to Admin pannel</a>
+                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Welcome to Admin pannel</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> Kanola Constructions<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="show_projects.php"> View Projects</a>
+                                    <a href="#"> View Projects</a>
                                 </li>
                                 <li>
-                                    <a href="addproj.html"> Add Projets</a>
+                                    <a href="#"> Add Projets</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -99,13 +93,13 @@
                             <a href="#"><i class="fa fa-sitemap fa-fw"></i> Kanola Auto<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">Auto Vehicals<span class="fa arrow"></span></a>
+                                    <a href="#"> Vehicals<span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
-                                            <a href="show_auto.php"> View</a>
+                                            <a href="#"> View</a>
                                         </li>
                                         <li>
-                                            <a href="add_auto_vehicle.html"> Add Auto</a>
+                                            <a href="#"> Add</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -113,10 +107,10 @@
                                     <a href="#"> Hevy Mechinary<span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
-                                            <a href="show_heavy.php"> View</a>
+                                            <a href="#"> View</a>
                                         </li>
                                         <li>
-                                            <a href="add_heavy_machinery.html"> Add Heavy</a>
+                                            <a href="#"> Add</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -129,9 +123,101 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-
         <div id="page-wrapper">
-            <img src="img/top.jpg" width="100%">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="page-header"><b>Construction Project</b></h2>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    
+                    
+                    
+                    
+<!-- *********************************  Roads ongoing projects     *********************************************       -->
+                    <?php  
+                    
+                        require '../../functions&defined/function.php';                    
+                    
+                    ?>
+                    
+                    <div class="panel panel-default">                   
+                     <div class="panel-heading">
+                        <h2> Kanola Auto</h2>
+                     </div>
+                    <div class="panel-body">
+                         <div class="row">
+                                            
+                                            
+                    <?php
+
+                         # Auto vehicles
+	                   $files = json_decode(file_get_contents("../../auto&hevymachinary/".AUTO."auto.json"),true);
+	                   $length = $files["count"];                    
+                        for ($i=0; $i <$length ; $i++) { 
+                            $path = "../../auto&hevymachinary/".AUTO."".key($files["vehicles"][$i]);
+                            $project = json_decode(file_get_contents($path),true);
+                            //print_r($project);
+                    ?>
+                                            
+                                            
+                             <div class="col-md-4 col-sm-4 proj">
+                                  <table class="table">
+                                    <tbody>
+                                        <tr>                                            
+                                           <td><b>Brand</b> </td>
+                                            <td><b><?php echo($project['brand']); ?></b></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Model</b></td>
+                                            <td><b> <?php echo($project['model']); ?> </b></td>
+                                        </tr>
+                                        
+                                         <tr>
+                                            <td><b>Model year</b></td>
+                                            <td><b> <?php echo($project['model_year']); ?> </b></td>
+                                        </tr>
+                                    </tbody>
+                                    
+                                 </table>
+                                <form action='delete.php' method='POST'> 
+                                    <input type='hidden' name='filename' value='<?php echo(key($files["vehicles"][$i])); ?> '>
+                                    <input type='hidden' name='state' value='vehicles'>  
+                                    <input type='hidden' name='link' value='auto'> 
+                                    <input type='hidden' name='project_path' value='<?php echo(AUTO."auto.json"); ?> '> 
+                                    <input type='hidden' name='path_to_file' value=' <?php echo(AUTO.""); ?>'>  
+                                    <input type='submit' class="btn btn-default delete" value='delete'> 
+                                </form>
+
+
+
+                            </div>
+                        
+                            
+                    <?php
+
+                        }
+                    ?>
+                                                 
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                    
+    
+                    
+                    
+                    
+        
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
         </div>
         <!-- /#page-wrapper -->
 
@@ -146,11 +232,6 @@
 
     <!-- Metis Menu Plugin JavaScript -->
     <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
-
-    <!-- Morris Charts JavaScript -->
-    <script src="../bower_components/raphael/raphael-min.js"></script>
-    <script src="../bower_components/morrisjs/morris.min.js"></script>
-    <script src="../js/morris-data.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
