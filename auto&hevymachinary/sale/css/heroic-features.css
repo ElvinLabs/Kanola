@@ -1,0 +1,56 @@
+
+body {
+    padding-top: 70px; 
+}
+
+.hero-spacer {
+    margin-top: 50px;
+}
+
+.hero-feature {
+    margin-bottom: 30px;
+}
+
+footer {
+    margin: 50px 0;
+}
+
+
+.k-btn{
+	background-color: #ff3b30;
+	border: none;
+}
+
+@media (min-width:1366px){
+
+    .extra .thumbnail{
+        height: 107.375px;
+        border: none;
+        
+    }
+    
+    .hero-feature .thumbnail img{
+        height: 107.375px;
+        border: none;
+        
+    }
+    
+   
+
+}
+
+@media (min-width:768px){
+
+    .extra .thumbnail{
+        height: 107.375px;
+        border: none;
+    }
+    
+    .hero-feature .thumbnail img{
+        height: 107.375px; 
+        border: none;
+    }
+
+
+}
+

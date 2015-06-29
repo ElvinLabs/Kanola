@@ -39,7 +39,26 @@ require '../functions&defined/function.php';
 	}
 
 
+    
+    # Heavy vehicles
 
+    $files = json_decode(file_get_contents(MACHINERY."heavy.json"),true);
+	$length = $files["count"];
+
+	for ($i=0; $i <$length ; $i++) { 
+
+		print("<div style='border:1px solid #222;margin-top:20px;'>");        
+		$path = MACHINERY."".key($files["machines"][$i]);
+		$project = json_decode(file_get_contents($path),true);
+		print_r($project);
+
+		print("<form action='#' method='POST'> <input type='hidden' name='q' value=''> <input type='submit' value='edit'> </form>");
+        
+		print("<form action='delete.php' method='POST'> <input type='hidden' name='filename' value='".key($files["vehicles"][$i])."'> <input type='hidden' name='state' value='vehicles'> <input type='hidden' name='project_path' value='".AUTO."auto.json'> <input type='hidden' name='path_to_file' value='".AUTO."'> <input type='hidden' name='link' value='auto'>   <input type='submit' value='delete'> </form>");
+		print("</div>");
+		printf("<br>");
+
+	}
 
 
 
