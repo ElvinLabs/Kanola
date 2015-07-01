@@ -135,60 +135,52 @@
                 <div class="col-lg-12">
                     
                     
-                    
-                    
-<!-- *********************************  Roads ongoing projects     *********************************************       -->
+<!-- *********************************  Highways  ongoing projects     *********************************************       -->
                     <?php  
                     
                         require '../../functions&defined/function.php';                    
+                        $conn = connection();
                     
                     ?>
                     
                     <div class="panel panel-default">                   
                      <div class="panel-heading">
-                        <h2> Kanola Auto</h2>
+                        <h2> Water/Drainage ongoing projects</h2>
                      </div>
                     <div class="panel-body">
                          <div class="row">
                                             
-                                            
                     <?php
 
-                         # Auto vehicles
-	                   $files = json_decode(file_get_contents("../../auto&hevymachinary/".AUTO."auto.json"),true);
-	                   $length = $files["count"];                    
-                        for ($i=0; $i <$length ; $i++) { 
-                            $path = "../../auto&hevymachinary/".AUTO."".key($files["vehicles"][$i]);
-                            $project = json_decode(file_get_contents($path),true);
-                            //print_r($project);
+                        
+                        $query_ongoing_highways = "SELECT * FROM Water_Drainage WHERE Project_state='Ongoing'";
+                        $result = $conn->query($query_ongoing_highways);
+
+                        if($result->num_rows >0){
+                        
+                            while( $row = $result->fetch_assoc() ){        
+
                     ?>
+                
                                             
                                             
                              <div class="col-md-4 col-sm-4 proj">
                                   <table class="table">
                                     <tbody>
                                         <tr>                                            
-                                           <td><b>Brand</b> </td>
-                                            <td><b><?php echo($project['brand']); ?></b></td>
+                                           <td><b>Title</b> </td>
+                                            <td><b><?php echo($row["Title"]);  ?></b></td>
                                         </tr>
                                         <tr>
-                                            <td><b>Model</b></td>
-                                            <td><b> <?php echo($project['model']); ?> </b></td>
-                                        </tr>
-                                        
-                                         <tr>
-                                            <td><b>Model year</b></td>
-                                            <td><b> <?php echo($project['model_year']); ?> </b></td>
+                                            <td><b>Location</b></td>
+                                            <td><b> <?php echo($row["Location"]);  ?> </b></td>
                                         </tr>
                                     </tbody>
                                     
                                  </table>
-                                <form action='delete_saleitem.php' method='POST'> 
-                                    <input type='hidden' name='filename' value='<?php echo(key($files["vehicles"][$i])); ?> '>
-                                    <input type='hidden' name='state' value='vehicles'>  
-                                    <input type='hidden' name='link' value='auto'> 
-<!--                                    <input type='hidden' name='project_path' value='< '> -->
-                                    <input type='hidden' name='path_to_file' value=' <?php echo("../../auto&hevymachinary/"); ?>'>  
+                                <form action='delete_project.php' method='POST'> 
+                                    <input type='hidden' name='id' value='<?php echo($row["Id"]);   ?> '>
+                                    <input type='hidden' name='type' value='Water_Drainage'>                                     
                                     <input type='submit' class="btn btn-default delete" value='delete'> 
                                 </form>
 
@@ -196,11 +188,20 @@
 
                             </div>
                         
-                            
-                    <?php
+                       <?php
 
+
+                            }
+                        }else{
+                        
+                        
+                            echo "Np project yet";
                         }
-                    ?>
+
+                    
+
+                       ?>
+                    
                                                  
                             </div>
                             <!-- /.row (nested) -->
@@ -209,11 +210,87 @@
                     </div>
                     <!-- /.panel -->
                     
-    
                     
+<!-- *********************************  Highways  complete projects     *********************************************       -->
                     
+       
+                         <div class="panel panel-default">                   
+                     <div class="panel-heading">
+                        <h2> Water_Drainage Complete projects</h2>
+                     </div>
+                    <div class="panel-body">
+                         <div class="row">
+                                            
+                    <?php
+
+                        
+                        $query_complete_highways = "SELECT * FROM Water_Drainage WHERE Project_state='Complete'";
+                        $result = $conn->query($query_complete_highways);
+
+                        if($result->num_rows >0){
+                        
+                            while( $row = $result->fetch_assoc() ){
+                       
+
+                    ?>
+                
+                                            
+                                            
+                             <div class="col-md-4 col-sm-4 proj">
+                                  <table class="table">
+                                    <tbody>
+                                        <tr>                                            
+                                           <td><b>Title</b> </td>
+                                            <td><b><?php echo($row["Title"]);  ?></b></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Location</b></td>
+                                            <td><b> <?php echo($row["Location"]);  ?> </b></td>
+                                        </tr>
+                                    </tbody>
+                                    
+                                 </table>
+                                <form action='delete_project.php' method='POST'> 
+                                    <input type='hidden' name='id' value='<?php echo($row["Id"]);   ?> '>
+                                    <input type='hidden' name='type' value='Water_Drainage'>                                     
+                                    <input type='submit' class="btn btn-default delete" value='delete'> 
+                                </form>
+
+
+
+                            </div>
+                        
+                       <?php
+
+
+                            }
+                        }else{
+                        
+                        
+                            echo "No projects added yet";
+                        }
+
+                    
+
+                       ?>
+                             
+                             
+                    <?php
+
+                        $conn->close();
+
+                    ?>
+                    
+                                                 
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
                     
         
+                    
                 </div>
                 <!-- /.col-lg-12 -->
             </div>

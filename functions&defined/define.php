@@ -1,17 +1,15 @@
 <?php
 
+define("HOST","127.0.0.1");
+define("DBNAME","Kanola");
+define("UNAME","root");
+define("PW","root");
+
 
 /* file path for save new projects */
 define("ROAD","../roads/");
 define("BUILDING","../buildings/");
 define("BRIDGE","../bridges/");
-
-
-
-/* FILE path for projects file*/
-define("BUILDINGS","../buildings/buildings.json");
-define("BRIDGES","../bridges/bridges.json");
-define("ROADS","../roads/roads.json");
 
 
 
@@ -24,7 +22,6 @@ define("NOTFILL","All Field Requered");
 define("ROAD_IMG","roads/images/");
 define("BUILDING_IMG","../buildings/images/");
 define("BRIDGE_IMG","../bridges/images/");
-
 
 
 # auto & heavy machinary

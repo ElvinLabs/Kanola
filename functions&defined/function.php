@@ -1,155 +1,139 @@
-<?php 
-
-
-require 'define.php';
+<?php
 
 
 
-	function create_file_name(){
+require "define.php";
+
+
+        
+
+
+    function create_file_name(){
 
 		$t = microtime(true);
 		$micro = sprintf("%06d",($t - floor($t)) * 1000000);
 		$d = new DateTime( date('Y-m-d H:i:s.'.$micro, $t) );
 		$filename = $d->format("YmdHisu");
-
-		return $d->format("YmdHisu").".json";
+		return $d->format("YmdHisu")  ;
 	}
 
 
-	function json_string_one( $title ,$client ,$location,$start_date , $complete_date){
-
-			$part_one = array("title"=>$title ,"client"=>$client, "location"=>$location, "start_date"=>$start_date, "comple_date"=>$complete_date);
-			//print_r($part_one);
-			return $part_one;
-	}
-
-
-	function image_urls($url_1,$url_2,$url_3){
-
-		$urls = array("urrl_1"=>$url_1 ,"url_2"=>$url_2, "url_3"=>$url_3);
-		return $urls;
-	}
-
-	function json_string_two($part_one, $description, $urls){
-
-		$part_two = array( "description"=>$description, "images"=>$urls);
-		return array_merge($part_one, $part_two);
-
-	}
-
-
-	// write the string value to new file in file path
-	function write_file($path,$string){
-		$con = file_put_contents($path, json_encode($string ,JSON_UNESCAPED_UNICODE));
-
-		if ($con) return true;
-		else return false;
-	}
-
-
-
-
-
-
-	function create_json_file($file_name, $string, $type){
-
-		// please use try catch block
-			$path = $type.''.$file_name;		
-			$file = fopen($path, "w") or die("can't create file");
-			fwrite($file,json_encode($string,JSON_UNESCAPED_UNICODE));
-			fclose($file);
-
-
-			//return $file;
-	}
-
-
-	/*  state is the value for check whether the project is a ongoing project or finished project*/
-	/*  filename is the  name of the file we are gonna write  */
-	/*  type is the project type whether it is road,building or bridge */
-
-	
-	function add_project( $state ,$filename, $title ,$location,$type){
-
-		$current_projects = json_decode(file_get_contents($type),true);
-		$new_project = array("title"=>$title, "location"=>$location);
-		$new_project = array($filename=>$new_project);
-		
-		if ($state ==="ongoing") {			
-			array_push($current_projects["ongoing"],$new_project);
-			$current_projects["ongoing_num"]++;
-			$current_projects["count"]++;
-			file_put_contents($type,json_encode($current_projects,JSON_UNESCAPED_UNICODE));
-			
-		}
-		
-		if($state ==="finished"){
-
-			array_push($current_projects["finished"],$new_project);
-			$current_projects["finished_num"]++;
-			$current_projects["count"]++;
-			file_put_contents($type,json_encode($current_projects,JSON_UNESCAPED_UNICODE));
-			
-		}		
-
-	}
-
-
-
-
-    # auto & heavy machinery
-
-    #  add details to auto.json file
-    function add_auto_vehicle($path , $data ){
-    
-        $current_autos = json_decode( file_get_contents(AUTO."auto.json"), true );
-        //print_r( $current_autos);
-        array_push($current_autos['vehicles'],$data);
-        $current_autos['count']++;
-        //print_r( $current_autos);
-       $con= file_put_contents(AUTO."auto.json", json_encode( $current_autos, JSON_UNESCAPED_UNICODE ) );
+    function connection(){
         
-        
-       if($con) return true;
-        else return false;
-    
+        $con = mysqli_connect(HOST, UNAME, PW, DBNAME);       
+        if(mysqli_connect_error() ){      
+            echo( "Failed to connect to MySQL:" .mysqli_connect_error() );
+        }else return $con;
     }
 
-
-    function add_heavy_machinery($path , $data ){
-    
-        $current_machinery = json_decode( file_get_contents(MACHINERY."heavy.json"), true );
-        //print_r( $current_autos);
-        array_push($current_machinery ['machines'],$data);
-        $current_machinery ['count']++;
-        //print_r( $current_autos);
-       $con= file_put_contents(MACHINERY."heavy.json", json_encode( $current_machinery , JSON_UNESCAPED_UNICODE ) );
-        
-        
-       if($con) return true;
-        else return false;
-    
-    }
-
-
-
-    function delete_auto($filename, $type){
+    function conn_close($conn){
     
     
-    
-    
+        $conn->close();
     }
 
 
 
 
+    function save_img( $files,  $desired_dir){
+              
+        $errors = array();
+        $images ="";
+        //$desired_dir ="../../bridges/images/123";
+        
+        foreach($_FILES['files']['tmp_name'] as $key => $tmp_name ){
+
+            $file_name = $key.$_FILES['files']['name'][$key];
+            $file_size =$_FILES['files']['size'][$key];
+            $file_tmp =$_FILES['files']['tmp_name'][$key];
+            $file_type=$_FILES['files']['type'][$key];
+                                        
+            $img_path = $desired_dir.'/'.$file_name;                                   
+            $images = $images.",".$img_path;
+            
+            if($file_size > 3145728){
+                $errors[]='File size must be less than 3 MB';
+            }
+          
+            
+            if(empty($errors)==true){
+                if(is_dir($desired_dir)==false){
+                    mkdir("$desired_dir", 0700);		// Create directory if it does not exist
+                }
+                if(is_dir("$desired_dir/".$file_name)==false){
+                    move_uploaded_file($file_tmp,"$desired_dir/".$file_name);
+                }else{									// rename the file if another one exist
+                    $new_dir="$desired_dir/".$file_name.time();
+                    rename($file_tmp,$new_dir) ;				
+                }
+                		
+            }else{
+                print_r($errors);
+            }
+        }
+                                
+        if(empty($error)){
+            echo "Success";
+            return $images;
+        }else return "error";            
+
+  
+    }
+
+
+function add_project( $conn, $name, $title, $client, $type, $location, $srt_date, $cmlt_date, $description, $state, $files ){
+    $image_path = "../../".$type."/images/".$name;
+    $images = save_img( $files , $image_path);
+    //echo $images;
+              
+    $query = "INSERT INTO ".$type." (Id, Title, Client , Location, Srt_date, Cmpt_date, Description, Project_state, Images) VALUES ('$name', '$title' , '$client', '$location' , '$srt_date', '$cmlt_date', '$description', '$state', '$images' )"; 
+ 
+   // print($query."<br>");
+
+    if($conn->query($query)==true){
+        
+        echo "inserted";
+    }else{
+        echo "error<br>". $conn->error;
+        
+    }
+    
+    
+    $conn->close();
+        
+}
 
 
 
 
+        
+   function add_auto($conn, $name, $category, $brand, $model, $model_yr, $condition, $mileage, $transmition, $capacity, $fuel_type, $location, $description, $files ){
+       
+          $image_path = "../../Auto/images/".$name;
+          $images = save_img( $files , $image_path);
+        
+        $query = "INSERT INTO Auto (Category, Brand, Model, Model_yr, Cdtn, Mileage, Transmition, Eng_cap, Fuel_type, Location, Description, Images) VALUES ('$category', '$brand', '$model', '$model_yr', '$condition', '$mileage', '$transmition', '$capacity', '$fuel_type','$location,'$description', '$images')";
+       
+       
+       if( !($conn->query( $query))== true ){
+       
+            echo "error<br>". $conn->error;
+        
+       }else{
+       
+        echo "inserted";
+       }
+       
+       
+       
+       $conn->close();
+            
+   }
+
+  
 
 
-
+   
 
 
 ?>
