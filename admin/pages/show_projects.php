@@ -38,95 +38,25 @@
 
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">Kanola Group - Admin Pannel</a>
-            </div>
-            <!-- /.navbar-header -->
-
-            <ul class="nav navbar-top-links navbar-right">
-                
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-user -->
-                </li>
-                <!-- /.dropdown -->
-            </ul>
+           <?php 
+            
+            
+                include "nav_bar_top.html";
+            
+            ?>
             <!-- /.navbar-top-links -->
 
-            <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Welcome to Admin pannel</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i> Kanola Constructions<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="#"> View Projects</a>
-                                </li>
-                                <li>
-                                    <a href="#"> Add Projets</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Kanola Auto<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="#"> Vehicals<span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        <li>
-                                            <a href="#"> View</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> Add</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#"> Hevy Mechinary<span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        <li>
-                                            <a href="#"> View</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> Add</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.sidebar-collapse -->
-            </div>
+            <?php
+            
+            
+                include "navbar_left.html";
+            ?>
             <!-- /.navbar-static-side -->
         </nav>
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2 class="page-header"><b>Construction Project</b></h2>
+                    <h2 class="page-header"><b>Construction Ongoing Project</b></h2>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -135,394 +65,714 @@
                 <div class="col-lg-12">
                     
                     
-<!-- *********************************  Roads ongoing projects     *********************************************       -->
+<!-- *********************************  Highways  Ongoing projects     *********************************************       -->
                     <?php  
                     
                         require '../../functions&defined/function.php';                    
+                        $conn = connection();
+                        $query = "SELECT * FROM Highways WHERE State='Ongoing'";
                     
                     ?>
                     
                     <div class="panel panel-default">                   
                      <div class="panel-heading">
-                        <h2> Roads ongoing projects</h2>
+                        <h2> Highways ongoing projects</h2>   
                      </div>
+                        
                     <div class="panel-body">
                          <div class="row">
-                                            
-                                            
-                    <?php
-
-                        $files = json_decode(file_get_contents("../".ROADS),true);
-                        # ongoing projects
-                        $length = $files["ongoing_num"];                      
-                        for ($i=0; $i <$length ; $i++) { 
-                            $path = "../".ROAD."".key($files["ongoing"][$i]);
-                            $project = json_decode(file_get_contents($path),true);
-                            //print_r($project);
-                    ?>
-                                            
-                                            
+                             <?php 
+                             
+                                $result = $conn->query($query) ;
+                                if( $result->num_rows > 0 ){
+                                    while($row= $result->fetch_assoc() ){
+                                    
+                             ?> 
+                             
+                             
+                             
                              <div class="col-md-4 col-sm-4 proj">
-                                  <table class="table">
+                                 <table class="table">
                                     <tbody>
                                         <tr>                                            
                                            <td><b>Title</b> </td>
-                                            <td><b><?php echo($project['title']); ?></b></td>
+                                            <td><b><?php echo($row["Title"]);  ?></b></td>
                                         </tr>
                                         <tr>
                                             <td><b>Location</b></td>
-                                            <td><b> <?php echo($project['location']); ?> </b></td>
+                                            <td><b> <?php echo($row["Client"]);  ?> </b></td>
                                         </tr>
                                     </tbody>
                                     
                                  </table>
-                                <form action='../../construction/delete.php' method='POST'> 
-                                    <input type='hidden' name='filename' value='<?php key($files["ongoing"][$i]); ?> '>
-                                    <input type='hidden' name='state' value='ongoing'>  
-                                    <input type='hidden' name='link' value='roads'> 
-                                    <input type='hidden' name='project_path' value='<?php echo(ROADS); ?> '> 
-                                    <input type='hidden' name='path_to_file' value=' <?php echo(ROAD); ?>'>  
-                                    <input type='submit' class="btn btn-default delete" value='delete'> 
+                                <form action='show_projects.php' method='POST'> 
+                                    <input type='hidden' name='id' value='<?php echo($row["Id"]); ?> '>
+                                    <input type='hidden' name='type' value='<?php echo($row["Type"]); ?>'>                                     
+                                    <input type='submit' class="btn btn-default delete" value='remove'> 
                                 </form>
 
 
 
                             </div>
-                        
-                            
-                    <?php
-
-                        }
-                    ?>
+                    
                                                  
-                            </div>
-                            <!-- /.row (nested) -->
                         </div>
+                            <!-- /.row (nested) -->
+                                  <?php
+                                        
+                                    }
+                                
+                                }
+                             
+                             ?>
+                        </div>
+                        
+                        
+                        
+                        
+                        
+                        
                         <!-- /.panel-body -->
                     </div>
                     <!-- /.panel -->
                     
-    <!-- *********************************  Roads finished projects     *********************************************       -->  
+            <!--**********************************************Highways Complete projects********************************************* -->
                     
-                     <div class="panel panel-default">                   
-                     <div class="panel-heading">
-                        <h2> Roads Finished projects</h2>
-                     </div>
-                    <div class="panel-body">
-                         <div class="row">
-                                            
-                                            
-                    <?php
-
-                        //$files = json_decode(file_get_contents("../".ROADS),true);
-                       
-                       # Roads finished  projects
-                        $length = $files["finished_num"];                      
-                        for ($i=0; $i <$length ; $i++) { 
-                            $path = "../".ROAD."".key($files["finished"][$i]);
-		                    $project = json_decode(file_get_contents($path),true);
-                            //print_r($project);
+                    
+                    <?php  
+                    
+                        $query = "SELECT * FROM Highways WHERE State='Complete'";
+                    
                     ?>
-                                            
-                                            
-                             <div class="col-md-4 col-sm-4 proj">
-                                  <table class="table">
-                                    <tbody>
-                                        <tr>                                            
-                                           <td><b>Title</b> </td>
-                                            <td><b><?php echo($project['title']); ?></b></td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>Location</b></td>
-                                            <td><b> <?php echo($project['location']); ?> </b></td>
-                                        </tr>
-                                    </tbody>
-                                    
-                                 </table>
-                                <form action='../../construction/delete.php' method='POST'> 
-                                    <input type='hidden' name='filename' value='<?php echo(key($files["finished"][$i])); ?> '>
-                                    <input type='hidden' name='state' value='finished'>  
-                                    <input type='hidden' name='link' value='roads'> 
-                                    <input type='hidden' name='project_path' value='<?php echo(ROADS); ?> '> 
-                                    <input type='hidden' name='path_to_file' value=' <?php echo(ROAD); ?>'>  
-                                    <input type='submit' class="btn btn-default delete" value='delete'> 
-                                </form>
-
-
-
-                            </div>
-                        
-                            
-                    <?php
-
-                        }
-                    ?>
-                                                 
-                            </div>
-                            <!-- /.row (nested) -->
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                    
-                    
-                    
-     <!-- *********************************  Bridges ongoing projects     *********************************************       -->                 
                     
                     <div class="panel panel-default">                   
                      <div class="panel-heading">
-                        <h2> Bridges ongoing projects</h2>
+                        <h2> Highways Complete projects</h2>   
                      </div>
+                        
                     <div class="panel-body">
                          <div class="row">
-                                            
-                                            
-                    <?php
-
-                        $files = json_decode(file_get_contents("../".BRIDGES),true);
-                       
-                       # Roads finished  projects
-                        $length = $files["ongoing_num"];                      
-                        for ($i=0; $i <$length ; $i++) { 
-                            $path = "../".BRIDGE."".key($files["ongoing"][$i]);
-		                  $project = json_decode(file_get_contents($path),true);
-                            //print_r($project);
-                    ?>
-                                            
-                                            
+                             <?php 
+                             
+                                $result = $conn->query($query);
+                                echo $result->num_rows;
+                                if( $result->num_rows > 0 ){
+                                    while($row= $result->fetch_assoc() ){
+                                    
+                             ?> 
+                             
+                             
+                             
                              <div class="col-md-4 col-sm-4 proj">
-                                  <table class="table">
+                                 <table class="table">
                                     <tbody>
                                         <tr>                                            
                                            <td><b>Title</b> </td>
-                                            <td><b><?php echo($project['title']); ?></b></td>
+                                            <td><b><?php echo($row["Title"]);  ?></b></td>
                                         </tr>
                                         <tr>
                                             <td><b>Location</b></td>
-                                            <td><b> <?php echo($project['location']); ?> </b></td>
+                                            <td><b> <?php echo($row["Client"]);  ?> </b></td>
                                         </tr>
                                     </tbody>
                                     
                                  </table>
-                                <form action='../../construction/delete.php' method='POST'> 
-                                    <input type='hidden' name='filename' value='<?php echo(key($files["ongoing"][$i])); ?> '>
-                                    <input type='hidden' name='state' value='ongoing'>  
-                                    <input type='hidden' name='link' value='bridges'> 
-                                    <input type='hidden' name='project_path' value='<?php echo(BRIDGES); ?> '> 
-                                    <input type='hidden' name='path_to_file' value=' <?php echo(BRIDGE); ?>'>  
-                                    <input type='submit' class="btn btn-default delete" value='delete'> 
+                                <form action='show_projects.php' method='POST'> 
+                                    <input type='hidden' name='id' value='<?php echo($row["Id"]); ?> '>
+                                    <input type='hidden' name='type' value='<?php echo($row["Type"]); ?>'>                                     
+                                    <input type='submit' class="btn btn-default delete" value='remove'> 
                                 </form>
 
 
 
                             </div>
-                        
-                            
-                    <?php
-
-                        }
-                    ?>
+                    
                                                  
-                            </div>
-                            <!-- /.row (nested) -->
                         </div>
+                            <!-- /.row (nested) -->
+                                  <?php
+                                        
+                                    }
+                                
+                                }
+                             
+                             ?>
+                        </div>
+                        
+                        
+                        
+                        
+                        
+                        
                         <!-- /.panel-body -->
                     </div>
                     <!-- /.panel -->
                     
-    <!-- *********************************  Bridges finished projects     *********************************************       -->     
+          <!--**************************************Irrigation Ongoing projects***************************************** -->
+                    <?php  
                     
+                        $query = "SELECT * FROM Irrigation WHERE State='Ongoing'";
+                    
+                    ?>
                     
                     <div class="panel panel-default">                   
                      <div class="panel-heading">
-                        <h2> Bridges Finished projects</h2>
+                        <h2> Irrigation Ongoing projects</h2>   
                      </div>
+                        
                     <div class="panel-body">
                          <div class="row">
-                                            
-                                            
-                    <?php
-
-                        //$files = json_decode(file_get_contents("../".ROADS),true);
-                       
-                       # Roads finished  projects
-                        $length = $files["finished_num"];                      
-                        for ($i=0; $i <$length ; $i++) { 
-                            $path = "../".BRIDGE."".key($files["finished"][$i]);
-		                    $project = json_decode(file_get_contents($path),true);
-                            //print_r($project);
-                    ?>
-                                            
-                                            
+                             <?php 
+                             
+                                $result = $conn->query($query) ;
+                                echo $result->num_rows;
+                                if( $result->num_rows > 0 ){
+                                    while($row= $result->fetch_assoc() ){
+                                    
+                             ?>  
+                             
+                             
+                             
                              <div class="col-md-4 col-sm-4 proj">
-                                  <table class="table">
+                                 <table class="table">
                                     <tbody>
                                         <tr>                                            
                                            <td><b>Title</b> </td>
-                                            <td><b><?php echo($project['title']); ?></b></td>
+                                            <td><b><?php echo($row["Title"]);  ?></b></td>
                                         </tr>
                                         <tr>
                                             <td><b>Location</b></td>
-                                            <td><b> <?php echo($project['location']); ?> </b></td>
+                                            <td><b> <?php echo($row["Client"]);  ?> </b></td>
                                         </tr>
                                     </tbody>
                                     
                                  </table>
-                                <form action='../../construction/delete.php' method='POST'> 
-                                    <input type='hidden' name='filename' value='<?php echo(key($files["finished"][$i])); ?> '>
-                                    <input type='hidden' name='state' value='finished'>  
-                                    <input type='hidden' name='link' value='bridges'> 
-                                    <input type='hidden' name='project_path' value='<?php echo(BRIDGES); ?> '> 
-                                    <input type='hidden' name='path_to_file' value=' <?php echo(BRIDGE); ?>'>  
-                                    <input type='submit' class="btn btn-default delete" value='delete'> 
+                                <form action='show_projects.php' method='POST'> 
+                                    <input type='hidden' name='id' value='<?php echo($row["Id"]); ?> '>
+                                    <input type='hidden' name='type' value='<?php echo($row["Type"]); ?>'>                                     
+                                    <input type='submit' class="btn btn-default delete" value='remove'> 
                                 </form>
 
 
 
                             </div>
-                        
-                            
-                    <?php
-
-                        }
-                    ?>
+                    
                                                  
-                            </div>
-                            <!-- /.row (nested) -->
                         </div>
+                            <!-- /.row (nested) -->
+                                  <?php
+                                        
+                                    }
+                                
+                                }
+                             
+                             ?>
+                        </div>
+                        
+                        
+                        
+                        
+                        
+                        
                         <!-- /.panel-body -->
                     </div>
-                    <!-- /.panel -->
+                    <!-- /.panel -->  
                     
                     
-   <!-- *********************************  Buildings ongoing projects     *********************************************       -->                 
+                    
+                    
+            <!--***********************************Irrigation Complete projects***************************************** -->
+                    
+                    <?php  
+                    
+                        $query = "SELECT * FROM Irrigation WHERE State='Complete'";
+                    
+                    ?>
                     
                     <div class="panel panel-default">                   
                      <div class="panel-heading">
-                        <h2> Buildings ongoing projects</h2>
+                        <h2> Irrigation Complete projects</h2>   
                      </div>
+                        
                     <div class="panel-body">
                          <div class="row">
-                                            
-                                            
-                    <?php
-
-                        $files = json_decode(file_get_contents("../".BUILDINGS),true);
-                       
-                       # Roads finished  projects
-                        $length = $files["ongoing_num"];                      
-                        for ($i=0; $i <$length ; $i++) { 
-                          $path = "../".BUILDING."".key($files["ongoing"][$i]);
-		                  $project = json_decode(file_get_contents($path),true);
-                            //print_r($project);
-                    ?>
-                                            
-                                            
+                             <?php 
+                             
+                                $result = $conn->query($query) ;
+                                if( $result->num_rows > 0 ){
+                                    while($row= $result->fetch_assoc() ){
+                                    
+                             ?> 
+                             
+                             
+                             
                              <div class="col-md-4 col-sm-4 proj">
-                                  <table class="table">
+                                 <table class="table">
                                     <tbody>
                                         <tr>                                            
                                            <td><b>Title</b> </td>
-                                            <td><b><?php echo($project['title']); ?></b></td>
+                                            <td><b><?php echo($row["Title"]);  ?></b></td>
                                         </tr>
                                         <tr>
                                             <td><b>Location</b></td>
-                                            <td><b> <?php echo($project['location']); ?> </b></td>
+                                            <td><b> <?php echo($row["Client"]);  ?> </b></td>
                                         </tr>
                                     </tbody>
                                     
                                  </table>
-                                <form action='../../construction/delete.php' method='POST'> 
-                                    <input type='hidden' name='filename' value='<?php echo(key($files["ongoing"][$i])); ?> '>
-                                    <input type='hidden' name='state' value='ongoing'>  
-                                    <input type='hidden' name='link' value='buildings'> 
-                                    <input type='hidden' name='project_path' value='<?php echo(BUILDINGS); ?> '> 
-                                    <input type='hidden' name='path_to_file' value=' <?php echo(BUILDING); ?>'>  
-                                    <input type='submit' class="btn btn-default delete" value='delete'> 
+                                <form action='show_projects.php' method='POST'> 
+                                    <input type='hidden' name='id' value='<?php echo($row["Id"]); ?> '>
+                                    <input type='hidden' name='type' value='<?php echo($row["Type"]); ?>'>                                     
+                                    <input type='submit' class="btn btn-default delete" value='remove'> 
                                 </form>
 
 
 
                             </div>
-                        
-                            
-                    <?php
-
-                        }
-                    ?>
+                    
                                                  
-                            </div>
-                            <!-- /.row (nested) -->
                         </div>
+                            <!-- /.row (nested) -->
+                                  <?php
+                                        
+                                    }
+                                
+                                }
+                             
+                             ?>
+                        </div>
+                        
+                        
+                        
+                        
+                        
+                        
                         <!-- /.panel-body -->
                     </div>
-                    <!-- /.panel -->             
+                    <!-- /.panel -->  
                     
-    <!-- *********************************  Buildings finished projects     *********************************************       -->             
-             
+                    
+            <!--*****************************************Bridges Ongoing projects********************************************* -->
+                    
+                    <?php  
+                    
+                        $query = "SELECT * FROM Bridges WHERE State='Ongoing'";
+                    
+                    ?>
                     
                     <div class="panel panel-default">                   
                      <div class="panel-heading">
-                        <h2> Buildings Finished projects</h2>
+                        <h2> Bridges Ongoing projects</h2>   
                      </div>
+                        
                     <div class="panel-body">
                          <div class="row">
-                                            
-                                            
-                    <?php
-
-                        //$files = json_decode(file_get_contents("../".ROADS),true);
-                       
-                       # Roads finished  projects
-                        $length = $files["finished_num"];                      
-                        for ($i=0; $i <$length ; $i++) { 
-                            $path = "../".BUILDING."".key($files["finished"][$i]);
-		                    $project = json_decode(file_get_contents($path),true);
-                            //print_r($project);
-                    ?>
-                                            
-                                            
+                             <?php 
+                             
+                                $result = $conn->query($query) ;
+                                if( $result->num_rows > 0 ){
+                                    while($row= $result->fetch_assoc() ){
+                                    
+                             ?> 
+                             
+                             
+                             
                              <div class="col-md-4 col-sm-4 proj">
-                                  <table class="table">
+                                 <table class="table">
                                     <tbody>
                                         <tr>                                            
                                            <td><b>Title</b> </td>
-                                            <td><b><?php echo($project['title']); ?></b></td>
+                                            <td><b><?php echo($row["Title"]);  ?></b></td>
                                         </tr>
                                         <tr>
                                             <td><b>Location</b></td>
-                                            <td><b> <?php echo($project['location']); ?> </b></td>
+                                            <td><b> <?php echo($row["Client"]);  ?> </b></td>
                                         </tr>
                                     </tbody>
                                     
                                  </table>
-                                <form action='../../construction/delete.php' method='POST'> 
-                                    <input type='hidden' name='filename' value='<?php echo(key($files["finished"][$i])); ?> '>
-                                    <input type='hidden' name='state' value='finished'>  
-                                    <input type='hidden' name='link' value='buildings'> 
-                                    <input type='hidden' name='project_path' value='<?php echo(BUILDINGS); ?> '> 
-                                    <input type='hidden' name='path_to_file' value=' <?php echo(BUILDING); ?>'>  
-                                    <input type='submit' class="btn btn-default delete" value='delete'> 
+                                <form action='show_projects.php' method='POST'> 
+                                    <input type='hidden' name='id' value='<?php echo($row["Id"]); ?> '>
+                                    <input type='hidden' name='type' value='<?php echo($row["Type"]); ?>'>                                     
+                                    <input type='submit' class="btn btn-default delete" value='remove'> 
                                 </form>
 
 
 
                             </div>
-                        
-                            
-                    <?php
-
-                        }
-                    ?>
+                    
                                                  
-                            </div>
-                            <!-- /.row (nested) -->
                         </div>
+                            <!-- /.row (nested) -->
+                                  <?php
+                                        
+                                    }
+                                
+                                }
+                             
+                             ?>
+                        </div>
+                        
+                        
+                        
+                        
+                        
+                        
                         <!-- /.panel-body -->
                     </div>
-                    <!-- /.panel -->
+                    <!-- /.panel --> 
+             <!--*****************************************Bridges Complete projects********************************************* -->  
+                    
+                     <?php  
+                    
+                        $query = "SELECT * FROM Bridges WHERE State='Complete'";
+                    
+                    ?>
+                    
+                    <div class="panel panel-default">                   
+                     <div class="panel-heading">
+                        <h2> Bridges Complete projects</h2>   
+                     </div>
+                        
+                    <div class="panel-body">
+                         <div class="row">
+                             <?php 
+                             
+                                $result = $conn->query($query) ;
+                                if( $result->num_rows > 0 ){
+                                    while($row= $result->fetch_assoc() ){
+                                    
+                             ?> 
+                             
+                             
+                             
+                             <div class="col-md-4 col-sm-4 proj">
+                                 <table class="table">
+                                    <tbody>
+                                        <tr>                                            
+                                           <td><b>Title</b> </td>
+                                            <td><b><?php echo($row["Title"]);  ?></b></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Location</b></td>
+                                            <td><b> <?php echo($row["Client"]);  ?> </b></td>
+                                        </tr>
+                                    </tbody>
+                                    
+                                 </table>
+                                <form action='show_projects.php' method='POST'> 
+                                    <input type='hidden' name='id' value='<?php echo($row["Id"]); ?> '>
+                                    <input type='hidden' name='type' value='<?php echo($row["Type"]); ?>'>                                     
+                                    <input type='submit' class="btn btn-default delete" value='remove'> 
+                                </form>
+
+
+
+                            </div>
+                    
+                                                 
+                        </div>
+                            <!-- /.row (nested) -->
+                                  <?php
+                                        
+                                    }
+                                
+                                }
+                             
+                             ?>
+                        </div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel --> 
                     
                     
+             <!--*****************************************Buildings Ongoing projects********************************************* --> 
+                    
+                    <?php  
+                    
+                        $query = "SELECT * FROM Buildings WHERE State='Ongoing'";
+                    
+                    ?>
+                    
+                    <div class="panel panel-default">                   
+                     <div class="panel-heading">
+                        <h2>Buildings Ongoing projects</h2>   
+                     </div>
+                        
+                    <div class="panel-body">
+                         <div class="row">
+                             <?php 
+                             
+                                $result = $conn->query($query) ;
+                                if( $result->num_rows > 0 ){
+                                    while($row= $result->fetch_assoc() ){
+                                    
+                             ?> 
+                             
+                             
+                             
+                             <div class="col-md-4 col-sm-4 proj">
+                                 <table class="table">
+                                    <tbody>
+                                        <tr>                                            
+                                           <td><b>Title</b> </td>
+                                            <td><b><?php echo($row["Title"]);  ?></b></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Location</b></td>
+                                            <td><b> <?php echo($row["Client"]);  ?> </b></td>
+                                        </tr>
+                                    </tbody>
+                                    
+                                 </table>
+                                <form action='show_projects.php' method='POST'> 
+                                    <input type='hidden' name='id' value='<?php echo($row["Id"]); ?> '>
+                                    <input type='hidden' name='type' value='<?php echo($row["Type"]); ?>'>                                     
+                                    <input type='submit' class="btn btn-default delete" value='remove'> 
+                                </form>
+
+
+
+                            </div>
+                    
+                                                 
+                        </div>
+                            <!-- /.row (nested) -->
+                                  <?php
+                                        
+                                    }
+                                
+                                }
+                             
+                             ?>
+                        </div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel --> 
+                    
+             <!--*****************************************Buildings Complete projects********************************************* -->
+                    
+                    <?php  
+                    
+                        $query = "SELECT * FROM Buildings WHERE State='Complete'";
+                    
+                    ?>
+                    
+                    <div class="panel panel-default">                   
+                     <div class="panel-heading">
+                        <h2> Buildings Complete projects</h2>   
+                     </div>
+                        
+                    <div class="panel-body">
+                         <div class="row">
+                             <?php 
+                             
+                                $result = $conn->query($query) ;
+                                if( $result->num_rows > 0 ){
+                                    while($row= $result->fetch_assoc() ){
+                                    
+                             ?> 
+                             
+                             
+                             
+                             <div class="col-md-4 col-sm-4 proj">
+                                 <table class="table">
+                                    <tbody>
+                                        <tr>                                            
+                                           <td><b>Title</b> </td>
+                                            <td><b><?php echo($row["Title"]);  ?></b></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Location</b></td>
+                                            <td><b> <?php echo($row["Client"]);  ?> </b></td>
+                                        </tr>
+                                    </tbody>
+                                    
+                                 </table>
+                                <form action='show_projects.php' method='POST'> 
+                                    <input type='hidden' name='id' value='<?php echo($row["Id"]); ?> '>
+                                    <input type='hidden' name='type' value='<?php echo($row["Type"]); ?>'>                                     
+                                    <input type='submit' class="btn btn-default delete" value='remove'> 
+                                </form>
+
+
+
+                            </div>
+                    
+                                                 
+                        </div>
+                            <!-- /.row (nested) -->
+                                  <?php
+                                        
+                                    }
+                                
+                                }
+                             
+                             ?>
+                        </div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel --> 
+                    
+                    
+                    
+            <!--***************************************** Water_drainage Ongoing projects********************************************* -->
+                    
+                    <?php  
+                    
+                        $query = "SELECT * FROM Water_drainage WHERE State='Ongoing'";
+                    
+                    ?>
+                    
+                    <div class="panel panel-default">                   
+                     <div class="panel-heading">
+                        <h2>Water Drainage Ongoing projects</h2>   
+                     </div>
+                        
+                    <div class="panel-body">
+                         <div class="row">
+                             <?php 
+                             
+                                $result = $conn->query($query) ;
+                                if( $result->num_rows > 0 ){
+                                    while($row= $result->fetch_assoc() ){
+                                    
+                             ?> 
+                             
+                             
+                             
+                             <div class="col-md-4 col-sm-4 proj">
+                                 <table class="table">
+                                    <tbody>
+                                        <tr>                                            
+                                           <td><b>Title</b> </td>
+                                            <td><b><?php echo($row["Title"]);  ?></b></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Location</b></td>
+                                            <td><b> <?php echo($row["Client"]);  ?> </b></td>
+                                        </tr>
+                                    </tbody>
+                                    
+                                 </table>
+                                <form action='show_projects.php' method='POST'> 
+                                    <input type='hidden' name='id' value='<?php echo($row["Id"]); ?> '>
+                                    <input type='hidden' name='type' value='<?php echo($row["Type"]); ?>'>                                     
+                                    <input type='submit' class="btn btn-default delete" value='remove'> 
+                                </form>
+
+
+
+                            </div>
+                    
+                                                 
+                        </div>
+                            <!-- /.row (nested) -->
+                                  <?php
+                                        
+                                    }
+                                
+                                }
+                             
+                             ?>
+                        </div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel --> 
+           <!--***************************************** Water_drainage Complete projects********************************************* --> 
+                      <?php  
+                    
+                        $query = "SELECT * FROM Water_drainage WHERE State='Complete'";
+                    
+                    ?>
+                    
+                    <div class="panel panel-default">                   
+                     <div class="panel-heading">
+                        <h2>Water Drainage Complete projects</h2>   
+                     </div>
+                        
+                    <div class="panel-body">
+                         <div class="row">
+                             <?php 
+                             
+                                $result = $conn->query($query) ;
+                                if( $result->num_rows > 0 ){
+                                    while($row= $result->fetch_assoc() ){
+                                    
+                             ?> 
+                             
+                             
+                             
+                             <div class="col-md-4 col-sm-4 proj">
+                                 <table class="table">
+                                    <tbody>
+                                        <tr>                                            
+                                           <td><b>Title</b> </td>
+                                            <td><b><?php echo($row["Title"]);  ?></b></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Location</b></td>
+                                            <td><b> <?php echo($row["Client"]);  ?> </b></td>
+                                        </tr>
+                                    </tbody>
+                                    
+                                 </table>
+                                <form action='show_projects.php' method='POST'> 
+                                    <input type='hidden' name='id' value='<?php echo($row["Id"]); ?> '>
+                                    <input type='hidden' name='type' value='<?php echo($row["Type"]); ?>'>                                     
+                                    <input type='submit' class="btn btn-default delete" value='remove'> 
+                                </form>
+
+
+
+                            </div>
+                    
+                                                 
+                        </div>
+                            <!-- /.row (nested) -->
+                                  <?php
+                                        
+                                    }
+                                
+                                }
+                             
+                             ?>
+                        </div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel --> 
+                    
+                    <!--***************************************** End projects********************************************* -->   
                     
                     
                     

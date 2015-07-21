@@ -1,89 +1,65 @@
 
 
 # projects tables
-
+CREATE DATABASE KANOLA;
+USE KANOLA;
 
 #  Highway Construction
 
 CREATE TABLE Highways(
-    Id VARCHAR(32) NOT NULL,
+    Id INT(5) AUTO_INCREMENT,
+    P_id varchar(256) NOT NULL,
     Title VARCHAR(256) DEFAULT "NOT ADDED" NOT NULL,
     Client VARCHAR (256) DEFAULT "NOT ADDED" NOT NULL,
-    Project_type VARCHAR(32) DEFAULT "Highway" NOT NULL,
-    Location VARCHAR(256) DEFAULT "NOT ADDED" NOT NULL,
-    Srt_date DATE NOT NULL,
-    Cmpt_date DATE NOT NULL,
-    Description BLOB NOT NULL,
-    Project_state ENUM("Ongoing","Complete") DEFAULT "Ongoing" NOT NULL,
-    Img_dir VARCHAR(128) DEFAULT "Highways/images/" NOT NULL,
-    Images VARCHAR (256) DEFAULT "http://placehold.it/800x500" NOT NULL,
+    Type VARCHAR(32) DEFAULT "Highways" NOT NULL,
+    State ENUM("Ongoing","Complete") DEFAULT "Ongoing" NOT NULL,   
     PRIMARY KEY(Id)
 );
 
 
 
 CREATE TABLE Irrigation(
-    Id VARCHAR(32) NOT NULL,
+    Id INT(5) AUTO_INCREMENT,
+    P_id varchar(256) NOT NULL,
     Title VARCHAR(256) DEFAULT "NOT ADDED" NOT NULL,
     Client VARCHAR (256) DEFAULT "NOT ADDED" NOT NULL,
-    Project_type VARCHAR(32) DEFAULT "Irrigation" NOT NULL,
-    Location VARCHAR(256) DEFAULT "NOT ADDED" NOT NULL,
-    Srt_date DATE NOT NULL,
-    Cmpt_date DATE NOT NULL,
-    Description BLOB NOT NULL,
-    Project_state ENUM("Ongoing","Complete") DEFAULT "Ongoing" NOT NULL,
-    Img_dir VARCHAR(128) DEFAULT "Irrigation/images/" NOT NULL,
-    Images VARCHAR (256) DEFAULT "http://placehold.it/800x500" NOT NULL,
+    Type VARCHAR(32) DEFAULT "Irrigation" NOT NULL,
+    State ENUM("Ongoing","Complete") DEFAULT "Ongoing" NOT NULL, 
     PRIMARY KEY(Id)
 );
 
 
 
 CREATE TABLE Buildings(
-    Id VARCHAR(32) NOT NULL,
+    Id INT(5) AUTO_INCREMENT,
+    P_id varchar(256) NOT NULL,
     Title VARCHAR(256) DEFAULT "NOT ADDED" NOT NULL,
     Client VARCHAR (256) DEFAULT "NOT ADDED" NOT NULL,
-    Project_type VARCHAR(32) DEFAULT "Buildings" NOT NULL,
-    Location VARCHAR(256) DEFAULT "NOT ADDED" NOT NULL,
-    Srt_date DATE NOT NULL,
-    Cmpt_date DATE NOT NULL,
-    Description BLOB NOT NULL,
-    Project_state ENUM("Ongoing","Complete") DEFAULT "Ongoing" NOT NULL,
-    Img_dir VARCHAR(128) DEFAULT "Buildings/images/" NOT NULL,
-    Images VARCHAR (256) DEFAULT "http://placehold.it/800x500" NOT NULL,
+    Type VARCHAR(32) DEFAULT "Buildings" NOT NULL,
+    State ENUM("Ongoing","Complete") DEFAULT "Ongoing" NOT NULL, 
     PRIMARY KEY(Id)
 );
 
 
 
-CREATE TABLE Bridge(
-    Id VARCHAR(32) NOT NULL,
+CREATE TABLE Bridges(
+    Id INT(5) AUTO_INCREMENT,
+    P_id varchar(256) NOT NULL,
     Title VARCHAR(256) DEFAULT "NOT ADDED" NOT NULL,
     Client VARCHAR (256) DEFAULT "NOT ADDED" NOT NULL,
-    Project_type VARCHAR(64) DEFAULT "Bridge" NOT NULL,
-    Location VARCHAR(256) DEFAULT "NOT ADDED" NOT NULL,
-    Srt_date DATE NOT NULL,
-    Cmpt_date DATE NOT NULL,
-    Description BLOB NOT NULL,
-    Project_state ENUM("Ongoing","Complete") DEFAULT "Ongoing" NOT NULL,
-    Img_dir VARCHAR(128) DEFAULT "Bridge/images/" NOT NULL,
-    Images VARCHAR (256) DEFAULT "http://placehold.it/800x500" NOT NULL,
+    Type VARCHAR(64) DEFAULT "Bridge" NOT NULL,
+    State ENUM("Ongoing","Complete") DEFAULT "Ongoing" NOT NULL, 
     PRIMARY KEY(Id)
 );
 
 
 CREATE TABLE Water_Drainage(
-    Id VARCHAR(32) NOT NULL,
+    Id INT(5) AUTO_INCREMENT,
+    P_id varchar(256) NOT NULL,
     Title VARCHAR(256) DEFAULT "NOT ADDED" NOT NULL,
     Client VARCHAR (256) DEFAULT "NOT ADDED" NOT NULL,
-    Project_type VARCHAR(32) DEFAULT "Water_Drainage" NOT NULL,
-    Location VARCHAR(256) DEFAULT "NOT ADDED" NOT NULL,
-    Srt_date DATE NOT NULL,
-    Cmpt_date DATE NOT NULL,
-    Description BLOB NOT NULL,
-    Project_state ENUM("Ongoing","Complete") DEFAULT "Ongoing" NOT NULL,
-    Img_dir VARCHAR(128) DEFAULT "Water_Drainage/images/" NOT NULL,
-    Images VARCHAR (256) DEFAULT "http://placehold.it/800x500" NOT NULL,
+    Type VARCHAR(32) DEFAULT "Water_Drainage" NOT NULL,
+    State ENUM("Ongoing","Complete") DEFAULT "Ongoing" NOT NULL, 
     PRIMARY KEY(Id)
 );
 
@@ -97,7 +73,7 @@ INSERT INTO Bridge (id, Title, Client , Location, srt_date, cmpt_date, Descripti
 
 INSERT INTO Buildings (Id, Title, Client , Location, Srt_date, Cmpt_date, Description, Project_state, Images) VALUES ('$name', '$title' , '$client', '$location' , '2012/02/15', '2015/04/21', '$description', 'Ongoing', 'images/ghrh/hrhrt/rth' );
 
-
+INSERT INTO Highways (Id, Title, Client , Location, Srt_date, Cmpt_date, Description, Project_state, Images) VALUES ('20150701190214299802', 'etheth' , 'thhh4h', '4hthh' , '2015-07-17', '2015-07-22', '4thn344erbnebnth hheh f heh eh', 'Ongoing', ',../../Highways/images/20150701190214299802/01.jpg,../../Highways/images/20150701190214299802/12.jpg' );
 
 
 
@@ -108,7 +84,7 @@ INSERT INTO Buildings (Id, Title, Client , Location, Srt_date, Cmpt_date, Descri
 
 CREATE TABLE Auto(
     Id VARCHAR(32) NOT NULL,
-    Categoty VARCHAR(32) NOT NULL,
+    Category VARCHAR(32) NOT NULL,
     Brand VARCHAR(16) NOT NULL,
     Model VARCHAR(64) NOT NULL,
     Model_yr YEAR(4) NOT NULL,
@@ -137,6 +113,29 @@ CREATE TABLE Heavy(
     Images VARCHAR(256) DEFAULT "http://placehold.it/800x500" NOT NULL,
     PRIMARY KEY(Id)
 );
+
+
+
+#image tables for project sliders
+
+
+CREATE TABLE Ongoing_img(
+    Id INT(3) AUTO_INCREMENT,
+    Path VARCHAR(256) DEFAULT "http://placehold.it/800x500" NOT NULL,
+    AltText TEXT NOT NULL,
+    PRIMARY KEY(Id)
+);
+
+
+CREATE TABLE Finished_img(
+    Id INT(3) AUTO_INCREMENT,
+    Path VARCHAR(256) DEFAULT "http://placehold.it/800x500" NOT NULL,
+    AltText TEXT NOT NULL,
+    PRIMARY KEY(Id)
+);
+
+
+
 
 
 
