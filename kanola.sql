@@ -8,9 +8,8 @@ USE KANOLA;
 
 CREATE TABLE Highways(
     Id INT(5) AUTO_INCREMENT,
-    P_id varchar(256) NOT NULL,
-    Title VARCHAR(256) DEFAULT "NOT ADDED" NOT NULL,
-    Client VARCHAR (256) DEFAULT "NOT ADDED" NOT NULL,
+    P_id VARCHAR(256) NOT NULL,
+    Title TEXT  NOT NULL,
     Type VARCHAR(32) DEFAULT "Highways" NOT NULL,
     State ENUM("Ongoing","Complete") DEFAULT "Ongoing" NOT NULL,   
     PRIMARY KEY(Id)
@@ -20,9 +19,8 @@ CREATE TABLE Highways(
 
 CREATE TABLE Irrigation(
     Id INT(5) AUTO_INCREMENT,
-    P_id varchar(256) NOT NULL,
-    Title VARCHAR(256) DEFAULT "NOT ADDED" NOT NULL,
-    Client VARCHAR (256) DEFAULT "NOT ADDED" NOT NULL,
+    P_id VARCHAR(256) NOT NULL,
+    Title TEXT   NOT NULL,
     Type VARCHAR(32) DEFAULT "Irrigation" NOT NULL,
     State ENUM("Ongoing","Complete") DEFAULT "Ongoing" NOT NULL, 
     PRIMARY KEY(Id)
@@ -32,9 +30,8 @@ CREATE TABLE Irrigation(
 
 CREATE TABLE Buildings(
     Id INT(5) AUTO_INCREMENT,
-    P_id varchar(256) NOT NULL,
-    Title VARCHAR(256) DEFAULT "NOT ADDED" NOT NULL,
-    Client VARCHAR (256) DEFAULT "NOT ADDED" NOT NULL,
+    P_id VARCHAR(256) NOT NULL,
+    Title TEXT   NOT NULL,
     Type VARCHAR(32) DEFAULT "Buildings" NOT NULL,
     State ENUM("Ongoing","Complete") DEFAULT "Ongoing" NOT NULL, 
     PRIMARY KEY(Id)
@@ -44,9 +41,8 @@ CREATE TABLE Buildings(
 
 CREATE TABLE Bridges(
     Id INT(5) AUTO_INCREMENT,
-    P_id varchar(256) NOT NULL,
-    Title VARCHAR(256) DEFAULT "NOT ADDED" NOT NULL,
-    Client VARCHAR (256) DEFAULT "NOT ADDED" NOT NULL,
+    P_id VARCHAR(256) NOT NULL,
+    Title TEXT   NOT NULL,
     Type VARCHAR(64) DEFAULT "Bridge" NOT NULL,
     State ENUM("Ongoing","Complete") DEFAULT "Ongoing" NOT NULL, 
     PRIMARY KEY(Id)
@@ -55,10 +51,29 @@ CREATE TABLE Bridges(
 
 CREATE TABLE Water_Drainage(
     Id INT(5) AUTO_INCREMENT,
-    P_id varchar(256) NOT NULL,
-    Title VARCHAR(256) DEFAULT "NOT ADDED" NOT NULL,
-    Client VARCHAR (256) DEFAULT "NOT ADDED" NOT NULL,
+    P_id VARCHAR(256) NOT NULL,
+    Title TEXT  NOT NULL,
     Type VARCHAR(32) DEFAULT "Water_Drainage" NOT NULL,
+    State ENUM("Ongoing","Complete") DEFAULT "Ongoing" NOT NULL, 
+    PRIMARY KEY(Id)
+);
+
+
+CREATE TABLE Interlock(
+    Id INT(5) AUTO_INCREMENT,
+    P_id VARCHAR(256) NOT NULL,
+    Title TEXT  NOT NULL,
+    Type VARCHAR(32) DEFAULT "Interlock" NOT NULL,
+    State ENUM("Ongoing","Complete") DEFAULT "Ongoing" NOT NULL, 
+    PRIMARY KEY(Id)
+);
+
+
+CREATE TABLE Asphalt(
+    Id INT(5) AUTO_INCREMENT,
+    P_id VARCHAR(256) NOT NULL,
+    Title TEXT   NOT NULL,
+    Type VARCHAR(32) DEFAULT "Asphalt" NOT NULL,
     State ENUM("Ongoing","Complete") DEFAULT "Ongoing" NOT NULL, 
     PRIMARY KEY(Id)
 );
@@ -66,14 +81,6 @@ CREATE TABLE Water_Drainage(
 
 
 
-
-
-INSERT INTO Bridge (id, Title, Client , Location, srt_date, cmpt_date, Description, Project_state, Images) value ( "1233454656.json" ,"Kandy road" , "kcc", "from kandy to matale" , "2012/12/02", "2014/06/04", "this a testing project", "Ongoing", "a.jpg/b.jpg" ); 
-
-
-INSERT INTO Buildings (Id, Title, Client , Location, Srt_date, Cmpt_date, Description, Project_state, Images) VALUES ('$name', '$title' , '$client', '$location' , '2012/02/15', '2015/04/21', '$description', 'Ongoing', 'images/ghrh/hrhrt/rth' );
-
-INSERT INTO Highways (Id, Title, Client , Location, Srt_date, Cmpt_date, Description, Project_state, Images) VALUES ('20150701190214299802', 'etheth' , 'thhh4h', '4hthh' , '2015-07-17', '2015-07-22', '4thn344erbnebnth hheh f heh eh', 'Ongoing', ',../../Highways/images/20150701190214299802/01.jpg,../../Highways/images/20150701190214299802/12.jpg' );
 
 
 
@@ -135,7 +142,14 @@ CREATE TABLE Finished_img(
 );
 
 
-
+CREATE TABLE Users (
+    user_id INT( 5 ) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+    username VARCHAR( 25 ) NOT NULL ,
+    email VARCHAR( 35 ) NOT NULL ,
+    Password VARCHAR( 50 ) NOT NULL ,
+    UNIQUE (email),
+    UNIQUE (username)
+) ENGINE = MYISAM ;
 
 
 

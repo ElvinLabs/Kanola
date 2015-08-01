@@ -26,15 +26,10 @@ require "define.php";
         }else return $con;
     }
 
-    function conn_close($conn){
-    
-    
-        $conn->close();
-    }
+ 
 
 
-
-
+/*
     function save_img( $files,  $desired_dir){
               
         $errors = array();
@@ -79,12 +74,16 @@ require "define.php";
 
   
     }
+    
+    
+    
+    */
 
 // function for add the project
-function add_project( $conn,$title, $client, $type, $state){
+function add_project( $conn,$title, $type, $state){
     //create a unique id
     $p_id = create_file_name();
-    $query ="INSERT INTO $type (P_id,Title,Client,Type,State) VALUES ('$p_id','$title','$client','$type','$state')";
+    $query ="INSERT INTO $type (P_id,Title,Type,State) VALUES ('$p_id','$title','$type','$state')";
     
     // execute the mysqli query
     if($conn->query($query)==true){
@@ -100,6 +99,18 @@ function add_project( $conn,$title, $client, $type, $state){
         
 }
 
+
+function add_textImage($path,$text){
+
+    $query = "INSERT INTO Textile_img (AltText,Path) VALUES ('$text','$path')";
+    $conn = connection();
+    
+    if( $conn->query($query)){
+    
+        return true;
+    }else return false;
+    
+}
 
 
 function save_one_image($desired_dir,$file){
@@ -117,7 +128,7 @@ function save_one_image($desired_dir,$file){
             $images = $images.",".$img_path;
             
             if($file_size > 5145728){
-                $errors[]='File size must be less than 3 MB';
+                $errors[]='File size must be less than 5 MB';
             }
 
              if(empty($errors)==true){
@@ -142,19 +153,31 @@ function save_one_image($desired_dir,$file){
 
 }
 
+// add the image for projects slider online or finished
 function add_project_image($type,$path,$alt_text){
-        
-        $query = "INSERT INTO $type (Path,AltText) VALUES ('$path','$alt_text')";
-        $conn = connection();
+            
+    $query = "INSERT INTO $type (Path,AltText) VALUES ('$path','$alt_text')";
+    $conn = connection();
     
-        if( $conn->query($query) ==true ){
-            $conn->close();
-            return true;
-        }else {
-            $conn->close();
-            return false;
-        }
+    if( $conn->query($query) ==true ){
+        $conn->close();
+        return true;
+    }else {
+        $conn->close();
+        return false;
+    }
 }
+
+
+// delete the image when give a path
+function delete_img( $path ){
+
+    $dir = $path;
+    if( unlink($path) ){
+        return true;
+    }else return true;
+}
+
 
         
 function add_auto($conn, $name, $category, $brand, $model, $model_yr, $condition, $mileage, $transmition, $capacity, $fuel_type, $location, $description, $files ){

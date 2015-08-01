@@ -6,13 +6,7 @@ define("UNAME","root");
 define("PW","root");
 
 
-/* file path for save new projects */
-define("ROAD","../roads/");
-define("BUILDING","../buildings/");
-define("BRIDGE","../bridges/");
-
-
-
+//$conn = mysqli_connect("localhost","kanolalk_admin","kanola@123","kanolalk_K anola");
 /* ERROR Massages*/
 define("WRITIING_ERROR" , "writing_error");
 define("NOTFILL","All Field Requered");
@@ -20,8 +14,7 @@ define("NOTFILL","All Field Requered");
 
 # image uploading
 define("ROAD_IMG","roads/images/");
-define("BUILDING_IMG","../buildings/images/");
-define("BRIDGE_IMG","../bridges/images/");
+
 
 
 # auto & heavy machinary
