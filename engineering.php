@@ -64,7 +64,7 @@
 				<blockquote>
 				<i class="icon-quote-left"></i>Construction is the core business of the group. Our objectivity is to identify the specific expectations of our customers or clients and provide them with the best cost effective solutions, with emphasis on speed and efficiency while adhering strictly to quality.<br><br>
 
-It has successfully completed considerable extent of projects with the dedicated support of its competent staff. It has spread in Northern, North Central, North East &amp; Western Provinces engaging with RDA,PRDA, Department of Irrigation, Mahaweli Authority, Cultural Fund & as well as private sector.<br><br>
+It has successfully completed considerable extent of projects with the dedicated support of its competent staff. It has spread in Northern, North Central, North East &amp; Western Provinces engaging with RDA,PRDA, Department of Irrigation, Mahaweli Authority, Cultural Fund &amp; as well as private sector.<br><br>
 
 Also it supplies Asphalt, Interlock blocks &amp; Concrete for above agencies as a quality product supplier. Prevailing plants are conducting in Anuradhapura &amp; willing to spread them near provinces in future. <br><br>
 				</blockquote>
@@ -89,28 +89,7 @@ Also it supplies Asphalt, Interlock blocks &amp; Concrete for above agencies as 
 			</div>
 		</div>
 		<!-- divider -->
-            <hr>
-
-<!--
-		<div class="row">
-            <a href="projects.php" class=" btn btn-theme">Ongoing and Finished Projects<i class="icon-angle-right"></i></a>
-			<div class="col-lg-6  pullquote-left">
-                <h4>Ongoing Projects</h4>
-				<blockquote>
-					<i class="icon-quote-left icon-2x"></i>
-				</blockquote>
-			</div>
-			<div class="col-lg-6  pullquote-left">
-				<h4>Finished projects</h4>
-				<blockquote>
-					<i class="icon-quote-left icon-2x"></i>
-				</blockquote>
-			</div>
-        </div>
--->
-
-		<!-- divider -->
-		
+            
 	</div>
 	</section>
 	<?php

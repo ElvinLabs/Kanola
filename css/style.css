@@ -729,22 +729,22 @@ blockquote {
 	font-family:'Noto Serif', serif;
 	font-style:italic;
 	padding-left:0;
-	color:#a2a2a2;
+	color:#444;
 	line-height:1.6em;
 	border:none;
 }
 
-blockquote cite 							{ display:block; font-size:12px; color:#666; margin-top:10px; }
+blockquote cite 							{ display:block; font-size:12px; color:#222; margin-top:10px; }
 blockquote cite:before 					{ content:"\2014 \0020"; }
 blockquote cite a,
 blockquote cite a:visited,
-blockquote cite a:visited 				{ color:#555; }
+blockquote cite a:visited 				{ color:#222; }
 
 /* --- pullquotes --- */
 
 .pullquote-left {
 	display:block;
-	color:#a2a2a2;
+	color:#222;
 	font-family:'Noto Serif', serif;
 	font-size:14px;
 	line-height:1.6em;
@@ -753,7 +753,7 @@ blockquote cite a:visited 				{ color:#555; }
 
 .pullquote-right {
 	display:block;
-	color:#a2a2a2;
+	color:#222;
 	font-family:'Noto Serif', serif;
 	font-size:14px;
 	line-height:1.6em;

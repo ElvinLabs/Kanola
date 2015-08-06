@@ -906,6 +906,7 @@ font-size: 10px;
   text-shadow: none;
   border-right:none;
   border-left:none;
+    border-bottom: solid 2px #fff;
 }
 
 .navbar .nav > li > a:hover,
@@ -1365,7 +1366,9 @@ font-weight:600;
 }
 
 
-
+.navbar-default .navbar-nav > .open > a{
+    background-color: #ed3237;
+}
 
 
 

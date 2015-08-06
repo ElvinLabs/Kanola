@@ -54,6 +54,7 @@
 		<div class="row">
             
 			<div class="col-lg-12">
+<!--
 				<ul class="portfolio-categ filter">
 					<li class="all active"><a href="#">All</a></li>
 					<li class="Highways"><a href="#" title="">Highways</a></li>
@@ -65,157 +66,168 @@
 				</ul>
 				<div class="clearfix">
 				</div><hr>
+-->
 				<div class="row">
                     <div class="col-lg-8">
 					<section id="projects">
-					<ul id="thumbs" class="portfolio">
+					
                         <!--******************************************************-->
                         <?php
                             $query = "SELECT * FROM Highways WHERE State='Complete'";
                             $result = $conn->query($query);
                             if( $result->num_rows > 0 ){                                   
                         ?>
-                        
-                        <li><h4 style="margin-top:10px"><br><br><br>Highways</h4></li>
-                        <?php
-                            }
-                        ?>
-                        <?php
-                            $query = "SELECT * FROM Highways WHERE State='Complete'";
-                            $result = $conn->query($query);
-                            if( $result->num_rows > 0 ){
-                                while($row= $result->fetch_assoc() ){                                    
-                        ?> 
-                        
-						<li class="col-lg-12" data-id="id-0" data-type="Highways">
-                            <i class="fa fa-dot-circle-o">  </i>  <?php echo($row["Title"]);  ?>
-                        </li>
-                        <?php
+                        <h4 style="margin-top:10px"><br><br><br>Highways</h4>
+                        <ul id="thumbs" class="portfolio">
+                            <?php
                                 }
-                            }
-                        ?>
+                            ?>
+                            <?php
+                                $query = "SELECT * FROM Highways WHERE State='Complete'";
+                                $result = $conn->query($query);
+                                if( $result->num_rows > 0 ){
+                                    while($row= $result->fetch_assoc() ){                                    
+                            ?> 
+
+                            <li class="col-lg-12" data-id="id-0" data-type="Highways">
+                                <i class="fa fa-dot-circle-o">  </i>  <?php echo($row["Title"]);  ?>
+                            </li>
+                            <?php
+                                    }
+                                }
+                            ?>
+                        </ul>
                         <!--******************************************************-->
                         <?php
                             $query = "SELECT * FROM Irrigation WHERE State='Complete'";
                             $result = $conn->query($query);
                             if( $result->num_rows > 0 ){                                   
                         ?>
-                        <li><h4 style="margin-top:10px"><br><br>Irrigation</h4></li>
-                        <?php
-                            }
-                        ?>
-                        <?php
-                            $query = "SELECT * FROM Irrigation WHERE State='Complete'";
-                            $result = $conn->query($query);
-                            if( $result->num_rows > 0 ){
-                                while($row= $result->fetch_assoc() ){                                    
-                        ?> 
-                        
-						<li class="col-lg-12" data-id="id-0" data-type="Irrigation">
-                            <i class="fa fa-dot-circle-o">  </i>  <?php echo($row["Title"]);  ?>
-                        </li>
-                        <?php
+                        <h4 style="margin-top:10px"><br><br>Irrigation</h4>
+                        <ul id="thumbs" class="portfolio">
+                            <?php
                                 }
-                            }
-                        ?>
+                            ?>
+                            <?php
+                                $query = "SELECT * FROM Irrigation WHERE State='Complete'";
+                                $result = $conn->query($query);
+                                if( $result->num_rows > 0 ){
+                                    while($row= $result->fetch_assoc() ){                                    
+                            ?> 
+
+                            <li class="col-lg-12" data-id="id-0" data-type="Irrigation">
+                                <i class="fa fa-dot-circle-o">  </i>  <?php echo($row["Title"]);  ?>
+                            </li>
+                            <?php
+                                    }
+                                }
+                            ?>
+                        </ul>
                         <!--******************************************************-->
                         <?php
                             $query = "SELECT * FROM Bridges WHERE State='Complete'";
                             $result = $conn->query($query);
                             if( $result->num_rows > 0 ){                                   
                         ?>
-                        <li><h4 style="margin-top:10px"><br><br>Bridges</h4></li>
-                        <?php
-                            }
-                        ?>
-                        <?php
-                            $query = "SELECT * FROM Bridges WHERE State='Complete'";
-                            $result = $conn->query($query);
-                            if( $result->num_rows > 0 ){
-                                while($row= $result->fetch_assoc() ){                                    
-                        ?> 
-                        
-						<li class="col-lg-12" data-id="id-0" data-type="Bridges">
-                            <i class="fa fa-dot-circle-o">  </i>  <?php echo($row["Title"]);  ?>
-                        </li>
-                        <?php
+                        <h4 style="margin-top:10px"><br><br>Bridges</h4>
+                        <ul id="thumbs" class="portfolio">
+                            <?php
                                 }
-                            }
-                        ?>
+                            ?>
+                            <?php
+                                $query = "SELECT * FROM Bridges WHERE State='Complete'";
+                                $result = $conn->query($query);
+                                if( $result->num_rows > 0 ){
+                                    while($row= $result->fetch_assoc() ){                                    
+                            ?> 
+
+                            <li class="col-lg-12" data-id="id-0" data-type="Bridges">
+                                <i class="fa fa-dot-circle-o">  </i>  <?php echo($row["Title"]);  ?>
+                            </li>
+                            <?php
+                                    }
+                                }
+                            ?>
+                        </ul>
                         <!--******************************************************-->
                         <?php
                             $query = "SELECT * FROM Buildings WHERE State='Complete'";
                             $result = $conn->query($query);
                             if( $result->num_rows > 0 ){                                   
                         ?>
-                        <li><h4 style="margin-top:10px"><br><br>Buildings</h4></li>
-                        <?php
-                            }
-                        ?>
-                        <?php
-                            $query = "SELECT * FROM Buildings WHERE State='Complete'";
-                            $result = $conn->query($query);
-                            if( $result->num_rows > 0 ){
-                                while($row= $result->fetch_assoc() ){                                    
-                        ?> 
-                        
-						<li class="col-lg-12" data-id="id-0" data-type="Buildings">
-                            <i class="fa fa-dot-circle-o">  </i>  <?php echo($row["Title"]);  ?>
-                        </li>
-                        <?php
+                        <h4 style="margin-top:10px"><br><br>Buildings</h4>
+                        <ul id="thumbs" class="portfolio">
+                            <?php
                                 }
-                            }
-                        ?>
+                            ?>
+                            <?php
+                                $query = "SELECT * FROM Buildings WHERE State='Complete'";
+                                $result = $conn->query($query);
+                                if( $result->num_rows > 0 ){
+                                    while($row= $result->fetch_assoc() ){                                    
+                            ?> 
+
+                            <li class="col-lg-12" data-id="id-0" data-type="Buildings">
+                                <i class="fa fa-dot-circle-o">  </i>  <?php echo($row["Title"]);  ?>
+                            </li>
+                            <?php
+                                    }
+                                }
+                            ?>
+                        </ul>
                         <!--******************************************************-->
                         <?php
                             $query = "SELECT * FROM Water_drainage WHERE State='Complete'";
                             $result = $conn->query($query);
                             if( $result->num_rows > 0 ){                                   
                         ?>
-                        <li><h4 style="margin-top:10px"><br><br>Water Drainage</h4></li>
-                        <?php
-                            }
-                        ?>
-                        <?php
-                            $query = "SELECT * FROM Water_drainage WHERE State='Complete'";
-                            $result = $conn->query($query);
-                            if( $result->num_rows > 0 ){
-                                while($row= $result->fetch_assoc() ){                                    
-                        ?> 
-                        
-						<li class="col-lg-12" data-id="id-0" data-type="Water_drainage">
-                            <i class="fa fa-dot-circle-o">  </i>  <?php echo($row["Title"]);  ?>
-                        </li>
-                        <?php
+                        <h4 style="margin-top:10px"><br><br>Water Drainage</h4>
+                        <ul id="thumbs" class="portfolio">
+                            <?php
                                 }
-                            }
-                        ?>
+                            ?>
+                            <?php
+                                $query = "SELECT * FROM Water_drainage WHERE State='Complete'";
+                                $result = $conn->query($query);
+                                if( $result->num_rows > 0 ){
+                                    while($row= $result->fetch_assoc() ){                                    
+                            ?> 
+
+                            <li class="col-lg-12" data-id="id-0" data-type="Water_drainage">
+                                <i class="fa fa-dot-circle-o">  </i>  <?php echo($row["Title"]);  ?>
+                            </li>
+                            <?php
+                                    }
+                                }
+                            ?>
+                        </ul>
                         <!--******************************************************-->
                         <?php
                             $query = "SELECT * FROM Interlock WHERE State='Complete'";
                             $result = $conn->query($query);
                             if( $result->num_rows > 0 ){                                   
                         ?>
-                        <li><h4 style="margin-top:10px"><br><br>Interlock</h4></li>
-                        <?php
-                            }
-                        ?>
-                        <?php
-                            $query = "SELECT * FROM Interlock WHERE State='Complete'";
-                            $result = $conn->query($query);
-                            if( $result->num_rows > 0 ){
-                                while($row= $result->fetch_assoc() ){                                    
-                        ?> 
-                        
-						<li class="col-lg-12" data-id="id-0" data-type="Interlock">
-                            <i class="fa fa-dot-circle-o">  </i>  <?php echo($row["Title"]);  ?>
-                        </li>
-                        <?php
+                        <h4 style="margin-top:10px"><br><br>Interlock</h4>
+                        <ul id="thumbs" class="portfolio">
+                            <?php
                                 }
-                            }
-                        ?>
+                            ?>
+                            <?php
+                                $query = "SELECT * FROM Interlock WHERE State='Complete'";
+                                $result = $conn->query($query);
+                                if( $result->num_rows > 0 ){
+                                    while($row= $result->fetch_assoc() ){                                    
+                            ?> 
+
+                            <li class="col-lg-12" data-id="id-0" data-type="Interlock">
+                                <i class="fa fa-dot-circle-o">  </i>  <?php echo($row["Title"]);  ?>
+                            </li>
+                            <?php
+                                    }
+                                }
+                            ?>
+                        </ul>
                         
-					</ul>
 					</section></div>
 				</div>
 			</div>

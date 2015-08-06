@@ -222,3 +222,7 @@ footer{
 	background:#ED3237;
 }
 
+.navbar .nav > li > a:hover{
+    
+    border-bottom: solid 2px #ED3237;
+}

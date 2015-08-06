@@ -30,7 +30,7 @@
         include "nav.html"
     ?>
 	<!-- end header -->
-	<section id="featured">
+	<section id="featured" style="background:#111;">
 	<!-- start slider -->
 	<div class="container">
 		<div class="row">
@@ -40,27 +40,19 @@
             <ul class="slides">
               <li>
                 <img src="img/slides/1.jpg" alt="" />
-                <div class="flex-caption">
-                    <h3>Construction &amp; Engineering</h3> 
-					<p> The core business of the group. Our objectivity is to identify the specific expectations of our customers or clients and provide them with the best cost effective solutions, with emphasis on speed and efficiency while adhering strictly to quality.</p> 
-					<a href="#" class="btn btn-theme">More</a>
-                </div>
               </li>
               <li>
                 <img src="img/slides/2.jpg" alt="" />
-                <div class="flex-caption">
-                    <h3>Kanola Auto &amp; Heavy Machinery</h3> 
-					<p>It satisfying its customers offering their dream motor vehicles, even if it’s not displayed in our show room.</p> 
-					<a href="#" class="btn btn-theme">More</a>
-                </div>
               </li>
               <li>
                 <img src="img/slides/3.jpg" alt="" />
+<!--
                 <div class="flex-caption">
                     <h3>Kanola Tex</h3> 
 					<p>A leading comfort brand retailer in Eppawala since 2011. It always consists with fresh new arrivals added every week ensuring that you can find something unique to wear to every occasion.</p> 
 					<a href="#" class="btn btn-theme">More</a>
                 </div>
+-->
               </li>
             </ul>
         </div>
@@ -78,7 +70,7 @@
 			<div class="col-lg-12">
 				<div class="big-cta">
 					<div class="cta-text">
-						<h2>Welcome to <span>Kanola Group</span></h2><hr class="small">
+                        <h2>Welcome to <span>Kanola</span></h2>
 					</div>
 				</div>
 			</div>
@@ -90,9 +82,9 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="row">
-					<div class="col-lg-8">
+					<div class="col-lg-7">
 						<div class="box">
-							<div class="box-gray">
+							<div >
                                 <blockquote>
 								<i class="icon-quote-left"></i> We are one of the fastest growing enterprise, diversified organization engaged in Trading Activities, Infrastructure Developing Projects &amp; Engineering Services. The core objective is driven towards excellence in customer service, bound by a common set of values, linked across the entire Organization. Group recognized itself that with its expertise, its resources and its goodwill, the Group is fully equipped to meet the challenges of the future. The ability to respond to change and provide excellence in Customer Service remains the foremost priority by the Group.
 							</blockquote>
@@ -101,6 +93,7 @@
 							</div>
 				        </div>
 					</div>
+                    <div class="col-lg-1"></div>
                     <div class="col-lg-4">
                         <h4>Vision</h4>
                         <span class="pullquote-left  alert alert-danger">“To be a leading &amp; dynamic enterprise in Sri Lanka”</span>
