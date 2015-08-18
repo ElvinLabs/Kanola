@@ -26,7 +26,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2 class="page-header"><b>Construction Project</b></h2>
+                    <h2 class="page-header"><b>Add Auto Vehicle</b></h2>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -34,9 +34,6 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Add Auto Vehicle
-                        </div>
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6"> 
@@ -81,6 +78,8 @@
                                             <label>Engine Capacity(cc)</label>
                                             <input class="form-control" type="text" name="capacity" value="" placeholder="eg: 1000cc" required>
                                         </div>
+                                        
+                                        </div><div class="col-lg-6">
                                             <div class="form-group">
                                             <label>Fuel type</label>
                                             <div class="radio">

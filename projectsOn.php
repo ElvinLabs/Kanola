@@ -38,7 +38,7 @@
 					<li><a href="#"><i class="fa fa-home"></i></a><i class="icon-angle-right"></i></li>
 					<li class="active">Sectors</li>
 					<li class="active">Constructions &amp; Engineering</li>
-                    <li class="active">Ongoing Projects</li>
+					<li class="active">Finished Projects</li>
 				</ul>
 			</div>
 		</div>
@@ -52,126 +52,178 @@
 	<section id="content">
 	<div class="container">
 		<div class="row">
+            
 			<div class="col-lg-12">
-				<ul class="portfolio-categ filter">
-					<li class="all active"><a href="#">All</a></li>
-					<li class="Highways"><a href="#" title="">Highways</a></li>
-					<li class="Interlock"><a href="#" title="">Interlock</a></li>
-					<li class="Irrigation"><a href="#" title="">Irrigation</a></li>
-					<li class="Bridges"><a href="#" title="">Bridges</a></li>
-					<li class="Buildings"><a href="#" title="">Buildings</a></li>
-					<li class="Water_drainage"><a href="#" title="">Water Drainage</a></li>
-				</ul>
-				<div class="clearfix">
-				</div><hr>
 				<div class="row">
+                    <div class="col-lg-9">
 					<section id="projects">
-					<ul id="thumbs" class="portfolio">
+					
                         <!--******************************************************-->
                         <?php
                             $query = "SELECT * FROM Highways WHERE State='Ongoing'";
                             $result = $conn->query($query);
-                            if( $result->num_rows > 0 ){
-                                while($row= $result->fetch_assoc() ){                                    
-                        ?> 
-                        
-						<li class="item-thumbs col-lg-4 design" data-id="id-0" data-type="Highways">
-                            <div style="height:100px;overflow:auto"  class="alert alert-info">
-				                <strong><?php echo($row["Title"]);  ?></strong>
-                            </div>
-                        </li>
-                        <?php
-                                }
-                            }
+                            if( $result->num_rows > 0 ){                                   
                         ?>
+                        <h4 style="margin-top:10px"><br><br><br>Highways</h4>
+                        <ul id="thumbs" class="portfolio">
+                            <?php
+                                }
+                            ?>
+                            <?php
+                                $query = "SELECT * FROM Highways WHERE State='Ongoing'";
+                                $result = $conn->query($query);
+                                if( $result->num_rows > 0 ){
+                                    while($row= $result->fetch_assoc() ){                                    
+                            ?> 
+
+                            <li class="col-lg-12" data-id="id-0" data-type="Highways">
+                                <i class="fa fa-dot-circle-o">  </i>  <?php echo($row["Title"]);  ?>
+                            </li>
+                            <?php
+                                    }
+                                }
+                            ?>
+                        </ul>
                         <!--******************************************************-->
                         <?php
                             $query = "SELECT * FROM Irrigation WHERE State='Ongoing'";
                             $result = $conn->query($query);
-                            if( $result->num_rows > 0 ){
-                                while($row= $result->fetch_assoc() ){                                    
-                        ?> 
-                        
-						<li class="item-thumbs col-lg-4 design" data-id="id-0" data-type="Irrigation">
-                            <div style="height:100px;overflow:auto"  class="alert alert-info">
-				                <strong><?php echo($row["Title"]);  ?></strong>
-                            </div>
-                        </li>
-                        <?php
-                                }
-                            }
+                            if( $result->num_rows > 0 ){                                   
                         ?>
+                        <h4 style="margin-top:10px"><br><br>Irrigation</h4>
+                        <ul id="thumbs" class="portfolio">
+                            <?php
+                                }
+                            ?>
+                            <?php
+                                $query = "SELECT * FROM Irrigation WHERE State='Ongoing'";
+                                $result = $conn->query($query);
+                                if( $result->num_rows > 0 ){
+                                    while($row= $result->fetch_assoc() ){                                    
+                            ?> 
+
+                            <li class="col-lg-12" data-id="id-0" data-type="Irrigation">
+                                <i class="fa fa-dot-circle-o">  </i>  <?php echo($row["Title"]);  ?>
+                            </li>
+                            <?php
+                                    }
+                                }
+                            ?>
+                        </ul>
                         <!--******************************************************-->
                         <?php
                             $query = "SELECT * FROM Bridges WHERE State='Ongoing'";
                             $result = $conn->query($query);
-                            if( $result->num_rows > 0 ){
-                                while($row= $result->fetch_assoc() ){                                    
-                        ?> 
-                        
-						<li class="item-thumbs col-lg-4 design" data-id="id-0" data-type="Bridges">
-                            <div style="height:100px;overflow:auto"  class="alert alert-info">
-				                <strong><?php echo($row["Title"]);  ?></strong>
-                            </div>
-                        </li>
-                        <?php
-                                }
-                            }
+                            if( $result->num_rows > 0 ){                                   
                         ?>
+                        <h4 style="margin-top:10px"><br><br>Bridges</h4>
+                        <ul id="thumbs" class="portfolio">
+                            <?php
+                                }
+                            ?>
+                            <?php
+                                $query = "SELECT * FROM Bridges WHERE State='Ongoing'";
+                                $result = $conn->query($query);
+                                if( $result->num_rows > 0 ){
+                                    while($row= $result->fetch_assoc() ){                                    
+                            ?> 
+
+                            <li class="col-lg-12" data-id="id-0" data-type="Bridges">
+                                <i class="fa fa-dot-circle-o">  </i>  <?php echo($row["Title"]);  ?>
+                            </li>
+                            <?php
+                                    }
+                                }
+                            ?>
+                        </ul>
                         <!--******************************************************-->
                         <?php
                             $query = "SELECT * FROM Buildings WHERE State='Ongoing'";
                             $result = $conn->query($query);
-                            if( $result->num_rows > 0 ){
-                                while($row= $result->fetch_assoc() ){                                    
-                        ?> 
-                        
-						<li class="item-thumbs col-lg-4 design" data-id="id-0" data-type="Buildings">
-                            <div style="height:100px;overflow:auto"  class="alert alert-info">
-				                <strong><?php echo($row["Title"]);  ?></strong>
-                            </div>
-                        </li>
-                        <?php
-                                }
-                            }
+                            if( $result->num_rows > 0 ){                                   
                         ?>
+                        <h4 style="margin-top:10px"><br><br>Buildings</h4>
+                        <ul id="thumbs" class="portfolio">
+                            <?php
+                                }
+                            ?>
+                            <?php
+                                $query = "SELECT * FROM Buildings WHERE State='Ongoing'";
+                                $result = $conn->query($query);
+                                if( $result->num_rows > 0 ){
+                                    while($row= $result->fetch_assoc() ){                                    
+                            ?> 
+
+                            <li class="col-lg-12" data-id="id-0" data-type="Buildings">
+                                <i class="fa fa-dot-circle-o">  </i>  <?php echo($row["Title"]);  ?>
+                            </li>
+                            <?php
+                                    }
+                                }
+                            ?>
+                        </ul>
                         <!--******************************************************-->
                         <?php
                             $query = "SELECT * FROM Water_drainage WHERE State='Ongoing'";
                             $result = $conn->query($query);
-                            if( $result->num_rows > 0 ){
-                                while($row= $result->fetch_assoc() ){                                    
-                        ?> 
-                        
-						<li class="item-thumbs col-lg-4 design" data-id="id-0" data-type="Water_drainage">
-                            <div style="height:100px;overflow:auto"  class="alert alert-info">
-				                <strong><?php echo($row["Title"]);  ?></strong>
-                            </div>
-                        </li>
-                        <?php
-                                }
-                            }
+                            if( $result->num_rows > 0 ){                                   
                         ?>
+                        <h4 style="margin-top:10px"><br><br>Water Drainage</h4>
+                        <ul id="thumbs" class="portfolio">
+                            <?php
+                                }
+                            ?>
+                            <?php
+                                $query = "SELECT * FROM Water_drainage WHERE State='Ongoing'";
+                                $result = $conn->query($query);
+                                if( $result->num_rows > 0 ){
+                                    while($row= $result->fetch_assoc() ){                                    
+                            ?> 
+
+                            <li class="col-lg-12" data-id="id-0" data-type="Water_drainage">
+                                <i class="fa fa-dot-circle-o">  </i>  <?php echo($row["Title"]);  ?>
+                            </li>
+                            <?php
+                                    }
+                                }
+                            ?>
+                        </ul>
                         <!--******************************************************-->
                         <?php
                             $query = "SELECT * FROM Interlock WHERE State='Ongoing'";
                             $result = $conn->query($query);
-                            if( $result->num_rows > 0 ){
-                                while($row= $result->fetch_assoc() ){                                    
-                        ?> 
-                        
-						<li class="item-thumbs col-lg-4 design" data-id="id-0" data-type="Interlock">
-                            <div style="height:100px;overflow:auto"  class="alert alert-info">
-				                <strong><?php echo($row["Title"]);  ?></strong>
-                            </div>
-                        </li>
-                        <?php
-                                }
-                            }
+                            if( $result->num_rows > 0 ){                                   
                         ?>
+                        <h4 style="margin-top:10px"><br><br>Interlock</h4>
+                        <ul id="thumbs" class="portfolio">
+                            <?php
+                                }
+                            ?>
+                            <?php
+                                $query = "SELECT * FROM Interlock WHERE State='Ongoing'";
+                                $result = $conn->query($query);
+                                if( $result->num_rows > 0 ){
+                                    while($row= $result->fetch_assoc() ){                                    
+                            ?> 
+
+                            <li class="col-lg-12" data-id="id-0" data-type="Interlock">
+                                <i class="fa fa-dot-circle-o">  </i>  <?php echo($row["Title"]);  ?>
+                            </li>
+                            <?php
+                                    }
+                                }
+                            ?>
+                        </ul>
                         
-					</ul>
-					</section>
+					</section></div>
+                     <div class="col-lg-3">
+                        <img src="img/engineering/1.jpg" width="100%">
+                        <img src="img/engineering/2.jpg" width="100%">
+                        <img src="img/engineering/3.jpg" width="100%">
+                        <img src="img/engineering/4.jpg" width="100%">
+                        <img src="img/engineering/5.jpg" width="100%">
+                        <img src="img/engineering/6.jpg" width="100%">
+                    </div>
 				</div>
 			</div>
 		</div>

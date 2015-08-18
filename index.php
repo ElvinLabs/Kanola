@@ -30,36 +30,29 @@
         include "nav.html"
     ?>
 	<!-- end header -->
-	<section id="featured" style="background:#111;">
+	<section id="featured">
 	<!-- start slider -->
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-	<!-- Slider -->
-        <div id="main-slider" class="flexslider">
-            <ul class="slides">
-              <li>
-                <img src="img/slides/1.jpg" alt="" />
-              </li>
-              <li>
-                <img src="img/slides/2.jpg" alt="" />
-              </li>
-              <li>
-                <img src="img/slides/3.jpg" alt="" />
-<!--
-                <div class="flex-caption">
-                    <h3>Kanola Tex</h3> 
-					<p>A leading comfort brand retailer in Eppawala since 2011. It always consists with fresh new arrivals added every week ensuring that you can find something unique to wear to every occasion.</p> 
-					<a href="#" class="btn btn-theme">More</a>
+<!--	<div class="container">-->
+		<div class="row" style="margin-bottom: 0px">
+			<div class="col-lg-12" style="margin-top: -50px">
+            <!-- Slider -->
+                <div id="main-slider" class="flexslider">
+                    <ul class="slides">
+                      <li>
+                        <img src="img/slides/1.jpg" alt="" />
+                      </li>
+                      <li>
+                        <img src="img/slides/2.jpg" alt="" />
+                      </li>
+                      <li>
+                        <img src="img/slides/3.jpg" alt="" />
+                    </li>
+                    </ul>
                 </div>
--->
-              </li>
-            </ul>
-        </div>
-	<!-- end slider -->
+            <!-- end slider -->
 			</div>
 		</div>
-	</div>	
+<!--	</div>	-->
 	
 	
 
@@ -69,8 +62,8 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="big-cta">
-					<div class="cta-text">
-                        <h2>Welcome to <span>Kanola</span></h2>
+					<div class="cta-text" >
+                        <h2 style="font-size:50px">Welcome to <span>Kanola</span></h2>
 					</div>
 				</div>
 			</div>

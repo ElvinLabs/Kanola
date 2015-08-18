@@ -46,29 +46,15 @@
 	</section>
                     <?php  
                         require 'functions&defined/function.php';                    
-                        $conn = connection();
-                                            
+                        $conn = connection();                                            
                     ?>
 	<section id="content">
 	<div class="container">
 		<div class="row">
             
 			<div class="col-lg-12">
-<!--
-				<ul class="portfolio-categ filter">
-					<li class="all active"><a href="#">All</a></li>
-					<li class="Highways"><a href="#" title="">Highways</a></li>
-					<li class="Interlock"><a href="#" title="">Interlock</a></li>
-					<li class="Irrigation"><a href="#" title="">Irrigation</a></li>
-					<li class="Bridges"><a href="#" title="">Bridges</a></li>
-					<li class="Buildings"><a href="#" title="">Buildings</a></li>
-					<li class="Water_drainage"><a href="#" title="">Water Drainage</a></li>
-				</ul>
-				<div class="clearfix">
-				</div><hr>
--->
 				<div class="row">
-                    <div class="col-lg-8">
+                    <div class="col-lg-9" >
 					<section id="projects">
 					
                         <!--******************************************************-->
@@ -77,7 +63,7 @@
                             $result = $conn->query($query);
                             if( $result->num_rows > 0 ){                                   
                         ?>
-                        <h4 style="margin-top:10px"><br><br><br>Highways</h4>
+                        <h4><br><br><br>Highways</h4>
                         <ul id="thumbs" class="portfolio">
                             <?php
                                 }
@@ -103,7 +89,7 @@
                             $result = $conn->query($query);
                             if( $result->num_rows > 0 ){                                   
                         ?>
-                        <h4 style="margin-top:10px"><br><br>Irrigation</h4>
+                        <h4 style="padding-top:10px"><br><br>Irrigation</h4>
                         <ul id="thumbs" class="portfolio">
                             <?php
                                 }
@@ -229,6 +215,14 @@
                         </ul>
                         
 					</section></div>
+                    <div class="col-lg-3">
+                        <img src="img/engineering/1.jpg" width="100%">
+                        <img src="img/engineering/2.jpg" width="100%">
+                        <img src="img/engineering/3.jpg" width="100%">
+                        <img src="img/engineering/4.jpg" width="100%">
+                        <img src="img/engineering/5.jpg" width="100%">
+                        <img src="img/engineering/6.jpg" width="100%">
+                    </div>
 				</div>
 			</div>
 		</div>

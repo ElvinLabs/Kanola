@@ -46,11 +46,26 @@
 	<div class="container">
         <div class="row">
 			<div class="col-lg-12">
-				<div class="box-gray">
+				<div >
                                 <blockquote>
 								<i class="icon-quote-left"></i>Kanola Auto &amp; Heavy Machinery satisfying its customers offering their dream motor vehicles, even if it’s not displayed in our show room. To ensure about the quality of vehicles Mr. Wijekoon personally engage with the process when select the vehicles to import. Our great expectation is to serve the customer in our best to satiate their expectations.</blockquote>
 				</div>
 			</div>
+            
+                <div class="col-lg-12" style="margin-top: -10px">
+            <!-- Slider -->
+                <div id="main-slider" class="flexslider">
+                    <ul class="slides">
+                      <li>
+                        <img src="Auto/slide/auto.jpg" alt="" />
+                      </li>
+                      <li>
+                        <img src="Auto/slide/heavy.jpg" alt="" />
+                      </li>
+                    </ul>
+                </div>
+            <!-- end slider -->
+            </div>
 		</div>
         
 	</div>

@@ -80,10 +80,10 @@ require "define.php";
     */
 
 // function for add the project
-function add_project( $conn,$title, $type, $state){
+function add_project( $conn,$title, $client, $type, $state){
     //create a unique id
     $p_id = create_file_name();
-    $query ="INSERT INTO $type (P_id,Title,Type,State) VALUES ('$p_id','$title','$type','$state')";
+    $query ="INSERT INTO $type (P_id,Title,Client,Type,State) VALUES ('$p_id','$title','$client','$type','$state')";
     
     // execute the mysqli query
     if($conn->query($query)==true){
@@ -99,18 +99,6 @@ function add_project( $conn,$title, $type, $state){
         
 }
 
-
-function add_textImage($path,$text){
-
-    $query = "INSERT INTO Textile_img (AltText,Path) VALUES ('$text','$path')";
-    $conn = connection();
-    
-    if( $conn->query($query)){
-    
-        return true;
-    }else return false;
-    
-}
 
 
 function save_one_image($desired_dir,$file){
