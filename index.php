@@ -53,7 +53,10 @@
                 height: 360px;
                 overflow: hidden;
 
-        }      
+        } 
+        footer{
+            background: #333;
+        }     
     </style>
 
 
@@ -135,18 +138,18 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="row">
-					<div class="col-lg-7">
+					<div class="col-lg-8">
 						<div class="box">
 							<div >
                                 <blockquote>
 								<i class="icon-quote-left"></i> We are one of the fastest growing enterprise, diversified organization engaged in Trading Activities, Infrastructure Developing Projects &amp; Engineering Services. The core objective is driven towards excellence in customer service, bound by a common set of values, linked across the entire Organization. Group recognized itself that with its expertise, its resources and its goodwill, the Group is fully equipped to meet the challenges of the future. The ability to respond to change and provide excellence in Customer Service remains the foremost priority by the Group.
 							</blockquote>
 								
-                                <a href="about.php" class="pull-right btn btn-theme">More<i class="icon-angle-right"></i></a>
+                                <a href="about.php" class="pull-left btn btn-theme">More<i class="icon-angle-right"></i></a>
 							</div>
 				        </div>
 					</div>
-                    <div class="col-lg-1"></div>
+                    <!-- <div class="col-lg-1"></div> -->
                     <div class="col-lg-4">
                         <h4>Vision</h4>
                         <span class="pullquote-left  alert alert-danger">“To be a leading &amp; dynamic enterprise in Sri Lanka”</span>
