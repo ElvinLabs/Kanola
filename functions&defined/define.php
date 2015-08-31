@@ -3,7 +3,7 @@
 define("HOST","localhost");
 define("DBNAME","kanolalk_Kanola");
 define("UNAME","root");
-define("PW","");
+define("PW","root");
 
 
 /* file path for save new projects */

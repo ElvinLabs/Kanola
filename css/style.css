@@ -861,8 +861,28 @@ footer .bottom-menu ul li{
 .vision h4{
 	margin-top: 0px;
 }
-.contact_body .content_section{
-	position: relative;
-	background: none repeat scroll 0% 0%;
-	padding: 20px 0px 10px;
+
+ #content{
+        
+     padding-top:0px;
+ }
+        
+.row-content{
+    margin-left:0px;
+    margin-top:-15px;
 }
+        
+
+blockquote{
+    font-family:'Open Sans', Arial, sans-serif;
+}
+
+
+ .h4-top{      
+     margin-top:0px;
+ }
+       
+.h4-middle{       
+    margin-top:10px;
+}
+       

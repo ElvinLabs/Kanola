@@ -14,6 +14,20 @@
 <link href="../css/style.css" rel="stylesheet" />
 <link rel="../shortcut icon" href="fav.ico" />
 <link href="../skins/default.css" rel="stylesheet" />
+    
+    
+   <style>
+    
+       #thumbs li{
+        margin:5px 2px;
+       }
+       
+       
+      
+    
+    </style>
+    
+    
 </head>
 <body>
 <div id="wrapper">
@@ -44,7 +58,7 @@
                             $result = $conn->query($query);
                             if( $result->num_rows > 0 ){                                   
                         ?>
-                        <h4 style="margin-top:0px">Highways</h4>
+                        <h4 class="h4-top" >Ongoing Projects</h4>
                         <ul id="thumbs" class="portfolio">
                             <?php
                                 }
@@ -70,7 +84,7 @@
                             $result = $conn->query($query);
                             if( $result->num_rows > 0 ){                                   
                         ?>
-                        <h4 style="margin-top:10px"><br><br>Irrigation</h4>
+<!--                        <h4 style="margin-top:10px"><br><br>Irrigation</h4>-->
                         <ul id="thumbs" class="portfolio">
                             <?php
                                 }
@@ -96,7 +110,7 @@
                             $result = $conn->query($query);
                             if( $result->num_rows > 0 ){                                   
                         ?>
-                        <h4 style="margin-top:10px"><br><br>Bridges</h4>
+<!--                        <h4 style="margin-top:10px"><br><br>Bridges</h4>-->
                         <ul id="thumbs" class="portfolio">
                             <?php
                                 }
@@ -122,7 +136,7 @@
                             $result = $conn->query($query);
                             if( $result->num_rows > 0 ){                                   
                         ?>
-                        <h4 style="margin-top:10px"><br><br>Buildings</h4>
+<!--                        <h4 style="margin-top:10px"><br><br>Buildings</h4>-->
                         <ul id="thumbs" class="portfolio">
                             <?php
                                 }
@@ -148,7 +162,7 @@
                             $result = $conn->query($query);
                             if( $result->num_rows > 0 ){                                   
                         ?>
-                        <h4 style="margin-top:10px"><br><br>Water Drainage</h4>
+<!--                        <h4 style="margin-top:10px"><br><br>Water Drainage</h4>-->
                         <ul id="thumbs" class="portfolio">
                             <?php
                                 }
@@ -174,7 +188,7 @@
                             $result = $conn->query($query);
                             if( $result->num_rows > 0 ){                                   
                         ?>
-                        <h4 style="margin-top:10px"><br><br>Interlock</h4>
+<!--                        <h4 style="margin-top:10px"><br><br>Interlock</h4>-->
                         <ul id="thumbs" class="portfolio">
                             <?php
                                 }
