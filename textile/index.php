@@ -25,6 +25,7 @@
         include "../nav/nav.html"
     ?>
 	<!-- end header -->
+<!--
 	<section id="inner-headline">
 	<div class="container">
 		<div class="row">
@@ -36,6 +37,7 @@
 		</div>
 	</div>
 	</section>
+-->
 	<section id="content">
 	<div class="container">
         <div class="row">
