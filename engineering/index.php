@@ -11,9 +11,17 @@
 <link href="../css/fancybox/jquery.fancybox.css" rel="stylesheet">
 <link href="../css/jcarousel.css" rel="stylesheet" />
 <link href="../css/flexslider.css" rel="stylesheet" />
-<link href="../css/style.css" rel="stylesheet" />
 <link rel="../shortcut icon" href="fav.ico" />
 <link href="../skins/default.css" rel="stylesheet" />
+<link href="../css/style.css" rel="stylesheet" />
+    
+    
+    <style>
+    
+        
+      
+    
+    </style>
 
 
 </head>
@@ -23,25 +31,7 @@
 	<?php
         include "../nav/nav.html"
     ?>
-	<!-- end header -->
-<!--
-	<section id="inner-headline">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<ul class="breadcrumb">
-					<li><a href="#"><i class="fa fa-home"></i></a><i class="icon-angle-right"></i></li>
-					<li><a href="#">Sectors</a><i class="icon-angle-right"></i></li>
-					<li class="active">Construction &amp; Engineering</li>
-				</ul>
-                
-			</div>
-		</div>
-	</div>
-        
-        
--->
-        
+     
         
         
           <div class="container">   
@@ -72,10 +62,10 @@
 	</section>
 	<section id="content">
 	<div class="container">
-		<div class="row">
+		<div class="row row-content">
 			
 		<!-- divider -->
-		<div class="row">
+		<div class="row ">
 			<div class="col-lg-12">
 				<div class="solidline">
 				</div>
@@ -83,7 +73,7 @@
 		</div>
 		<!-- end divider -->
 		<!-- Descriptions -->
-		<div class="row">
+		<div class="row ">
 			<div class="col-lg-8">
 				<!-- Description -->
                 <h4>Kanola Construction &amp; Engineering</h4>
@@ -99,19 +89,41 @@ Also it supplies Asphalt, Interlock blocks &amp; Concrete for above agencies as 
 			<div class="col-lg-4">
 				<h5>It has classified as follows in ICTAD Grading with ISO 9001:2008 certification</h5>
 				<dl class="dl-horizontal">
-					<dt>C2 -</dt>
-					<dd>Highway Construction</dd>
-					<dt>C3 -</dt>
-					<dd>Irrigation Works</dd>
-					<dt>C3 -</dt>
-					<dd>Buildings Works</dd>
-					<dt>C4 -</dt>
-					<dd>Bridge Construction</dd>
-                    <dt>C5 -</dt>
-					<dd>Water Supply/Drainage Works</dd>
+
+                    
+                    <table class="table">
+                    
+                        <tbody>
+                            <tr>
+                                <td>C2</td>
+                                <td>Highway Construction</td>
+                            </tr>
+                            <tr>
+                                <td>C3</td>
+                                <td>Irrigation Works</td>
+                            </tr>
+                            <tr>
+                                <td>C3</td>
+                                <td>Buildings Works</td>
+                            </tr>
+                            <tr>
+                                <td>C4</td>
+                                <td>Bridge Construction</td>
+                            </tr>
+                            <tr>
+                                <td>C5</td>
+                                <td>Water Supply/Drainage Works</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    
 				</dl><br><br>
+                
+                
+                
                 <a href="../projectsOn/" class=" btn btn-theme" style="width:100%">Ongoing Projects<i class="icon-angle-right"></i></a><br>
-                <a href="../projects/" class=" btn btn-theme" style="width:100%;margin-top:10px">Finished Projects<i class="icon-angle-right"></i></a>
+                <a href="../projects/" class=" btn btn-theme" style="width:100%;margin-top:10px">Completed Projects<i class="icon-angle-right"></i></a>
 			</div>
 		</div>
 		<!-- divider -->
