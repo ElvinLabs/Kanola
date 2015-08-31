@@ -1,7 +1,7 @@
 <?php
 
 define("HOST","localhost");
-define("DBNAME","kanola");
+define("DBNAME","kanolalk_Kanola");
 define("UNAME","root");
 define("PW","");
 

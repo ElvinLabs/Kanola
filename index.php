@@ -6,81 +6,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="" />
 <meta name="author" content="http://elvinlabs.com" />
+<link rel="shortcut icon" href="fav.ico" />
 <!-- css -->
     
     
     
 <link href="css/bootstrap.min.css" rel="stylesheet" />
-<link href="css/style.css" rel="stylesheet" />
-<link rel="shortcut icon" href="fav.ico" />
 <link href="skins/default.css" rel="stylesheet" />
 <link href="css/flexslider.css" rel="stylesheet" />
+<link href="css/style.css" rel="stylesheet" />
     
     
-    <style>     
-        .logo{
-            height: 45px;
-            margin-top: 5px;
-            float: left;      
+    <style>
         
-        }     
-        .container{
-            max-width: 900px;  
-        }            
-        .container .flexslider img{ 
-            max-width: 900px;
-            
-        }          
-        .navbar-collapse{
-            max-height: 60px;           
-        }     
-        .navbar .nav > li >a{     
-            font-size: 14px;
-            line-height: 15px 
-        }     
-        navbar-header .col-md-4 {
-           margin-left: 0px;
-           padding-left: 0px;
-       }    
-        @media (max-width: 767px) {
-             .navbar-header{
-                 margin-top:0px;
-             }
-        }    
-            #featured .flexslider {
-            
-                margin: 0px;
-                height: 360px;
-                overflow: hidden;
-
-        } 
-        footer{
-            background: #333;
-            padding: 10px 0px 0px;
-        }
-        footer .row{
-            margin-bottom: 0px;
-        }
-        footer .bottom-menu{
-            padding-left: 0px;
-        }
-        footer .bottom-menu ul{
-            margin: 0px 0px 0px 15px;
-        }
-        footer .bottom-menu ul li{
-            font-size: 8pt;
-        }
-        .copywrite{
-            float: right;
-            text-align: right;
-        }
-        #sub-footer {
-            padding: 8px 0px 0px;
-            margin: 0px 0px 0px;
-        }
-        .sub-footer .row {
-            margin-bottom: 8px;
-        }
+        
     </style>
 
 
@@ -90,7 +29,9 @@
 <div id="wrapper">
 	<!-- start header -->
 
-    <header>
+    
+    
+        <header>
         <div class="navbar navbar-default navbar-static-top" >        
             <div class="container" >   
                <div class="navbar-header row" style="">                 
@@ -111,18 +52,23 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Sectors<b class=" icon-angle-down"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="engineering.php"><b>Construction &amp; Engineering</b></a></li>
-                                <li><a href="auto.php"><b>Auto &amp; Heavy Machinary</b></a></li>
-                                <li><a href="textiles.php"><b>Textile</b></a></li>
+                                <li><a href="engineering/"><b>Construction &amp; Engineering</b></a></li>
+                                <li><a href="auto/"><b>Auto &amp; Heavy Machinary</b></a></li>
+                                <li><a href="textiles/"><b>Textile</b></a></li>
                             </ul>
                         </li>
-                        <li><a href="about.php">About Us</a></li>
-                        <li><a href="contact.php">Contact Us</a></li>
+                        <li><a href="about/">About Us</a></li>
+                        <li><a href="contact/">Contact Us</a></li>
                     </ul>                
                 </div>              
             </div>       
         </div>
 	</header>
+    
+    
+    
+    
+    
     
     
     <div class="container">   
@@ -173,13 +119,22 @@
 							</div>
 				        </div>
 					</div>
-                    <!-- <div class="col-lg-1"></div> -->
-                    <div class="col-lg-4">
-                        <h4>Vision</h4>
-                        <span class="pullquote-left  alert alert-danger">“To be a leading &amp; dynamic enterprise in Sri Lanka”</span>
-                        <h4>Mision</h4>
-                        <span class="pullquote-left  alert alert-danger">“We offer solutions and services, which exceed customer expectations whilst providing our staff the opportunity for personal advancement with performance based recognition and rewards”</span>
+                    
+                    <div class="col-lg-4 comments">
+                        
+                        <h4 class="margin-top:0px;">Vision</h4>
+                        
+                        <div class=" col-lg-12 col-sm-12 pullquote-left">“To be a leading &amp; dynamic enterprise in Sri Lanka”</div>
+                        
+                        <h4>Mission</h4>
+                        
+                        <div class=" col-lg-12 col-sm-12 pullquote-left">“We offer solutions and services, which exceed customer expectations whilst providing our staff the opportunity for personal advancement with performance based recognition and rewards”</div>
+                        
+                        
                     </div>
+                    
+                    
+                    
 				</div>
 			</div>
 		</div>
@@ -187,28 +142,17 @@
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+                
     <footer id="footer">
     	<div class="container">
     		<div class="row">
                 <div class="col-lg-12 bottom-menu">
                     <ul class="list-inline">
-                        <li><a href="engineering.php">Construction &amp; Engineering</a></li>
-                        <li><a href="auto.php">Auto &amp; Heavy Machinaru</a></li>
-                        <li><a href="textiles.php">Textiles</a></li>
-                        <li><a href="about.php">About Us</a></li>
-                        <li><a href="contact.php">Contact Us</a></li>
+                        <li><a href="engineering/">Construction &amp; Engineering</a></li>
+                        <li><a href="auto/">Auto &amp; Heavy Machinaru</a></li>
+                        <li><a href="textiles/">Textiles</a></li>
+                        <li><a href="about/">About Us</a></li>
+                        <li><a href="contact/">Contact Us</a></li>
                         <li><div class="copyright"><p><span>&copy; KANOLA KCE 2015 All right reserved. </span></p></div></li>
                         <li>&nbsp;</li>
                         <li>Site by <a href="http://elvinlabs.com" target="_blank">ElvinLabs</a></li>
@@ -223,15 +167,10 @@
     	</div>
 	</footer>
     
+
     
     
-    
-    
-    
-    
-    
-    
-       
+   
     
 </div>
 <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>

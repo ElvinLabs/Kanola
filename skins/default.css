@@ -63,24 +63,6 @@ header .nav li.active ul.dropdown-menu li.active a{
 	border:1px solid #ED3237;
 }
 
-textarea:focus,
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="datetime"]:focus,
-input[type="datetime-local"]:focus,
-input[type="date"]:focus,
-input[type="month"]:focus,
-input[type="time"]:focus,
-input[type="week"]:focus,
-input[type="number"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="search"]:focus,
-input[type="tel"]:focus,
-input[type="color"]:focus,
-.uneditable-input:focus {
-  border-color: #ED3237;
-}
 
 input:focus {
 	border-color: #ED3237;
@@ -92,11 +74,11 @@ input:focus {
 }
 
 .pullquote-left {
-	border-left:5px solid #ED3237;
+	border-left:5px solid #222;
 }
 
 .pullquote-right {
-	border-right:5px solid #ED3237;
+	border-right:3px solid #ED3237;
 }
 
 /* cta */
@@ -132,27 +114,7 @@ ul.clients li:hover {
 
 
 /* blog */
-.post-meta {
-	border-top:4px solid #ED3237;
-}
-
-.post-meta .comments a:hover  {
-	color:#ED3237;
-}
-
-.widget ul.tags li a:hover {
-	background: #ED3237;
-}
-
-.recent-post .text h5 a:hover{
-	color:#ED3237;
-}
-
 /* pricing box */
-
-.pricing-box-alt.special .pricing-heading {
-	background: #ED3237;
-}
 
 
 /* portfolio */
@@ -216,10 +178,7 @@ ul.clients li:hover {
 
 /* footer */
 footer{
-	background:#ED3237;
-}
-#sub-footer{
-	background:#ED3237;
+	color: #222;
 }
 
 .navbar .nav > li > a:hover{

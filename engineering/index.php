@@ -7,27 +7,21 @@
 <meta name="description" content="" />
 <meta name="author" content="http://bootstraptaste.com" />
 <!-- css -->
-<link href="css/bootstrap.min.css" rel="stylesheet" />
-<link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">
-<link href="css/jcarousel.css" rel="stylesheet" />
-<link href="css/flexslider.css" rel="stylesheet" />
-<link href="css/style.css" rel="stylesheet" />
-<link rel="shortcut icon" href="fav.ico" />
+<link href="../css/bootstrap.min.css" rel="stylesheet" />
+<link href="../css/fancybox/jquery.fancybox.css" rel="stylesheet">
+<link href="../css/jcarousel.css" rel="stylesheet" />
+<link href="../css/flexslider.css" rel="stylesheet" />
+<link href="../css/style.css" rel="stylesheet" />
+<link rel="../shortcut icon" href="fav.ico" />
+<link href="../skins/default.css" rel="stylesheet" />
 
-<!-- Theme skin -->
-<link href="skins/default.css" rel="stylesheet" />
-
-<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-<!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
 
 </head>
 <body>
 <div id="wrapper">
 	<!-- start header -->
 	<?php
-        include "nav.html"
+        include "../nav/nav.html"
     ?>
 	<!-- end header -->
 	<section id="inner-headline">
@@ -43,6 +37,36 @@
 			</div>
 		</div>
 	</div>
+        
+        
+        
+        
+        
+          <div class="container">   
+    	<section id="featured">
+	<!-- start slider -->
+<!--	<div class="container">-->
+		  <div class="row" style="margin-bottom: 0px">
+			<div class="col-lg-12" style="">
+            <!-- Slider -->
+                <div id="main-slider" class="flexslider" style="height:300px;">
+                    <ul class="slides">
+                      <li>
+                        <img style="max-height:250px;" src="../img/slides/1.jpg" alt="" />
+                      </li>
+
+
+                    </ul>
+                </div>
+            <!-- end slider -->
+			</div>
+		  </div>
+<!--	</div>	-->	
+	   </section>      
+      </div>
+        
+   
+        
 	</section>
 	<section id="content">
 	<div class="container">
@@ -84,8 +108,8 @@ Also it supplies Asphalt, Interlock blocks &amp; Concrete for above agencies as 
                     <dt>C5 -</dt>
 					<dd>Water Supply/Drainage Works</dd>
 				</dl><br><br>
-                <a href="projectsOn.php" class=" btn btn-theme" style="width:100%">Ongoing Projects<i class="icon-angle-right"></i></a><br>
-                <a href="projects.php" class=" btn btn-theme" style="width:100%;margin-top:10px">Finished Projects<i class="icon-angle-right"></i></a>
+                <a href="../projectsOn/" class=" btn btn-theme" style="width:100%">Ongoing Projects<i class="icon-angle-right"></i></a><br>
+                <a href="../projects/" class=" btn btn-theme" style="width:100%;margin-top:10px">Finished Projects<i class="icon-angle-right"></i></a>
 			</div>
 		</div>
 		<!-- divider -->
@@ -93,23 +117,23 @@ Also it supplies Asphalt, Interlock blocks &amp; Concrete for above agencies as 
 	</div>
 	</section>
 	<?php
-        include "footer.html"
+        include "../footer/footer.html"
     ?>
 </div>
 <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
 <!-- javascript
     ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="js/jquery.js"></script>
-<script src="js/jquery.easing.1.3.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.fancybox.pack.js"></script>
-<script src="js/jquery.fancybox-media.js"></script>
-<script src="js/google-code-prettify/prettify.js"></script>
-<script src="js/portfolio/jquery.quicksand.js"></script>
-<script src="js/portfolio/setting.js"></script>
-<script src="js/jquery.flexslider.js"></script>
-<script src="js/animate.js"></script>
-<script src="js/custom.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/jquery.easing.1.3.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/jquery.fancybox.pack.js"></script>
+<script src="../js/jquery.fancybox-media.js"></script>
+<script src="../js/google-code-prettify/prettify.js"></script>
+<script src="../js/portfolio/jquery.quicksand.js"></script>
+<script src="../js/portfolio/setting.js"></script>
+<script src="../js/jquery.flexslider.js"></script>
+<script src="../js/animate.js"></script>
+<script src="../js/custom.js"></script>
 </body>
 </html>
