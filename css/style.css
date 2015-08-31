@@ -790,71 +790,69 @@ a.scrollup i:hover {
     margin-top: 5px;
     float: left;          
  }     
-        .container{
-            max-width: 900px;  
-        }            
-        .container .flexslider img{ 
-            max-width: 900px;
-            
-        }          
-        .navbar-collapse{
-            max-height: 60px;           
-        }     
-        .navbar .nav > li >a{     
-            font-size: 14px;
-            line-height: 15px 
-        }     
-        navbar-header .col-md-4 {
-           margin-left: 0px;
-           padding-left: 0px;
-       }    
-        @media (max-width: 767px) {
-             .navbar-header{
-                 margin-top:0px;
-             }
-        }    
-            #featured .flexslider {
-            
-                margin: 0px;
-                height: 360px;
-                overflow: hidden;
-        } 
-        footer{
-            background: #333;
-            padding: 10px 0px 0px;
-        }
-        footer .row{
-            margin-bottom: 0px;
-        }
-        footer .bottom-menu{
-            padding-left: 0px;
-        }
-        footer .bottom-menu ul{
-            margin: 0px 0px 0px 15px;
-        }
-        footer .bottom-menu ul li{
-            font-size: 8pt;
-        }
-        .copywrite{
-            float: right;
-            text-align: right;
-        }
-        #sub-footer {
-            padding: 8px 0px 0px;
-            margin: 0px 0px 0px;
-            background-color: #ED3237;
-        }
-        .sub-footer .row {
-            margin-bottom: 8px;
-        }
+.container{
+    max-width: 900px;  
+}            
+.container .flexslider img{ 
+    max-width: 900px;
+    
+}          
+.navbar-collapse{
+    max-height: 60px;           
+}     
+.navbar .nav > li >a{     
+    font-size: 14px;
+    line-height: 15px 
+}     
+navbar-header .col-md-4 {
+   margin-left: 0px;
+   padding-left: 0px;
+}    
+@media (max-width: 767px) {
+     .navbar-header{
+         margin-top:0px;
+     }
+}    
+    #featured .flexslider {
+    
+        margin: 0px;
+        height: 360px;
+        overflow: hidden;
+} 
+footer{
+    background: #333;
+    padding: 10px 0px 0px;
+}
+footer .row{
+    margin-bottom: 0px;
+}
+footer .bottom-menu{
+    padding-left: 0px;
+}
+footer .bottom-menu ul{
+    margin: 0px 0px 0px 15px;
+}
+footer .bottom-menu ul li{
+    font-size: 8pt;
+}
+.copywrite{
+    float: right;
+    text-align: right;
+}
+#sub-footer {
+    padding: 8px 0px 0px;
+    margin: 0px 0px 0px;
+    background-color: #ED3237;
+}
+.sub-footer .row {
+    margin-bottom: 8px;
+}
 .comments-box{
 
     border-bottom-color: #222;
     border-left: 2px solid #222;
     margin-right: 0px;
 }
-
-
 .comments h4{
 
     padding-top: 10px;

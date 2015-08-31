@@ -122,13 +122,13 @@
                     
                     <div class="col-lg-4 comments">
                         
-                        <h4 class="margin-top:0px;">Vision</h4>
+                        <div class="col-lg-12 col-sm-12"><h4>Vision</h4></div>
                         
-                        <div class=" col-lg-12 col-sm-12 pullquote-left">“To be a leading &amp; dynamic enterprise in Sri Lanka”</div>
+                        <div class="col-lg-12 col-sm-12 pullquote-left">“To be a leading &amp; dynamic enterprise in Sri Lanka”</div>
                         
-                        <h4>Mission</h4>
+                        <div class="col-lg-12 col-sm-12"><h4>Mission</h4></div>
                         
-                        <div class=" col-lg-12 col-sm-12 pullquote-left">“We offer solutions and services, which exceed customer expectations whilst providing our staff the opportunity for personal advancement with performance based recognition and rewards”</div>
+                        <div class="col-lg-12 col-sm-12 pullquote-left">“We offer solutions and services, which exceed customer expectations whilst providing our staff the opportunity for personal advancement with performance based recognition and rewards”</div>
                         
                         
                     </div>
