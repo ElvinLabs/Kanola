@@ -12,6 +12,25 @@
 <link href="../css/style.css" rel="stylesheet" />
 <link rel="../shortcut icon" href="fav.ico" />
 
+<style type="text/css">
+	body{
+		background: url("../img/page_bg.jpg") no-repeat center center fixed; 
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+
+	}
+	header .navbar-default{
+		background-color: rgba(255,255,255,0);
+	}
+	.pagetop img{
+		width: 100%;
+	}
+	#googlemaps{
+		padding-left: -20px;
+	}
+</style>
 
 </head>
 <body class="contact_body">
@@ -38,7 +57,9 @@
 	<section id="" class="content_section">
 		<div class="container">
         	<div class="row">
-        		<div class="col-lg-12"></div>
+        		<div class="col-lg-12 pagetop">
+        			<img src="../img/pagetop/contact.jpg">
+        		</div>
 				<div class="col-lg-6">
 						<div class="widget">
 							<h5 class="widgetheading">Address</h5>
