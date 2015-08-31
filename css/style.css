@@ -861,3 +861,8 @@ footer .bottom-menu ul li{
 .vision h4{
 	margin-top: 0px;
 }
+.contact_body .content_section{
+	position: relative;
+	background: none repeat scroll 0% 0%;
+	padding: 20px 0px 10px;
+}
