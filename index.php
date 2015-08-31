@@ -122,7 +122,7 @@
                     
                     <div class="col-lg-4 comments">
                         
-                        <div class="col-lg-12 col-sm-12"><h4>Vision</h4></div>
+                        <div class="col-lg-12 col-sm-12 vision"><h4>Vision</h4></div>
                         
                         <div class="col-lg-12 col-sm-12 pullquote-left">“To be a leading &amp; dynamic enterprise in Sri Lanka”</div>
                         
