@@ -6,10 +6,15 @@
 
 body {
 	font-family:'Open Sans', Arial, sans-serif;
-	font-size:14px;
+	font-size:12px;
 	font-weight:300;
 	line-height:1.6em;
 	color:#656565;
+	background: url("../img/page_bg.jpg") no-repeat center center fixed; 
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
 }
 
 a:active {
@@ -92,10 +97,18 @@ header .navbar {
 header .navbar-collapse  ul.navbar-nav {
     float: right;
     margin-right: 0;
+    position: absolute;
+    bottom: 5px;
+    right: 0px;
+    padding: 0 5px 5px 0;
 }
 
 header .navbar-default{
-    background-color: #fff;
+    background-color: rgba(255,255,255,0);
+}
+
+header .row{
+	margin: 20px 0px;
 }
 
 header .nav li a:hover,
@@ -112,7 +125,6 @@ header .nav li.active ul.dropdown-menu li.active a{
     -o-transition: all .3s ease;
     transition: all .3s ease;
 }
-
 
 header .navbar-default .navbar-nav > .open > a,
 header .navbar-default .navbar-nav > .open > a:hover,
