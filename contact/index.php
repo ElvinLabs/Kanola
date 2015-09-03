@@ -27,11 +27,18 @@
 	header .navbar-default{
 		background-color: rgba(255,255,255,0);
 	}
+	.pagetop{
+		margin-bottom: 50px;
+	}
 	.pagetop img{
 		width: 100%;
 	}
 	#googlemaps{
 		padding-left: -20px;
+	}
+	.cont-border{
+		border-left: 1px solid #888;
+		font-size: 12px;
 	}
 </style>
 
@@ -54,35 +61,30 @@
         		<div class="col-lg-12 pagetop">
         			<img src="../img/pagetop/contact.jpg">
         		</div>
-				<div class="col-lg-6">
+        		<div class="col-lg-4">
+						<div class="widget">
+							<h5 class="widgetheading">Contact</h5>
+						</div>
+				</div>
+				<div class="col-lg-8 cont-border">
 						<div class="widget">
 							<h5 class="widgetheading">Address</h5>
 							<address>
-							<strong>Kanola Construction &amp; Engineering</strong><br>
-							<strong>Kanola Auto &amp; Heavy Machinery</strong><br>
-							 Ihala Kalankuttiya , Kalankuttiya,<br>Sri Lanka.</address>
+							Kanola Construction &amp; Engineering<br>
+							Kanola Auto &amp; Heavy Machinery<br>
+							Ihala Kalankuttiya , Kalankuttiya,<br>Sri Lanka.</address>
 							<p>
 								
 							</p>
 						</div>
 				</div>
-	<section id="content">
-	    <div class="container">
-		    <div class="row">
-			   <div class="col-lg-6">
-						<div class="widget">
-							<h5 class="widgetheading">Address</h5>
-							<address>
-							<strong>Kanola Construction &amp; Engineering</strong><br>
-							<strong>Kanola Auto &amp; Heavy Machinery</strong><br>
-							 Ihala Kalankuttiya , Kalankuttiya,<br>Sri Lanka.</address>
-							<p>
-								
-							</p>
 
+        		<div class="col-lg-4">
+						<div class="widget">
+							<h5 class="widgetheading"></h5>
 						</div>
-			    </div>
-				<div class="col-lg-6">
+				</div>
+				<div class="col-lg-8 cont-border">
 					<div class="widget">
 						<h5 class="widgetheading">Digital Media</h5>
 						<ul class="list-unstyled">
