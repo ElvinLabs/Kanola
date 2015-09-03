@@ -65,42 +65,44 @@
 								
 							</p>
 						</div>
-
-	<section id="content">
-        <div class="container">
-        <div class="row">
-	   <div class="col-lg-6">
-				<div class="widget">
-					<h5 class="widgetheading">Address</h5>
-					<address>
-					<strong>Kanola Construction &amp; Engineering</strong><br>
-					<strong>Kanola Auto &amp; Heavy Machinery</strong><br>
-					 Ihala Kalankuttiya , Kalankuttiya,<br>Sri Lanka.</address>
-					<p>
-						
-					</p>
-
 				</div>
-        </div>
-			<div class="col-lg-6">
-				<div class="widget">
-					<h5 class="widgetheading">Digital Media</h5>
-					<ul class="list-unstyled">
-                        <li><i class="fa fa-phone fa-fw"></i>Office : +94 25 7200220</li>
-                        <li><i class="fa fa-phone fa-fw"></i>Mobile :+94 71 4270539 ,+94 71 9925125</li>
-                        <li><i class="fa fa-phone fa-fw"></i>Fax  : +94 25 2249616</li>
-                        <li><i class="fa fa-envelope-o fa-fw"></i>
-                            <a href="mailto:name@example.com">kanolathilak@gmail.com</a>
-                        </li>
-                    </ul>
+	<section id="content">
+	    <div class="container">
+		    <div class="row">
+			   <div class="col-lg-6">
+						<div class="widget">
+							<h5 class="widgetheading">Address</h5>
+							<address>
+							<strong>Kanola Construction &amp; Engineering</strong><br>
+							<strong>Kanola Auto &amp; Heavy Machinery</strong><br>
+							 Ihala Kalankuttiya , Kalankuttiya,<br>Sri Lanka.</address>
+							<p>
+								
+							</p>
+
+						</div>
+			    </div>
+				<div class="col-lg-6">
+					<div class="widget">
+						<h5 class="widgetheading">Digital Media</h5>
+						<ul class="list-unstyled">
+		                    <li><i class="fa fa-phone fa-fw"></i>Office : +94 25 7200220</li>
+		                    <li><i class="fa fa-phone fa-fw"></i>Mobile :+94 71 4270539 ,+94 71 9925125</li>
+		                    <li><i class="fa fa-phone fa-fw"></i>Fax  : +94 25 2249616</li>
+		                    <li><i class="fa fa-envelope-o fa-fw"></i>
+		                        <a href="mailto:name@example.com">kanolathilak@gmail.com</a>
+		                    </li>
+		                </ul>
+					</div>
 				</div>
 			</div>
-	</div>
-            </div>
+		</div>
 	</section>
+	<!-- start footer -->
 	<?php
         include "../footer/footer.html"
     ?>
+	<!-- end footer -->
 </div>
 <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
 <!-- javascript
