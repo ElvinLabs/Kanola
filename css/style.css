@@ -229,6 +229,7 @@ header ul.nav li ul li a {
 .navbar .nav > li > a {
   color: #111;
   text-shadow: none;
+    border-bottom: 2px solid #fff;
 }
 
 .navbar .nav a:hover {
