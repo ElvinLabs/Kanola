@@ -677,6 +677,11 @@ a.scrollup i:hover {
 	  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
 			  box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
 	}
+    
+    
+    
+    
+   
 	
 
 	
@@ -748,6 +753,10 @@ a.scrollup i:hover {
   [class*="span"] {
 		margin-bottom:20px;
   }
+    
+    
+    
+    
 
 }
 
@@ -778,6 +787,7 @@ a.scrollup i:hover {
 		font-size:14px;
 	}
 
+    
 
 }
 
@@ -796,10 +806,21 @@ a.scrollup i:hover {
 .container .flexslider img{ 
     max-width: 900px;
     
-}          
-.navbar-collapse{
-    max-height: 60px;           
-}     
+}  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .navbar .nav > li >a{     
     font-size: 14px;
     line-height: 15px 
@@ -884,5 +905,15 @@ blockquote{
        
 .h4-middle{       
     margin-top:10px;
+}
+ 
+
+
+@media (min-width :767px){
+
+    .navbar-collapse{
+        max-height: 250px;           
+    }
+    
 }
        

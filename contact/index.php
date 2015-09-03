@@ -14,7 +14,7 @@
 <link href="../css/style.css" rel="stylesheet" />
 <link rel="../shortcut icon" href="fav.ico" />
 
-<<<<<<< HEAD
+
 <style type="text/css">
 	body{
 		background: url("../img/page_bg.jpg") no-repeat center center fixed; 
@@ -34,9 +34,9 @@
 		padding-left: -20px;
 	}
 </style>
-=======
+
 <link href="../skins/default.css" rel="stylesheet" />
->>>>>>> origin/900-content
+
 
 </head>
 <body>
@@ -46,21 +46,8 @@
         include "../nav/nav.html"
     ?>
 	<!-- end header -->
-<!--
-	<section id="inner-headline">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<ul class="breadcrumb">
-					<li><a href="#"><i class="fa fa-home"></i></a><i class="icon-angle-right"></i></li>
-					<li class="active">Contact</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	</section>
--->
-<<<<<<< HEAD
+
+
 	<section id="" class="content_section">
 		<div class="container">
         	<div class="row">
@@ -78,7 +65,7 @@
 								
 							</p>
 						</div>
-=======
+
 	<section id="content">
         <div class="container">
         <div class="row">
@@ -92,7 +79,7 @@
 					<p>
 						
 					</p>
->>>>>>> origin/900-content
+
 				</div>
         </div>
 			<div class="col-lg-6">
