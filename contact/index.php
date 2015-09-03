@@ -14,34 +14,6 @@
 <link href="../css/style.css" rel="stylesheet" />
 <link rel="../shortcut icon" href="fav.ico" />
 
-
-<style type="text/css">
-	body{
-		background: url("../img/page_bg.jpg") no-repeat center center fixed; 
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		-o-background-size: cover;
-		background-size: cover;
-
-	}
-	header .navbar-default{
-		background-color: rgba(255,255,255,0);
-	}
-	.pagetop{
-		margin-bottom: 50px;
-	}
-	.pagetop img{
-		width: 100%;
-	}
-	#googlemaps{
-		padding-left: -20px;
-	}
-	.cont-border{
-		border-left: 1px solid #888;
-		font-size: 12px;
-	}
-</style>
-
 <link href="../skins/default.css" rel="stylesheet" />
 
 

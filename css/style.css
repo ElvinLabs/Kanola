@@ -928,4 +928,17 @@ blockquote{
     }
     
 }
-       
+
+
+.pagetop{
+	margin-bottom: 50px;
+}
+.pagetop img{
+	width: 100%;
+}
+
+.content_section .cont-border{
+	border-left: 1px solid #888;
+	font-size: 12px;
+}
+   
