@@ -49,8 +49,6 @@
                 <div class="navbar-collapse collapse ">
                   <ul class="nav navbar-nav">
                         <li ><a href="index.php">Home</a></li>
-                      <li><a href="about/">About Us</a></li>
-                        <li><a href="contact/">Contact Us</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Sectors<b class=" icon-angle-down"></b></a>
                             <ul class="dropdown-menu">
@@ -59,6 +57,9 @@
                                 <li><a href="textiles/"><b>Textile</b></a></li>
                             </ul>
                         </li>
+                      
+                      <li><a href="about/">About Us</a></li>
+                        <li><a href="contact/">Contact Us</a></li>
                         
                     </ul>                
                 </div>              
