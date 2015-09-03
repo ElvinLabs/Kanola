@@ -37,9 +37,12 @@
 	</div>
 	</section>
 -->
-	<section id="content">
+	<section id="content" class="about">
 	<div class="container">
         <div class="row">
+        	<div class="col-lg-12 pagetop">
+    			<img src="../img/pagetop/about.jpg">
+    		</div>
 			<div class="col-lg-12">
 				<div class="box-gray">
                     <h3> About our History</h3>
