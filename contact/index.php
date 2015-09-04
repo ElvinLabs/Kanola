@@ -27,7 +27,7 @@
 	<!-- end header -->
 
 
-	<section id="" class="content_section">
+	<section id="content" class="content_section">
 		<div class="container">
         	<div class="row">
         		<div class="col-lg-12 pagetop">
