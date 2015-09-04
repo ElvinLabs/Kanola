@@ -54,7 +54,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="engineering/"><b>Construction &amp; Engineering</b></a></li>
                                 <li><a href="auto/"><b>Auto &amp; Heavy Machinary</b></a></li>
-                                <li><a href="textiles/"><b>Textile</b></a></li>
+                                <li><a href="textile/"><b>Textile</b></a></li>
                             </ul>
                         </li>
                       

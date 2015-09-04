@@ -25,16 +25,14 @@
         include "../nav/nav.html"
     ?>
 	<!-- end header -->
-	<section id="inner-headline">
-	<div class="container">
-		<div class="row">
-
-		</div>
-	</div>
-	</section>
+    
+        
 	<section id="content">
 	<div class="container">
         <div class="row">
+            <div class="col-lg-12" style="padding-bottom:30px">
+                <img src="../img/pagetop/textile.jpg">
+            </div>
 			<div class="col-lg-12">
 				<div class="box-gray">
                                 <blockquote>
@@ -47,37 +45,26 @@
         
 		<div class="row">
 			<div class="col-lg-12">
-				<div class="clearfix">
-				</div>
 				<div class="row">
-					<section id="projects">
-					<ul id="thumbs" class="portfolio" style="list-style-type:none;">
-					
-						<li class="item-thumbs col-lg-4 design" data-id="id-0" data-type="web">
-                            <img src="../img/works/1.jpg" alt="">
-						</li>
-					
-						<li class="item-thumbs col-lg-4 design" data-id="id-1" data-type="web">
-                            <img src="../img/works/2.jpg" alt="">
-						</li>
-						
-						<li class="item-thumbs col-lg-4 photography" data-id="id-2" data-type="eweb">
-                            <img src="../img/works/3.jpg" alt="">
-						</li>
-					
-						<li class="item-thumbs col-lg-4 design" data-id="id-0" data-type="web">
-                            <img src="../img/works/4.jpg" alt="">
-						</li>
-					
-						<li class="item-thumbs col-lg-4 photography" data-id="id-4" data-type="web">
-                            <img src="../img/works/5.jpg" alt="">
-						</li>
-				
-						<li class="item-thumbs col-lg-4 photography" data-id="id-5" data-type="web">
-                            <img src="../img/works/6.jpg" alt="">
-						</li>
-					</ul>
-					</section>
+                    <div class="col-lg-4" style="padding-top:30px">
+                        <img src="../img/works/1.jpg" alt="">
+                    </div>
+                    <div class="col-lg-4" style="padding-top:30px">
+                        <img src="../img/works/2.jpg" alt="">
+                    </div>
+                    <div class="col-lg-4" style="padding-top:30px">
+                        <img src="../img/works/3.jpg" alt="">
+                    </div>
+                    <div class="col-lg-4" style="padding-top:30px">
+                        <img src="../img/works/4.jpg" alt="">
+                    </div>
+                    <div class="col-lg-4" style="padding-top:30px">
+                        <img src="../img/works/5.jpg" alt="">
+                    </div>
+                    <div class="col-lg-4" style="padding-top:30px">
+                        <img src="../img/works/6.jpg" alt="">
+                    </div>
+                    
 				</div>
 			</div>
 		</div>

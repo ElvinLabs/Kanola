@@ -32,48 +32,14 @@
         include "../nav/nav.html"
     ?>
      
-        
-        
-          <div class="container">   
-    	<section id="featured">
-	<!-- start slider -->
-<!--	<div class="container">-->
-		  <div class="row" style="margin-bottom: 0px">
-			<div class="col-lg-12" style="">
-            <!-- Slider -->
-                <div id="main-slider" class="flexslider" style="height:300px;">
-                    <ul class="slides">
-                      <li>
-                        <img style="max-height:250px;" src="../img/slides/1.jpg" alt="" />
-                      </li>
-
-
-                    </ul>
-                </div>
-            <!-- end slider -->
-			</div>
-		  </div>
-<!--	</div>	-->	
-	   </section>      
-      </div>
-        
-   
-        
-	</section>
-	<section id="content">
+	<section id="content" class="about">
 	<div class="container">
-		<div class="row row-content">
-			
-		<!-- divider -->
-		<div class="row ">
-			<div class="col-lg-12">
-				<div class="solidline">
-				</div>
-			</div>
-		</div>
-		<!-- end divider -->
-		<!-- Descriptions -->
-		<div class="row ">
+        <div class="row">
+        	<div class="col-lg-12 pagetop">
+    			<img src="../img/pagetop/engineering.jpg">
+    		</div>
+            
+            
 			<div class="col-lg-8">
 				<!-- Description -->
                 <h4>Kanola Construction &amp; Engineering</h4>
