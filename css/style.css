@@ -284,6 +284,10 @@ ul.nav li.dropdown a {
 	display:none;
 }
 
+.nav-padding{
+	padding-top: 30px;
+}
+
 /* ===================================
 5. Section: Featured
 ==================================== */
