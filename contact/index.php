@@ -31,7 +31,10 @@
 		<div class="container">
         	<div class="row">
         		<div class="col-lg-12 pagetop">
-        			<img src="../img/pagetop/contact.jpg">
+                    <div class="container">
+        			     <img src="../img/pagetop/contact.jpg">
+                    
+                    </div>
         		</div>
         		<div class="col-lg-4">
 						<div class="widget">

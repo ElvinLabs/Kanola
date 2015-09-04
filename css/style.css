@@ -97,7 +97,7 @@ header .navbar {
 header .navbar-collapse  ul.navbar-nav {
     float: right;
     margin-right: 0;
-    position: absolute;
+/*    position: absolute;*/
     bottom: 5px;
     right: 0px;
     padding: 0 5px 5px 0;

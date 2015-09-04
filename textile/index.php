@@ -28,13 +28,7 @@
 	<section id="inner-headline">
 	<div class="container">
 		<div class="row">
-<!--
-			<ul class="breadcrumb">
-					<li><a href="#"><i class="fa fa-home"></i></a><i class="icon-angle-right"></i></li>
-					<li><a href="#">Sectors</a><i class="icon-angle-right"></i></li>
-					<li class="active">Textile</li>
-				</ul>
--->
+
 		</div>
 	</div>
 	</section>
@@ -57,82 +51,29 @@
 				</div>
 				<div class="row">
 					<section id="projects">
-					<ul id="thumbs" class="portfolio">
-						<!-- Item Project and Filter Name -->
+					<ul id="thumbs" class="portfolio" style="list-style-type:none;">
+					
 						<li class="item-thumbs col-lg-4 design" data-id="id-0" data-type="web">
-						<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-<!--
-                            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="" href="img/works/1.jpg">
-                            <span class="overlay-img"></span>
-                            <span class="overlay-img-thumb font-icon-plus"></span>
-                            </a>
--->
-                            <!-- Thumb Image and Description -->
                             <img src="../img/works/1.jpg" alt="">
 						</li>
-						<!-- End Item Project -->
-						<!-- Item Project and Filter Name -->
-						<li class="item-thumbs col-lg-4 design" data-id="id-1" data-type="icon">
-						<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-<!--
-                            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="" href="img/works/2.jpg">
-                            <span class="overlay-img"></span>
-                            <span class="overlay-img-thumb font-icon-plus"></span>
-                            </a>
--->
-                            <!-- Thumb Image and Description -->
+					
+						<li class="item-thumbs col-lg-4 design" data-id="id-1" data-type="web">
                             <img src="../img/works/2.jpg" alt="">
 						</li>
-						<!-- End Item Project -->
-						<!-- Item Project and Filter Name -->
-						<li class="item-thumbs col-lg-4 photography" data-id="id-2" data-type="graphic">
-						<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-<!--
-                            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="" href="img/works/3.jpg">
-                            <span class="overlay-img"></span>
-                            <span class="overlay-img-thumb font-icon-plus"></span>
-                            </a>
--->
-                            <!-- Thumb Image and Description -->
+						
+						<li class="item-thumbs col-lg-4 photography" data-id="id-2" data-type="eweb">
                             <img src="../img/works/3.jpg" alt="">
 						</li>
-						<!-- End Item Project -->
-						<!-- Item Project and Filter Name -->
+					
 						<li class="item-thumbs col-lg-4 design" data-id="id-0" data-type="web">
-						<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-<!--
-                            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="" href="img/works/4.jpg">
-                            <span class="overlay-img"></span>
-                            <span class="overlay-img-thumb font-icon-plus"></span>
-                            </a>
--->
-                            <!-- Thumb Image and Description -->
                             <img src="../img/works/4.jpg" alt="">
 						</li>
-						<!-- End Item Project -->
-						<!-- Item Project and Filter Name -->
+					
 						<li class="item-thumbs col-lg-4 photography" data-id="id-4" data-type="web">
-						<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-<!--
-                            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="" href="img/works/5.jpg">
-                            <span class="overlay-img"></span>
-                            <span class="overlay-img-thumb font-icon-plus"></span>
-                            </a>
--->
-                            <!-- Thumb Image and Description -->
                             <img src="../img/works/5.jpg" alt="">
 						</li>
-						<!-- End Item Project -->
-						<!-- Item Project and Filter Name -->
-						<li class="item-thumbs col-lg-4 photography" data-id="id-5" data-type="icon">
-						<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-<!--
-                            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="" href="img/works/6.jpg">
-                            <span class="overlay-img"></span>
-                            <span class="overlay-img-thumb font-icon-plus"></span>
-                            </a>
--->
-                            <!-- Thumb Image and Description -->
+				
+						<li class="item-thumbs col-lg-4 photography" data-id="id-5" data-type="web">
                             <img src="../img/works/6.jpg" alt="">
 						</li>
 					</ul>
