@@ -1,4 +1,11 @@
-
+<?php
+    session_start();
+    if(!isset($_SESSION['user']))
+    {
+        header("Location:../login");
+       // echo $_SESSION['user'];
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -91,7 +98,7 @@
                                             <label>Project State</label>
                                             <select class="form-control" name="state">
                                                 <option value="Ongoing" >Ongoing</option>
-                                                <option value="Complete" >Finished</option>
+                                                <option value="Complete" >Completed</option>
                                             </select>
                                         </div>                                        
                                         <div class="form-group">
@@ -104,7 +111,7 @@
                                                 $title 		 = isset($_POST["title"]) ? $_POST['title'] : print( "plese insert the title");
                                                 $type		 = isset( $_POST["type"]) ? $_POST["type"] : print("plase select the type");
                                                 $state 		 = isset($_POST["state"]) ? $_POST["state"] : print("plase select the state");
-                                                $conn = $conn = connection();
+                                                $conn        = connection();
                                                 add_project($conn,$title,$type,$state);
                                             }
                                          ?>

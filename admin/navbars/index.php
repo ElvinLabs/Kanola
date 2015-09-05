@@ -96,12 +96,14 @@
                         <li>
                           <a href="#"><i class="fa fa-sitemap fa-fw"></i> Kanola Texttile<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">                                    
+<!--
                                         <li>
                                             <a href="../change%20text%20image/"> change image</a>
                                         </li>
                                         <li>
                                             <a href="../add%20text%20image/"> Add image</a>
                                         </li>                         
+-->
                             
                             </ul>
                         </li>
