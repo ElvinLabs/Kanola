@@ -80,17 +80,17 @@ require "define.php";
     */
 
 // function for add the project
-function add_project( $conn,$title, $client, $type, $state){
+function add_project( $conn, $title, $type, $state){
     //create a unique id
     $p_id = create_file_name();
-    $query ="INSERT INTO $type (P_id,Title,Client,Type,State) VALUES ('$p_id','$title','$client','$type','$state')";
+    $query ="INSERT INTO $type (P_id, Title, Type, State) VALUES ('$p_id','$title','$type','$state')";
     
     // execute the mysqli query
     if($conn->query($query)==true){
         
         echo "<script>alert('Successfuly Added');</script>";
     }else{
-        echo "error<br>". $conn->error;
+//        echo "error<br>". $conn->error;
         echo "<script>alert('Error Not Added');</script>";
         
     }
@@ -114,6 +114,8 @@ function save_one_image($desired_dir,$file){
                                         
             $img_path = $desired_dir.'/'.$file_name;                                   
             $images = $images.",".$img_path;
+    
+            //echo $img_path;
             
             if($file_size > 5145728){
                 $errors[]='File size must be less than 5 MB';

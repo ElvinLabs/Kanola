@@ -1,4 +1,10 @@
-
+<?php
+    session_start();
+    if(!isset($_SESSION['user'])){
+        header("Location:../login");
+       // echo $_SESSION['user'];
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,7 +49,7 @@
                     ?>
                     <div class="panel panel-default">                   
                      <div class="panel-heading">
-                        <p> Highways Complete projects</p>   
+                        <p><b> Highways Complete projects</b></p>   
                      </div>  
                     <div class="panel-body">
                          <div class="row">
@@ -56,7 +62,7 @@
                                  <table class="table">
                                     <tbody>
                                         <tr>                                            
-                                            <td><b><?php echo($row["Title"]);  ?></b></td>
+                                            <td><?php echo($row["Title"]);  ?></td>
                                         </tr>
                                     </tbody>
                                  </table>
@@ -82,7 +88,7 @@
                     ?>
                     <div class="panel panel-default">                   
                      <div class="panel-heading">
-                        <p> Irrigation Complete projects</p>   
+                        <p><b> Irrigation Complete projects</b></p>   
                      </div>    
                     <div class="panel-body">
                          <div class="row">
@@ -95,7 +101,7 @@
                                  <table class="table">
                                     <tbody>
                                         <tr>                                             
-                                            <td><b><?php echo($row["Title"]);  ?></b></td>
+                                            <td><?php echo($row["Title"]);  ?></td>
                                         </tr>
                                     </tbody>
                                  </table>
@@ -121,7 +127,7 @@
                     ?>
                     <div class="panel panel-default">                   
                      <div class="panel-heading">
-                        <p> Bridges Complete projects</p>   
+                        <p><b>Bridges Complete projects</b></p>   
                      </div>
                     <div class="panel-body">
                          <div class="row">
@@ -134,7 +140,7 @@
                                  <table class="table">
                                     <tbody>
                                         <tr>                                                       
-                                            <td><b><?php echo($row["Title"]);  ?></b></td>
+                                            <td><?php echo($row["Title"]);  ?></td>
                                         </tr>
                                     </tbody>
                                  </table>
@@ -161,7 +167,7 @@
                     ?>
                     <div class="panel panel-default">                   
                      <div class="panel-heading">
-                        <p> Buildings Complete projects</p>   
+                        <p><b>Buildings Complete projects</b></p>   
                      </div>   
                     <div class="panel-body">
                          <div class="row">
@@ -174,7 +180,7 @@
                                  <table class="table">
                                     <tbody>
                                         <tr>                                            
-                                            <td><b><?php echo($row["Title"]);  ?></b></td>
+                                            <td><?php echo($row["Title"]);  ?></td>
                                         </tr> 
                                     </tbody>     
                                  </table>
@@ -201,7 +207,7 @@
                     ?> 
                     <div class="panel panel-default">                   
                      <div class="panel-heading">
-                        <p>Water Drainage Complete projects</p>   
+                        <p><b>Water Drainage Complete projects</b></p>   
                      </div>      
                     <div class="panel-body">
                          <div class="row">
@@ -214,8 +220,8 @@
                                  <table class="table">
                                     <tbody>
                                         <tr>                                            
-                                            <td><b><?php echo($row["Title"]);  ?></b></td>
-                                        </tr>  
+                                            <td><?php echo($row["Title"]);  ?></td>
+                                        </tr> 
                                     </tbody> 
                                  </table>
                                 <form action='index.php' method='POST'>  
@@ -240,7 +246,7 @@
                     ?>
                     <div class="panel panel-default">                   
                      <div class="panel-heading">
-                        <p>Interlock Complete projects</p>   
+                        <p><b>Interlock Complete projects</b></p>   
                      </div>
                     <div class="panel-body">
                          <div class="row">
@@ -253,7 +259,7 @@
                                  <table class="table">
                                     <tbody>
                                         <tr>                                            
-                                            <td><b><?php echo($row["Title"]);  ?></b></td>
+                                            <td><?php echo($row["Title"]);  ?></td>
                                         </tr>
                                     </tbody>
                                  </table>
@@ -274,11 +280,11 @@
                     </div> 
  <!--***************************************** Asphalt Complete projects********************************************* --> 
                     <?php  
-                        $query = "SELECT * FROM Interlock WHERE State='Complete'";
+                        $query = "SELECT * FROM Asphalt WHERE State='Complete'";
                     ?>
                     <div class="panel panel-default">                   
                      <div class="panel-heading">
-                        <p>Asphalt Complete projects</p>   
+                        <p><b>Asphalt Complete projects</b></p>   
                      </div>
                     <div class="panel-body">
                          <div class="row">
@@ -291,7 +297,7 @@
                                  <table class="table">
                                     <tbody>
                                         <tr>                                            
-                                            <td><b><?php echo($row["Title"]);  ?></b></td>
+                                            <td><?php echo($row["Title"]);  ?></td>
                                         </tr>
                                     </tbody>
                                  </table>
@@ -320,6 +326,7 @@
                                 $conn = $conn = connection();
                                 if( $conn->query($query_img)){
                                     print("<script>alert('Project removed');</script>");
+                                    header("Refresh:0");
                                 }else{
                                     print("<script>alert('Error');</script>");
                                 }

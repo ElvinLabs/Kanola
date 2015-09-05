@@ -1,14 +1,10 @@
-
 <?php
-
-/*
     session_start();
     if(!isset($_SESSION['user']))
     {
         header("Location:../login");
        // echo $_SESSION['user'];
     }
-*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,7 +51,7 @@
                     
                     <div class="panel panel-default">                   
                      <div class="panel-heading">
-                         <p> Highways ongoing projects</p>   
+                         <p><b> Highways ongoing projects</b></p>   
                      </div>                        
                     <div class="panel-body">
                          <div class="row">
@@ -70,7 +66,7 @@
                                   <table class="table ">
                                     <tbody>
                                         <tr>                                                                                       
-                                           <td><b><?php echo($row["Title"]);  ?></b></td>
+                                           <td><?php echo($row["Title"]);  ?></td>
                                         </tr>                                      
                                     </tbody>
                                     
@@ -96,7 +92,7 @@
                     ?>                   
                     <div class="panel panel-default">                   
                      <div class="panel-heading">
-                        <p> Irrigation Ongoing projects</p>   
+                        <p><b>Irrigation Ongoing projects</b></p>   
                      </div>                      
                     <div class="panel-body">
                          <div class="row">
@@ -111,9 +107,9 @@
                                  <table class="table">
                                     <tbody>
                                         <tr>                                                                                       
-                                            <td><b><?php 
+                                            <td><?php 
                                                 echo( ($row["Title"]));
-                                                ?></b>
+                                                ?>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -142,7 +138,7 @@
                     ?>
                     <div class="panel panel-default">                   
                      <div class="panel-heading">
-                        <p> Bridges Ongoing projects</p>   
+                        <p><b> Bridges Ongoing projects</b></p>   
                      </div>                     
                     <div class="panel-body">
                          <div class="row">
@@ -155,7 +151,7 @@
                                  <table class="table">
                                     <tbody>
                                         <tr>                                                                                      
-                                            <td><b><?php echo($row["Title"]);  ?></b></td>
+                                            <td><?php echo($row["Title"]);  ?></td>
                                         </tr>
                                     </tbody>
                                  </table>
@@ -182,7 +178,7 @@
                     
                     <div class="panel panel-default">                   
                      <div class="panel-heading">
-                        <p>Buildings Ongoing projects</p>   
+                        <p><b>Buildings Ongoing projects</b></p>   
                      </div>                      
                     <div class="panel-body">
                          <div class="row">
@@ -196,7 +192,7 @@
                                  <table class="table">
                                     <tbody>
                                         <tr>                                             
-                                            <td><b><?php echo($row["Title"]);  ?></b></td>
+                                            <td><?php echo($row["Title"]);  ?></td>
                                         </tr>
                                     </tbody>
                                  </table>
@@ -222,7 +218,7 @@
                     ?>
                     <div class="panel panel-default">                   
                      <div class="panel-heading">
-                        <p>Water Drainage Ongoing projects</p>   
+                        <p><b>Water Drainage Ongoing projects</b></p>   
                      </div>
                         
                     <div class="panel-body">
@@ -236,7 +232,7 @@
                                  <table class="table">
                                     <tbody>
                                         <tr>                                            
-                                            <td><b><?php echo($row["Title"]);  ?></b></td>
+                                            <td><?php echo($row["Title"]);  ?></td>
                                         </tr>
                                     </tbody>
                                  </table>
@@ -262,7 +258,7 @@
                     ?>
                     <div class="panel panel-default">                   
                      <div class="panel-heading">
-                        <p>Interlock Ongoing projects</p>   
+                        <p><b>Interlock Ongoing projects</b></p>   
                      </div>    
                     <div class="panel-body">
                          <div class="row">
@@ -275,7 +271,7 @@
                                  <table class="table">
                                     <tbody>
                                         <tr>                                             
-                                            <td><b><?php echo($row["Title"]);  ?></b></td>
+                                            <td><?php echo($row["Title"]);  ?></td>
                                         </tr> 
                                     </tbody>  
                                  </table>
@@ -302,7 +298,7 @@
                     ?>               
                     <div class="panel panel-default">                   
                      <div class="panel-heading">
-                        <p> Asphalt Ongoing projects</p>   
+                        <p><b>Asphalt Ongoing projects</b></p>   
                      </div>
                         <div class="panel-body">
                          <div class="row">
@@ -315,7 +311,7 @@
                                  <table class="table">
                                     <tbody>
                                         <tr>                                             
-                                            <td><b><?php echo($row["Title"]);  ?></b></td>
+                                            <td><?php echo($row["Title"]);  ?></td>
                                         </tr> 
                                     </tbody>
                                  </table>

@@ -49,7 +49,7 @@
                                         while( $row = $result_ongo->fetch_assoc() ){
                                 ?>        
                                 <div class="col-md-4 col-sm-4">   
-                                    <img  class="img-responsive"  src="<?php echo($row['Path']); ?>">                              
+                                    <img  class="img-responsive"  src="<?php echo('../'.$row['Path']); ?>">                              
                                     <form role="form" action="index.php" method="post"  accept-charset="utf-8">
                                         <div class="form-group">
                                             <input class="form-control" type="hidden" name="id" value="<?php echo ($row['Id']); ?>"  >
@@ -91,7 +91,7 @@
                                         while( $row = $result_fini->fetch_assoc() ){
                                 ?>      
                                 <div class="col-md-4 col-sm-4">   
-                                    <img  class="img-responsive"  src="<?php echo($row['Path']); ?>">                              
+                                    <img  class="img-responsive"  src="<?php echo('../'.$row['Path']); ?>">                              
                                     <form role="form" action="index.php" method="post"  accept-charset="utf-8">
                                         <div class="form-group">
                                             <input class="form-control" type="hidden" name="id" value="<?php echo ($row['Id']); ?>"  >
@@ -117,7 +117,7 @@
                                     if($_POST){
                                         $type  = isset($_POST['type']) ? $_POST['type'] : '';
                                         $id    = isset($_POST['id']) ? $_POST['id'] : '';
-                                        $path  = isset($_POST['path']) ? $_POST['path'] : '';
+                                        $path  = isset($_POST['path']) ? '../'.$_POST['path'] : '';
                                         $conn  = connection();
                                         $query = "DELETE FROM $type WHERE Id='$id'";
                                         if( $conn->query($query) == true){

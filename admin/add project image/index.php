@@ -1,4 +1,10 @@
-
+<?php
+    session_start();
+    if(!isset($_SESSION['user'])){
+        header("Location:../login");
+       // echo $_SESSION['user'];
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,8 +70,11 @@
                                             $alt_text = isset( $_POST['alt_text']) ? $_POST['alt_text'] : '';
                                             $type     = isset( $_POST['type']) ? $_POST['type'] : '';
                                             $files    = isset($_FILES['files'] ) ? $_FILES['files'] : "";
-                                            $desired_dir = "../../construction/img/".$type;
-                                            $path = $desired_dir."/".$_FILES['files']['name'];
+                                            
+                                            $desired_dir = "../../img/engineering/".$type;
+                                            
+                                            
+                                            $path = "../img/engineering/".$type."/".$_FILES['files']['name'];
                                             if (  add_project_image($type,$path,$alt_text) ){
                                                  save_one_image( $desired_dir,$files);
                                                  echo "<script>alert('image added');</script>";
@@ -90,10 +99,10 @@
 
     </div>
     <!-- /#wrapper -->
-    <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../../bower_components/metisMenu/dist/metisMenu.min.js"></script>
-    <script src="../../dist/js/sb-admin-2.js"></script>
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    <script src="../dist/js/sb-admin-2.js"></script>
 </body>
 
 </html>

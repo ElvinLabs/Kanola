@@ -1,16 +1,4 @@
-
-<?php
-    session_start();
-    if(!isset($_SESSION['user']))
-    {
-        header("Location:../login");
-       // echo $_SESSION['user'];
-    }
-?>
-
-
 <!--  navbar top-->
-
 <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -26,8 +14,9 @@
             <ul class="nav navbar-top-links navbar-right">
                 
                 <!-- /.dropdown -->
+                
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin
                         <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
@@ -43,12 +32,6 @@
 
 
 <!--  end of navbar top-->
-
-
-
-
-
-
 
 <!--  navbar left-->
 
@@ -66,7 +49,7 @@
                                     <a href="../show%20ongoing%20projects/">ongoing</a>
                                 </li>
                                 <li>
-                                    <a href="../show%20finished%20project/">finished </a>
+                                    <a href="../show%20finished%20project/">Completed </a>
                                 </li>
                                 <li>
                                     <a href="../add%20project/"> Add Projets</a>
@@ -112,19 +95,13 @@
                         
                         <li>
                           <a href="#"><i class="fa fa-sitemap fa-fw"></i> Kanola Texttile<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                
-                                    
-                                    
+                            <ul class="nav nav-second-level">                                    
                                         <li>
                                             <a href="../change%20text%20image/"> change image</a>
                                         </li>
                                         <li>
                                             <a href="../add%20text%20image/"> Add image</a>
-                                        </li>
-                                    
-                                
-                                
+                                        </li>                         
                             
                             </ul>
                         </li>

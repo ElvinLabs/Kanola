@@ -380,3 +380,8 @@ table.dataTable thead .sorting:after {
 
 
 }
+
+
+.pannel-heading p{
+    font-style:oblique;
+}
