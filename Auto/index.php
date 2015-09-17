@@ -11,10 +11,9 @@
 <link href="../css/fancybox/jquery.fancybox.css" rel="stylesheet">
 <link href="../css/jcarousel.css" rel="stylesheet" />
 <link href="../css/flexslider.css" rel="stylesheet" />
-<link href="../css/style.css" rel="stylesheet" />
 <link rel="../shortcut icon" href="fav.ico" />
-
 <link href="../skins/default.css" rel="stylesheet" />
+<link href="../css/style.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -24,49 +23,72 @@
 	<?php
         include "../nav/nav.html"
     ?>
-	<!-- end header -->
-<!--
-	<section id="inner-headline">
-	<div class="container">
-		<div class="row">
-			<ul class="breadcrumb">
-					<li><a href="#"><i class="fa fa-home"></i></a><i class="icon-angle-right"></i></li>
-					<li><a href="#">Sectors</a><i class="icon-angle-right"></i></li>
-					<li class="active">Auto &amp; Heavy Machinary</li>
-				</ul>
-		</div>
-	</div>
-	</section>
--->
-	<section id="content">
+
+	<section id="content" class="about">
 	<div class="container">
         <div class="row">
+        	<div class="col-lg-12 pagetop">
+    			<img src="../img/pagetop/auto.jpg">
+    		</div>
 			<div class="col-lg-12">
-				<div >
-                                <blockquote>
-								<i class="icon-quote-left"></i>Kanola Auto &amp; Heavy Machinery satisfying its customers offering their dream motor vehicles, even if it’s not displayed in our show room. To ensure about the quality of vehicles Mr. Wijekoon personally engage with the process when select the vehicles to import. Our great expectation is to serve the customer in our best to satiate their expectations.</blockquote>
+				<div class="box-gray">
+                    <h3>Car and Vehicle</h3>                                
 				</div>
-			</div>
-            
-                <div class="col-lg-12" style="margin-top: -10px">
-            <!-- Slider -->
-                <div id="main-slider" class="flexslider">
-                    <ul class="slides">
-                      <li>
-                        <img src="../Auto/slide/auto.jpg" alt="" />
-                      </li>
-                      <li>
-                        <img src="../Auto/slide/heavy.jpg" alt="" />
-                      </li>
-                    </ul>
+                
+                
+                <div class="col-lg-6 col-md-6 col-sm-6" id="auto">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <img class="img-thumbnail" src="img/1.jpg" width="100%">
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <p><b>Honda GP5 L Grade 2014</b><br>
+                            11,000 km<br>
+                            <strong>Rs 3,000,000</strong></p>
+                        </div>
                 </div>
-            <!-- end slider -->
-            </div>
+                
+                <div class="col-lg-6 col-md-6 col-sm-6" id="auto">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <img class="img-thumbnail" src="img/1.jpg" width="100%">
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <p><b>Honda GP5 L Grade 2014</b><br>
+                            11,000 km<br>
+                            <strong>Rs 3,000,000</strong></p>
+                        </div>
+                </div>
+                
+                <div class="col-lg-6 col-md-6 col-sm-6" id="auto">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <img class="img-thumbnail" src="img/1.jpg" width="100%">
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <p><b>Honda GP5 L Grade 2014</b><br>
+                            11,000 km<br>
+                            <strong>Rs 3,000,000</strong></p>
+                        </div>
+                </div>
+                
+                <div class="col-lg-6 col-md-6 col-sm-6" id="auto">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <img class="img-thumbnail" src="img/1.jpg" width="100%">
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <p><b>Honda GP5 L Grade 2014</b><br>
+                            11,000 km<br>
+                            <strong>Rs 3,000,000</strong></p>
+                        </div>
+                </div>
+                
+                
+                
+			</div>
 		</div>
         
 	</div>
 	</section>
-	<?php
+<!--	footer-->
+    <?php
         include "../footer/footer.html"
     ?>
 </div>
@@ -74,7 +96,7 @@
 <!-- javascript
     ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="../js/jquery.js"></script>
+ <script src="../js/jquery.js"></script>
 <script src="../js/jquery.easing.1.3.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/jquery.fancybox.pack.js"></script>
