@@ -34,7 +34,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2 class="page-header"><b>Construction Project</b></h2>
+                    <h2 class="page-header"><b>Kanola Auto and Heavy Mechinary</b></h2>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -43,29 +43,28 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            ongoing project image edit
+                            Availble Vehicles
                         </div>
                         <div class="panel-body">
                             <div class="row">
                                 <?php
                                     require '../../functions&defined/function.php';
-                                    $query_ongo = "SELECT * FROM Ongoing_img";
+                                    $query_auto = "SELECT * FROM Auto";
                                     $conn = connection();
-                                    $result_ongo = $conn->query($query_ongo);
-                                    if( $result_ongo->num_rows > 0){
-                                        while( $row = $result_ongo->fetch_assoc() ){
+                                    $result = $conn->query($query_auto);
+                                    if( $result->num_rows > 0){
+                                        while( $row = $result->fetch_assoc() ){
+                                            
+                                            $file_name = $row['file_name'];
                                 ?>        
                                 <div class="col-md-4 col-sm-4">   
-                                    <img  class="img-responsive"  src="<?php echo($row['Path']); ?>">                              
+                                    <img  class="img-responsive"  src="<?php echo('../../Auto/images/'.$file_name.'/'.$file_name.'-0.jpg'); ?>">                              
                                     <form role="form" action="index.php" method="post"  accept-charset="utf-8">
                                         <div class="form-group">
-                                            <input class="form-control" type="hidden" name="id" value="<?php echo ($row['Id']); ?>"  >
+                                            <input class="form-control" type="hidden" name="file_name" value="<?php echo ($file_name); ?>">
                                         </div>
                                         <div class="form-group">
-                                            <input class="form-control" type="hidden" name="type" value="Ongoing_img">
-                                        </div>
-                                        <div class="form-group">
-                                            <input class="form-control" type="hidden" name="path" value="<?php echo($row['Path']); ?>">
+                                            <input class="form-control" type="hidden" name="count" value="<?php echo($row['Img_count']); ?>">
                                         </div>
                                         <div class="form-group">
                                             <input class="form-control" class="btn btn-default" type="submit" value="remove" >
@@ -84,64 +83,32 @@
                     <!-- /.panel -->
                 </div>
                 <!-- /.col-lg-12 -->
-                 <div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            finished project image edit
-                        </div>
-                        <div class="panel-body">
-                            <div class="row">     
-                                  <?php
-                                    $query_fini = "SELECT * FROM Finished_img";
-                                    $result_fini = $conn->query($query_fini);
-                                    if( $result_fini->num_rows > 0){
-                                        while( $row = $result_fini->fetch_assoc() ){
-                                ?>      
-                                <div class="col-md-4 col-sm-4">   
-                                    <img  class="img-responsive"  src="<?php echo($row['Path']); ?>">                              
-                                    <form role="form" action="index.php" method="post"  accept-charset="utf-8">
-                                        <div class="form-group">
-                                            <input class="form-control" type="hidden" name="id" value="<?php echo ($row['Id']); ?>"  >
-                                        </div>
-                                        <div class="form-group">
-                                            <input class="form-control" type="hidden" name="type" value="Finished_img">
-                                        </div>
-                                        <div class="form-group">
-                                            <input class="form-control" type="hidden" name="path" value="<?php echo($row['Path']); ?>">
-                                        </div>
-                                        <div class="form-group">
-                                            <input class="form-control" class="btn btn-default" type="submit" value="remove" >
-                                        </div>
-                                    </form>                                   
-                                </div>                    
-                                        
-                                <?php
-                                        }                                   
-                                    }else  echo $conn->error;                                                                      
-                                    $conn->close();
-                                ?>            
+                                  
+                                      
+                                           
                                 <?php   
                                     if($_POST){
-                                        $type  = isset($_POST['type']) ? $_POST['type'] : '';
-                                        $id    = isset($_POST['id']) ? $_POST['id'] : '';
-                                        $path  = isset($_POST['path']) ? $_POST['path'] : '';
+                                        $file_name  = isset($_POST['file_name']) ? $_POST['file_name'] : '';
+                                        $image_count    = isset($_POST['count']) ? $_POST['count'] : '';
                                         $conn  = connection();
-                                        $query = "DELETE FROM $type WHERE Id='$id'";
-                                        if( $conn->query($query) == true){
-                                             delete_img( $path );
-                                            echo "<script> alert('image removed');</script>";
-                                            echo "image removed";
-                                        }else echo $conn->error;
-                                        $conn->close();
+                                        $dir = "../../Auto/images/".$file_name;
+                                        $result = auto_delete_img( $dir ,$image_count,$file_name);
+                                        
+                 
+                                        if($result){
+                                            $query = "DELETE FROM Auto WHERE file_name='$file_name'";
+                                            if( $conn->query($query) == true){
+                                                echo "<script> alert('image removed');</script>";
+                                                echo "image removed";
+                                            }else echo $conn->error;
+                                            $conn->close();
+                                        
+                                        }
+                                        
+                                       
                                     }
                                 ?>
-                            </div>
-                            <!-- /.row (nested) -->
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
+                  
             </div>
             <!-- /.row -->
         </div>

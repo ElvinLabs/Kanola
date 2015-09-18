@@ -36,6 +36,18 @@
 				</div>
                 
                 
+                
+                <?php
+            
+                    require "../functions&defined/function.php";
+                    $conn = connection();
+
+                    $query = "";
+            
+            
+                ?>
+                
+                
                 <div class="col-lg-6 col-md-6 col-sm-6" id="auto">
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <img class="img-thumbnail" src="img/1.jpg" width="100%">

@@ -116,7 +116,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Upload Images</label>
-                                            <input type="file"  name="files" id="imgid" multiple/ >
+                                            <input type="file"  name="files[]" id="imgid" multiple/ >
                                             <img src="#" alt="your image" id="image" style="width:100px;height:100px;">   
                                         </div>
                                         <div class="form-group">
@@ -124,6 +124,10 @@
                                         </div>
                                     </form> 
                                     <?php 
+
+                                        require "../../functions&defined/function.php";
+
+
                                         if($_POST){  
                                             $category    = isset($_POST['category']) ? $_POST['category'] : "";
                                             $brand       = isset($_POST['brand']) ? $_POST['brand'] : "" ;
@@ -137,9 +141,13 @@
                                             $location    = isset($_POST['location']) ? $_POST['location'] : "";
                                             $description = isset($_POST['description']) ? $_POST['description'] : "";
                                             $files       = isset($_FILES['files'] ) ? $_FILES['files'] : "";
+                                            //echo "came";
+                                            //print_r($files["name"]);
+                                           
 
-                                            echo "came";
-                                            print_r($files);
+                                           $result = add_auto( $category, $brand, $model, $model_yr, $condition, $mileage, $transmition, $capacity, $fuel_type, $location, $description, $files );
+                                            if($result)  print("<script>alert('Added Sucsessfuly')</script>");  
+                                                      
                                         }
                                     ?>     
                                 </div>
