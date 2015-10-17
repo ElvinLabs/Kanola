@@ -15,6 +15,8 @@
 <link rel="../shortcut icon" href="fav.ico" />
 <link href="../skins/default.css" rel="stylesheet" />
 
+
+
 </head>
 <body>
 <div id="wrapper">
@@ -24,19 +26,7 @@
         include "../nav/nav.html"
     ?>
 	<!-- end header -->
-<!--
-	<section id="inner-headline">
-	<div class="container">
-		<div class="row">
-			<ul class="breadcrumb">
-					<li><a href="#"><i class="fa fa-home"></i></a><i class="icon-angle-right"></i></li>
-					<li><a href="#">Sectors</a><i class="icon-angle-right"></i></li>
-					<li class="active">About us</li>
-				</ul>
-		</div>
-	</div>
-	</section>
--->
+
 	<section id="content" class="about">
 	<div class="container">
         <div class="row">
@@ -45,7 +35,7 @@
     		</div>
 			<div class="col-lg-12">
 				<hr><div class="box-gray">
-                    <h3>Honda GP5 L Grade 2014</h3>                                
+                    <h3>Kanola Auto Vehicles</h3>                                
 				</div><hr>
                 <div class="row">
 
@@ -76,7 +66,7 @@
 
 
                                     <div class="col-lg-8">
-                                        <img src="<?php echo ($path.'-0.jpg'); ?>" width="100%">
+                                        <img src="<?php echo ($path.'-0.jpg'); ?>" width="100%" id="begin">
 
                                         <?php
                                             for ($i=0; $i <$row['Img_count'] ; $i++) { 
@@ -85,7 +75,7 @@
                                             
                                         ?>
                                             <div style="padding:2px" class="col-lg-3">
-                                                <img src="<?php echo ($path); ?>" width="100%">
+                                                <img src="<?php echo ($path); ?>" width="100%" onclick="imgChange(this);">
                                             </div>
                                         <?php
                                             }
@@ -111,10 +101,10 @@
                         
                                     </div>
 
-                                    <div class="col-lg-12">  <hr>
+                                    <div class="col-lg-12" style="font-size:16px;color:#222;line-height: 1.8em;">  <hr>
                                      <p>
-                                     Other details:  <?php echo ($row['Description']); ?><br>
-                                     Location : <? echo ($row['Location']); ?>
+                                     <b>Other details:</b>  <?php echo ($row['Description']); ?><br>
+                                     <b>Location</b> : <? echo ($row['Location']); ?>
                                     </p>
                                 </div>
 
@@ -163,5 +153,16 @@
 <script src="../js/jquery.flexslider.js"></script>
 <script src="../js/animate.js"></script>
 <script src="../js/custom.js"></script>
+<script type="text/javascript">
+    
+    var currentImg;
+//    currentImg = $('#begin').attr("src");
+    function imgChange(Img){
+        currentImg =$(Img).attr('src');
+        $('#begin').attr("src",currentImg);
+        
+    }
+
+</script>
 </body>
 </html>
