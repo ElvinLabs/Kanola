@@ -974,3 +974,9 @@ blockquote{
     background-repeat:   no-repeat;
     background-size:     cover;
 }
+
+.autobutton{
+    color: #fff;
+    background: #0078e7; 
+    border-color: #fff;
+}

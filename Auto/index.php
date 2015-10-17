@@ -60,19 +60,22 @@
 
                                 
 
-                                <div class="col-lg-6 col-md-6 col-sm-6"  id="auto">
-                                     <div class="col-lg-6 col-md-6 col-sm-6 img"  style="background-image:url('<?php echo ($path); ?>')">
-                                         <!-- <img class="img-thumbnail" alt="" src="" width="100%"> -->
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"  id="auto" style="border-left: solid 2px #acacac;" >
+                                     <div class="col-lg-6 col-md-6 col-sm-6 img"  style="background-image:url('<?php echo ($path); ?>'); margin:10px">
+                                          <img class="img-thumbnail" alt="" src="<?php echo ($path); ?>" width="100%" style="visibility:hidden"> 
                                      </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6">
-                                        <form action="item.php" method="post">
+                                    <div class="col-lg-6 col-md-6 col-sm-6" style="width:200px">
+                                        <form action="item.php" method="post" style="padding-top:10px">
                                             
 
-                                            <p class="details"><b>Model : <?php echo ($row['Model']);  ?></b>
-                                            <p class="details"><b>Brand : <?php echo ($row['Brand']);  ?></b>
+                                            <p class="details">
+                                                <b style="color:#000;font-size:20px">Model : <?php echo ($row['Model']);  ?></b><br>
+                                                <b style="color:#222;font-size:13px">Brand : <?php echo ($row['Brand']);  ?></b><br>
+                                                <b style="color:#222;font-size:13px">Engine Capasity : <?php echo ($row['Eng_cap']);  ?></b><br>
+                                                <b style="color:#222;font-size:13px">Fuel type : <?php echo ($row['Fuel_type']);  ?></b>
                                             </p>
                                             <input type="hidden" name="id" value="<?php echo ($row['Id']); ?>" >
-                                            <input type="submit" value="More" >
+                                            <input class="autobutton pull-left btn btn-theme" style="flote:bottom;margin-top:10px" type="submit" value="More" >
                                         </form>
 
                                     </div>
