@@ -1,4 +1,4 @@
-<!--  navbar top-->
+
 <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -64,7 +64,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Kanola Auto & Heavy<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Kanola Auto<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="#">Auto Vehicals<span class="fa arrow"></span></a>
@@ -77,7 +77,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li>
+                                <!-- <li>
                                     <a href="#"> Hevy Mechinary<span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
@@ -87,7 +87,7 @@
                                             <a href="../add%20heavy/"> Add Heavy</a>
                                         </li>
                                     </ul>
-                                </li>
+                                </li> -->
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
@@ -118,4 +118,4 @@
     
     
     
-    <!--  end of navbar left-->
+    <!--  end of navbar left

@@ -15,6 +15,11 @@
 <link href="../skins/default.css" rel="stylesheet" />
 <link href="../css/style.css" rel="stylesheet" />
 
+<style type="text/css">
+    
+
+    
+</style>
 </head>
 <body>
 <div id="wrapper">
@@ -35,25 +40,79 @@
                     <h3>Car and Vehicle</h3>                                
 				</div>
                 
-                
-                
-                <?php
-            
-                    require "../functions&defined/function.php";
-                    $conn = connection();
+                        
 
-                    $query = "";
-            
-            
-                ?>
+                       
+                            
+                                <?php
+                                    require "../functions&defined/function.php";
+                                    $query_auto = "SELECT * FROM Auto";
+                                    $conn = connection();
+                                    $result = $conn->query($query_auto);
+                                    if( $result->num_rows > 0){
+                                        while( $row = $result->fetch_assoc() ){
+                                            
+                                            $file_name = $row['file_name'];
+                                            $path = "images/".$file_name."/".$file_name."-0.jpg";
+                                ?>  
+
+
+
+                                
+
+                                <div class="col-lg-6 col-md-6 col-sm-6"  id="auto">
+                                     <div class="col-lg-6 col-md-6 col-sm-6 img"  style="background-image:url('<?php echo ($path); ?>')">
+                                         <!-- <img class="img-thumbnail" alt="" src="" width="100%"> -->
+                                     </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                        <p class="details"><b>Model : <?php echo ($row['Model']);  ?></b>
+                                        <p class="details"><b>Brand : <?php echo ($row['Brand']);  ?></b>
+                                        </p>
+                                    </div>
+                                </div>
+
+
+                                <?php
+                                        }                                   
+                                    }else  echo $conn->error;
+                                ?>
+                            
+                        
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 
                 
-                <div class="col-lg-6 col-md-6 col-sm-6" id="auto">
+<!--                 <div class="col-lg-6 col-md-6 col-sm-6" id="auto">
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <img class="img-thumbnail" src="img/1.jpg" width="100%">
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
-                            <p><b>Honda GP5 L Grade 2014</b><br>
+                            <p class="details"><b>Honda GP5 L Grade 2014</b><br>
                             11,000 km<br>
                             <strong>Rs 3,000,000</strong></p>
                         </div>
@@ -64,33 +123,13 @@
                             <img class="img-thumbnail" src="img/1.jpg" width="100%">
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
-                            <p><b>Honda GP5 L Grade 2014</b><br>
+                            <p class="details"><b>Honda GP5 L Grade 2014</b><br>
                             11,000 km<br>
                             <strong>Rs 3,000,000</strong></p>
                         </div>
                 </div>
+                 -->
                 
-                <div class="col-lg-6 col-md-6 col-sm-6" id="auto">
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <img class="img-thumbnail" src="img/1.jpg" width="100%">
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <p><b>Honda GP5 L Grade 2014</b><br>
-                            11,000 km<br>
-                            <strong>Rs 3,000,000</strong></p>
-                        </div>
-                </div>
-                
-                <div class="col-lg-6 col-md-6 col-sm-6" id="auto">
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <img class="img-thumbnail" src="img/1.jpg" width="100%">
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <p><b>Honda GP5 L Grade 2014</b><br>
-                            11,000 km<br>
-                            <strong>Rs 3,000,000</strong></p>
-                        </div>
-                </div>
                 
                 
                 

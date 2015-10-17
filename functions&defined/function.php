@@ -1,10 +1,7 @@
 <?php
 
 
-
 require "define.php";
-
-
         
 function connection(){  
         $con = mysqli_connect(HOST, UNAME, PW, DBNAME);       
@@ -54,14 +51,14 @@ function save_img( $files,  $desired_dir,$dir_name){
             $img_path = $desired_dir.'/'.$file_name;                                   
             $images = $images.",".$img_path;
             
-            if($file_size > 3145728){
-                $errors[]='File size must be less than 3 MB';
+            if($file_size > 5145728){
+                $errors[]='File size must be less than 5 MB';
             }
           
             
             if(empty($errors)==true){
                 if(is_dir($desired_dir)==false){
-                    mkdir("$desired_dir", 0700);		// Create directory if it does not exist
+                    mkdir("$desired_dir", 0754);		// Create directory if it does not exist
                 }
                 if(is_dir("$desired_dir/".$file_name)==false){
                     move_uploaded_file($file_tmp,"$desired_dir/".$file_name);
@@ -146,9 +143,6 @@ function delete_img( $path ){
         return true;
     }else return true;
 }
-
-
-
 // delete the image when give a path
 function auto_delete_img( $path ,$count,$file_name){
     $folder = $path;
@@ -188,9 +182,6 @@ function add_auto( $category, $brand, $model, $model_yr, $condition, $mileage, $
 }
 
   
-
-
-   
 
 
 ?>
