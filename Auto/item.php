@@ -48,39 +48,82 @@
                     <h3>Honda GP5 L Grade 2014</h3>                                
 				</div><hr>
                 <div class="row">
-                    <div class="col-lg-8">
-                        <img src="img/1.jpg" width="100%">
-                        <div style="padding:2px" class="col-lg-3"><img src="img/1.jpg" width="100%"></div>
-                        <div style="padding:2px" class="col-lg-3"><img src="img/1.jpg" width="100%"></div>
-                        <div style="padding:2px" class="col-lg-3"><img src="img/1.jpg" width="100%"></div>
-                        <div style="padding:2px" class="col-lg-3"><img src="img/1.jpg" width="100%"></div>
-                    </div>
 
                     <?php 
 
                         if($_POST){
 
                             $id = $_POST['id'];
-                            echo $id;
+                            // echo $id;
 
                              
                                     require "../functions&defined/function.php";
                                     $query_auto = "SELECT * FROM Auto WHERE Id='$id'";
-                                    echo $query_auto;
+                                    // echo $query_auto;
                                     $conn = connection();
+
+
+
+                                    
                                     $result = $conn->query($query_auto);
                                     if( $result->num_rows > 0){
-                                        // while($row = $result->fetch_assoc()){
-                                              $row = $result->fetch_assoc();                              
+                                        while($row = $result->fetch_assoc()){
+                                              // $row = $result->fetch_assoc();                              
                                             $file_name = $row['file_name'];
-                                                                                        
-                                        // }    
+                                            $path = "images/".$file_name."/".$file_name;
+
+                                    ?>
 
 
-                                    }else{
-                                        echo "error";
-                                    }
+                                    <div class="col-lg-8">
+                                        <img src="<?php echo ($path.'-0.jpg'); ?>" width="100%">
+
+                                        <?php
+                                            for ($i=0; $i <$row['Img_count'] ; $i++) { 
+                                                $path = "images/".$file_name."/".$file_name.'-'.$i.'.jpg';
+
                                             
+                                        ?>
+                                            <div style="padding:2px" class="col-lg-3">
+                                                <img src="<?php echo ($path); ?>" width="100%">
+                                            </div>
+                                        <?php
+                                            }
+                                        ?>                                        
+                                    </div>
+
+
+
+
+
+
+                                    <div class="col-lg-4">
+                                        <p style="font-size:16px;color:#222;line-height: 1.8em;">
+                                                <b>Brand: </b> <?php echo ($row['Brand']); ?><br>
+                                                <b>Model: </b> <?php echo ($row['Model']); ?><br>
+                                                <b>Model year: </b><?php echo ($row['Model_yr']); ?><br>
+                                                <b>Condition: </b> <?php echo ($row['Cdtn']); ?><br>
+                                                <b>Transmission: </b> <?php echo ($row['Transmition']); ?><br>
+                                                <b>Fuel type: </b> <?php echo ($row['Fuel_type']); ?><br>
+                                                <b>Engine capacity: </b> <?php echo ($row['Eng_cap']); ?><br>
+                                                <b>Mileage: </b><?php echo ($row['Mileage']); ?><br>
+                                        </p>
+                        
+                                    </div>
+
+                                    <div class="col-lg-12">  <hr>
+                                     <p>
+                                     Other details:  <?php echo ($row['Description']); ?><br>
+                                     Location : <? echo ($row['Location']); ?>
+                                    </p>
+                                </div>
+
+                                    <?php 
+
+                                        }
+
+                                    }                                    
+                                                                                
                                  
 
                             
@@ -88,37 +131,8 @@
 
                     ?>
                     
-                    <div class="col-lg-4">
-                        <p style="font-size:16px;color:#222;line-height: 1.8em;">
-                            <b>Brand: </b> Honda<br>
-                            <b>Model year: </b> 2014<br>
-                            <b>Condition: </b> New<br>
-                            <b>Transmission: </b> Auto<br>
-                            <b>Model: </b> GP5 L grade<br>
-                            <b>Body type: </b> Hatchback<br>
-                            <b>Fuel type: </b> Other fule type<br>
-                            <b>Engine capacity: </b> 1500 cc<br>
-                            <b>Mileage: </b> 11500 km<br>
-                        </p>
-                        
-                    </div>
-                    <div class="col-lg-12">  <hr>
-                    <p>
-                        1500CC, Full Option, L-Package, 2014 , pearl white , Original Factory Fitted Honda Allow Wheels, Led Head Lights, Ret/ Mirrors, Half Leather Seats, Full Multi-function steering, Cruze Control, Push Start, Auto A/C, Smart key, Rear wiper, HDD, Navi, Reverse camera with Guide Lines, Winker mirrors, Door Wiser, Rear Wiper, Fully Loaded, front and rear drive support sensors<br><br>
-
-02 years Warranty<br>
-And many more functions<br><br>
-
-Web:- www.ojtjapan.com<br>
-Address:- # 135/8, Digana Road, Kundasale.<br><br>
-
-We make the order as per your request to get this vehicle directly from Japanese auction in for reasonable price.<br>
-Please note that we need approximately 3 weeks’ time to complete the delivery.<br>
-Join with our 3 years trusted hassle free service. Japanese bureau Certification available .<br><br>
-
-I do not want to be contacted by telemarketers.<br>
-                        </p>
-                    </div>
+                    
+                    
                 </div>
                 
                 
