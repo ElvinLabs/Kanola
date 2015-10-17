@@ -65,9 +65,16 @@
                                          <!-- <img class="img-thumbnail" alt="" src="" width="100%"> -->
                                      </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6">
-                                        <p class="details"><b>Model : <?php echo ($row['Model']);  ?></b>
-                                        <p class="details"><b>Brand : <?php echo ($row['Brand']);  ?></b>
-                                        </p>
+                                        <form action="item.php" method="post">
+                                            
+
+                                            <p class="details"><b>Model : <?php echo ($row['Model']);  ?></b>
+                                            <p class="details"><b>Brand : <?php echo ($row['Brand']);  ?></b>
+                                            </p>
+                                            <input type="hidden" name="id" value="<?php echo ($row['Id']); ?>" >
+                                            <input type="submit" value="More" >
+                                        </form>
+
                                     </div>
                                 </div>
 

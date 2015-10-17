@@ -55,6 +55,38 @@
                         <div style="padding:2px" class="col-lg-3"><img src="img/1.jpg" width="100%"></div>
                         <div style="padding:2px" class="col-lg-3"><img src="img/1.jpg" width="100%"></div>
                     </div>
+
+                    <?php 
+
+                        if($_POST){
+
+                            $id = $_POST['id'];
+                            echo $id;
+
+                             
+                                    require "../functions&defined/function.php";
+                                    $query_auto = "SELECT * FROM Auto WHERE Id='$id'";
+                                    echo $query_auto;
+                                    $conn = connection();
+                                    $result = $conn->query($query_auto);
+                                    if( $result->num_rows > 0){
+                                        // while($row = $result->fetch_assoc()){
+                                              $row = $result->fetch_assoc();                              
+                                            $file_name = $row['file_name'];
+                                                                                        
+                                        // }    
+
+
+                                    }else{
+                                        echo "error";
+                                    }
+                                            
+                                 
+
+                            
+                        }
+
+                    ?>
                     
                     <div class="col-lg-4">
                         <p style="font-size:16px;color:#222;line-height: 1.8em;">
